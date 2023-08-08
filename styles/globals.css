@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  .font-outline-orange1 {
+    -webkit-text-stroke: 1px #ff6341;
+  }
+
+  .font-outline-orange2 {
+    -webkit-text-stroke: 2px #ff6341;
+  }
+
+  .font-outline-gray1 {
+    -webkit-text-stroke: 1px #142039;
+  }
+
+  .font-outline-gray2 {
+    -webkit-text-stroke: 2px #142039;
+  }
+
+  .font-outline-yellow1 {
+    -webkit-text-stroke: 1px darkgoldenrod;
+  }
+
+  .font-outline-yellow2 {
+    -webkit-text-stroke: 2px darkgoldenrod;
+  }
+}

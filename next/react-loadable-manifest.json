@@ -1,0 +1,62 @@
+{
+  "..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_app": {
+    "id": "..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_app",
+    "files": [
+      "static/chunks/node_modules_next_dist_pages__app_js.js"
+    ]
+  },
+  "..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_error": {
+    "id": "..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_error",
+    "files": [
+      "static/chunks/node_modules_next_dist_pages__error_js.js"
+    ]
+  },
+  "_app.tsx -> ../components/Analytics": {
+    "id": "_app.tsx -> ../components/Analytics",
+    "files": [
+      "static/chunks/components_Analytics_js.js"
+    ]
+  },
+  "_app.tsx -> ../components/BgParallax2": {
+    "id": "_app.tsx -> ../components/BgParallax2",
+    "files": [
+      "static/chunks/components_BgParallax2_js.js"
+    ]
+  },
+  "_app.tsx -> ../components/Footer": {
+    "id": "_app.tsx -> ../components/Footer",
+    "files": [
+      "static/chunks/components_Footer_js.js"
+    ]
+  },
+  "_app.tsx -> ../components/Navbar": {
+    "id": "_app.tsx -> ../components/Navbar",
+    "files": [
+      "static/chunks/components_Navbar_js.js"
+    ]
+  },
+  "_app.tsx -> ../components/SideBar": {
+    "id": "_app.tsx -> ../components/SideBar",
+    "files": [
+      "static/chunks/components_SideBar_js.js"
+    ]
+  },
+  "index.tsx -> ../components/AboutInsurances": {
+    "id": "index.tsx -> ../components/AboutInsurances",
+    "files": [
+      "static/chunks/components_AboutInsurances_js.js"
+    ]
+  },
+  "index.tsx -> ../components/BgParallax1": {
+    "id": "index.tsx -> ../components/BgParallax1",
+    "files": [
+      "static/chunks/components_BgParallax1_js.js"
+    ]
+  },
+  "index.tsx -> ../components/PageSeo": {
+    "id": "index.tsx -> ../components/PageSeo",
+    "files": [
+      "static/chunks/components_PageSeo_tsx.js"
+    ]
+  }
+}

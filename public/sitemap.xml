@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <urlset xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+      http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+      xmlns:xhtml="http://www.w3.org/1999/xhtml">
+      
+	<url>
+		<loc>https://aboutinsurances.vercel.app/404</loc>
+		<lastmod>2023-06-23</lastmod>
+	</url>
+
+	<url>
+		<loc>https://aboutinsurances.vercel.app/500</loc>
+		<lastmod>2023-06-23</lastmod>
+	</url>
+
+	<url>
+		<loc>https://aboutinsurances.vercel.app</loc>
+		<lastmod>2023-06-23</lastmod>
+	</url>
+
+	<url>
+		<loc>https://aboutinsurances.vercel.app/offline</loc>
+		<lastmod>2023-06-23</lastmod>
+	</url>
+
+	<url>
+		<loc>https://aboutinsurances.vercel.app/policy</loc>
+		<lastmod>2023-06-23</lastmod>
+	</url>
+
+	<url>
+		<loc>https://aboutinsurances.vercel.app/terms</loc>
+		<lastmod>2023-06-23</lastmod>
+	</url>
+
+	<url>
+		<loc>https://aboutinsurances.vercel.app/tips/teste</loc>
+		<lastmod>2023-06-23</lastmod>
+	</url>
+</urlset>
