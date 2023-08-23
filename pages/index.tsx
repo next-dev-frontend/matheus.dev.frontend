@@ -1,19 +1,17 @@
 import dynamic from 'next/dynamic'
 const PageSeo = dynamic(() => import('../components/PageSeo'))
-const SliderImages = dynamic(() => import('../components/SliderImages'))
-const AboutInsurances = dynamic(() => import('../components/AboutInsurances'))
+const TabBar = dynamic(() => import('../components/TabBar'))
 
 export default function Home() {
   return (
     <PageSeo
-      title="Ask Your Questions About Insurance and Agencies"
-      titleTemplate="%s | About Insurances"
-      description="Insurance information and tips website. Before contracting any insurance service, visit our website and clarify all your doubts on the subject."
+      title="Desenvolvedor Web Frontend"
+      titleTemplate="%s | React Nextjs Tailwind"
+      description="Procurando alguém para criar sites institucionais? Acesse o site e veja os serviços que disponibilizamos pra você obter um site 100% seguro, com excelência nos quisitos performance, acessibilidade, melhores práticas de programação, SEO e Aplicativos Progressivos. Tudo isso utilizando linguagens e frameworks modernos e robustos como React.js e Next.js, além de TailwindCSS e Typescript. Acesse agora."
       path="/"
     >
       <main>
-        <SliderImages />
-        <AboutInsurances />
+        <TabBar />
       </main>
     </PageSeo>
   )
