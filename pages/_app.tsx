@@ -6,6 +6,7 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import Loading from '../components/Loading';
+const TabBar = dynamic(() => import('../components/TabBar'))
 const Analytics = dynamic(() => import('../components/Analytics'));
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
@@ -43,6 +44,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <Loading />
       ) : (
         <>
+          <TabBar />
           <Component {...pageProps} />
           <Analytics />
         </>

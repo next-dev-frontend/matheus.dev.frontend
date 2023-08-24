@@ -4,12 +4,12 @@ const Sobre = () => {
   return (
     <div className="font-mono text-justify p-4 h-max max-w-3xl text-gray-700 bg-gray-200 rounded border-2 border-gray-400">
 
-      <h1 className="flex p-2 text-lg md:text-xl lg:text-2xl md:text-left">
-        <span className="animate-waving-hand">👋🏻 &nbsp;</span> Sejam bem-vindos ao meu website.
+      <h1 className="flex p-2 text-xl md:text-2xl lg:text-3xl md:text-left">
+        <span className="animate-waving-hand">👋🏻 &nbsp;</span> <span className="underline decoration-wavy decoration-indigo-500"> Sejam todos bem-vindos</span>.
       </h1>
 
       <p className="indent-8 p-2 text-sm md:text-md lg:text-lg text-center md:text-left text-justify">
-        Olá, meu nome é Matheus, tenho 43 anos e sou formado em Ciência da Computação desde 2016. Em dezembro de 2020, decidi iniciar minha nova jornada como programador, utilizando Next.js, TailwindCSS e Typescript para desenvolvimento Web, de forma moderna, eficiente e segura.
+        Olá, meu nome é Matheus, tenho 43 anos e sou formado em Ciência da Computação desde 2016. Em dezembro de 2020, decidi iniciar minha nova jornada como programador, utilizando React/Next.js, TailwindCSS e Typescript para desenvolvimento Web, de forma moderna, eficiente e segura.
       </p>
 
       <p className="p-2 text-sm md:text-md lg:text-lg md:text-left text-justify">
