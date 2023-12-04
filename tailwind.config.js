@@ -24,9 +24,29 @@ module.exports = {
           '60%': { transform: 'rotate(0.0deg)' },
           '100%': { transform: 'rotate(0.0deg)' },
         },
+
+        typing: {
+          from: {
+            width: '0'
+          },
+          to: {
+            width: '23ch'
+          },
+        },
+
+        blink: {
+          from: {
+            'border-right': '0'
+          },
+          to: {
+            'border-right': '0'
+          },
+        },
+
       },
       animation: {
         'waving-hand': 'wave 2s linear infinite',
+        'typing': 'typing 3s steps(23), blink 2s infinite',
       },
 
 

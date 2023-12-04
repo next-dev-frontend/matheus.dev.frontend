@@ -3,39 +3,111 @@
 @tailwind utilities;
 
 
-
-.loading-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  background-color: rgba(255, 255, 255, 0.8);
-  z-index: 1000;
+/* background gradiente */
+body {
+  background: linear-gradient(45deg, #0167ff, #28ddfd, #c71ed6, #28ddfd, #0167ff, #c71ed6, #28ddfd, #0167ff, #c71ed6, #28ddfd, #0167ff);
+  background-size: 400% 400%;
+  animation: gradient 50s ease infinite;
+  height: 100%;
+  z-index: 10;
 }
 
-.loading-spinner {
-  border: 4px solid rgba(0, 0, 0, 0.1);
-  border-top: 4px solid #000;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 4s linear infinite;
-}
-
-@keyframes spin {
+@keyframes gradient {
   0% {
-    transform: rotate(0deg);
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
   }
 
   100% {
-    transform: rotate(360deg);
+    background-position: 0% 50%;
   }
 }
 
 
 
+/*transições*/
+[data-anime] {
+  opacity: 0;
+  transition: 1.5s;
+}
+
+[data-anime="top"] {
+  transform: translate3d(0, 100%, 0);
+}
+
+[data-anime="bottom"] {
+  transform: translate3d(0, -100%, 0);
+}
+
+[data-anime="left"] {
+  transform: translate3d(-100%, 0, 0);
+}
+
+[data-anime="right"] {
+  transform: translate3d(50px, 0, 0);
+}
+
+[data-anime="blur"] {
+  transition: all 2.0s cubic-bezier(.71, 0, .33, 1.56)
+}
+
+[data-anime].animate {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+
+
+
+
+
+/* fotos */
+.carousel {
+  position: relative;
+  width: 100%;
+}
+
+.carousel .imageContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel .imageWrapper {
+  position: relative;
+  width: 512px;
+  height: 512px;
+  overflow: hidden;
+}
+
+.carousel .arrowLeft,
+.carousel .arrowRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+}
+
+.carousel .arrowLeft {
+  left: 10px;
+}
+
+.carousel .arrowRight {
+  right: 10px;
+}
+
+
+
+
+
+
+/* efeito no texto */
 
 @keyframes fade-in {
   from {
@@ -48,9 +120,8 @@
 }
 
 .animate-fade-in {
-  animation: fade-in 1.0s ease-out;
+  animation: fade-in 2.0s ease-out;
 }
-
 
 
 @keyframes gradient-animation {
@@ -74,4 +145,352 @@
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+}
+
+
+@keyframes jump {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.animate-jump {
+  animation: jump 0.7s ease;
+  ;
+}
+
+
+
+/* blink button */
+@keyframes blink-button {
+
+  0%,
+  100% {
+    background-color: #16A34A;
+    border-color: #ffffff;
+  }
+
+  50% {
+    background-color: transparent;
+    border-color: #16A34A;
+  }
+}
+
+.animate-blink-button {
+  animation: blink-button 1.5s 4;
+}
+
+
+/* animação de logos no background */
+@keyframes animate {
+
+  0% {
+    transform: translateY(-1500px) rotate(720deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+
+}
+
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 100%;
+  height: 100px;
+  background: transparent;
+  animation: animate 85s linear infinite;
+  bottom: 0px;
+  z-index: 0;
+}
+
+.circles li:nth-child(1) {
+  left: 32%;
+  width: 100px;
+  height: 100px;
+  animation-delay: 0s;
+  animation-duration: 42s;
+  z-index: 0;
+}
+
+.circles li:nth-child(2) {
+  left: 17%;
+  width: 100px;
+  height: 100px;
+  animation-delay: 0s;
+  animation-duration: 34s;
+  z-index: 0;
+}
+
+.circles li:nth-child(3) {
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  animation-delay: 0s;
+  animation-duration: 44s;
+  z-index: 0;
+}
+
+.circles li:nth-child(4) {
+  left: 40%;
+  width: 100px;
+  height: 100px;
+  animation-delay: 0s;
+  animation-duration: 56s;
+  z-index: 0;
+}
+
+.circles li:nth-child(5) {
+  left: 65%;
+  width: 100px;
+  height: 100px;
+  animation-delay: 0s;
+  animation-duration: 39s;
+  z-index: 0;
+}
+
+.circles li:nth-child(6) {
+  left: 85%;
+  width: 100px;
+  height: 100px;
+  animation-delay: 0s;
+  animation-duration: 51s;
+  z-index: 0;
+}
+
+.circles li:nth-child(7) {
+  left: 75%;
+  width: 100px;
+  height: 100px;
+  animation-delay: 0s;
+  animation-duration: 49s;
+  z-index: 0;
+}
+
+
+
+
+/* lighthouse animação*/
+#loading {
+  width: 90px;
+  height: 90px;
+  margin: 30px auto;
+  position: relative;
+}
+
+
+#loading .percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #16A34A;
+  z-index: 30;
+}
+
+.outer-shadow,
+.inner-shadow {
+  z-index: 4;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  box-shadow: 1px 1px 1px 1px rgba(83, 82, 82, 0.5);
+}
+
+.inner-shadow {
+  top: 50%;
+  left: 50%;
+  width: 75px;
+  height: 75px;
+  margin-left: -37px;
+  margin-top: -37px;
+  border-radius: 100%;
+  background-color: #ffffff;
+}
+
+.hold {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip: rect(0px, 45px, 95px, 0px);
+  border-radius: 100%;
+  background-color: #fff;
+}
+
+.fill,
+.dot span {
+  background-color: #16A34A;
+}
+
+.fill {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  clip: rect(0px, 100px, 100px, 45px);
+}
+
+.left .fill {
+  z-index: 1;
+  -webkit-animation: left 1s linear;
+  -moz-animation: left 1s linear;
+  animation: left 1s linear both;
+}
+
+@keyframes left {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@-webkit-keyframes left {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(180deg);
+  }
+}
+
+.right {
+  z-index: 3;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.right .fill {
+  z-index: 3;
+  -webkit-animation: right 1s linear;
+  -moz-animation: right 1s linear;
+  animation: right 1s linear both;
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+@keyframes right {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@-webkit-keyframes right {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+
+
+
+
+
+
+/* animação em torno da imagem nextjs*/
+.box .content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: pink;
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+  box-sizing: border-box;
+  padding: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: repeating-linear-gradient(white 0%,
+      white 7.5px,
+      hotpink 7.5px,
+      hotpink 15px,
+      white 15px,
+      white 22.5px,
+      hotpink 22.5px,
+      hotpink 30px);
+  transform: translateX(-20%) translateY(-20%) rotate(-45deg);
+  animation: animateBorder 20s linear infinite;
+}
+
+.box .content {
+  position: relative;
+  background-color: white;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 30px;
+  text-align: center;
+  font-family: sans-serif;
+  z-index: 2;
+}
+
+.box,
+.box .content {
+  box-shadow: 0 0 2px deeppink,
+    0 0 5px rgba(0, 0, 0, 1),
+    inset 0 0 5px rgba(0, 0, 0, 1);
+  border-radius: 10px;
+}
+
+.box .content h2 {
+  color: deeppink;
+}
+
+.box .content p {
+  color: dimgray;
+}
+
+@keyframes animateBorder {
+  from {
+    background-position: 0;
+  }
+
+  to {
+    background-position: 0 450px;
+  }
 }

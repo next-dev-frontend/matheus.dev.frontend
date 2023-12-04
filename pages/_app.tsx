@@ -1,16 +1,15 @@
 //import '../styles/tailwind.css'
 import "../styles/globals.css";
 import "tailwindcss/tailwind.css";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from "react";
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import dynamic from 'next/dynamic';
-import Loading from '../components/Loading';
-const TabBar = dynamic(() => import('../components/TabBar'))
-const Analytics = dynamic(() => import('../components/Analytics'));
+import NextNProgress from 'nextjs-progressbar';
+import dynamic from 'next/dynamic'
+const ScrollToTop = dynamic(() => import('../components/ScrollToTop'))
+const BgIconsEffect = dynamic(() => import('../components/BgIconsEffect'));
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
-  const [loading, setLoading] = useState(true);
+export default function MyApp({ Component, pageProps }: AppProps) {
 
   // registrar service-worker
   useEffect(() => {
@@ -28,29 +27,22 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     }
   }, []);
 
-  useEffect(() => {
-    // Após o carregamento inicial, definimos o estado de carregamento como falso
-    setLoading(false);
-  }, []);
+
+
 
   return (
     <>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" type="image/png" href="/favicon.ico" />
         <link rel="icon" href="/logos/logo-144x144.png" />
       </Head>
-      {loading ? (
-        <Loading />
-      ) : (
-        <>
-          <TabBar />
-          <Component {...pageProps} />
-          <Analytics />
-        </>
-      )}
+      <NextNProgress color="#142039" startPosition={0.3} stopDelayMs={200} height={3} showOnShallow={true} />
+      <ScrollToTop />
+      <BgIconsEffect />
+      <Component {...pageProps} />
     </>
   );
 };
 
-export default MyApp;

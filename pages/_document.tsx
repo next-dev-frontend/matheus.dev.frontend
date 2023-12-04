@@ -7,10 +7,9 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta name="google-site-verification" content="rRKlKFWnlhU_kUGxe4fgENDoEIIcYSSc1DbdpRMn1kY" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="theme-color" content="#ff6341" />
         </Head>
-        <body className="scrollbar scrollbar-thumb-color1 scrollbar-track-color2 overflow-x-hidden overflow-y-auto scrollbar-hide md:scrollbar-default">
+        <body className="scrollbar scrollbar-thumb-pink-500 scrollbar-track-gray-200 overflow-x-hidden overflow-y-auto scrollbar-hide md:scrollbar-default">
           <Main />
           <NextScript />
         </body>

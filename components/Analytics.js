@@ -1,8 +1,21 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 import ls from 'local-storage';
 
 const CookiePopup = ({ onClose }) => {
+  const [textVisible, setTextVisible] = useState(false);
   const buttonRef = useRef(null);
+
+
+  useEffect(() => {
+    const textTimeout = setTimeout(() => {
+      setTextVisible(true);
+    }, 100);
+
+    return () => {
+      clearTimeout(textTimeout);
+    };
+  }, []);
 
   useEffect(() => {
     const button = buttonRef.current;
@@ -17,18 +30,23 @@ const CookiePopup = ({ onClose }) => {
     };
   }, [onClose]);
 
+
+
+
   return (
-    <div id='analytics' className='fixed bottom-0 p-20 flex items-center w-full justify-center z-50'>
-      <div className='modal p-4 bg-[#142039] border-4 rounded border-[#27ae60]'>
-        <p className='text-center font-bold text-white'>This site uses cookies</p>
+
+    <div id='analytics' className={`flex fixed w-full max-w-full h-full font-sans items-center bg-indigo-900 bg-opacity-90 border-4 border-gray-100 border-dashed justify-center z-50 ${textVisible ? 'animate-fade-in' : 'opacity-0'}`}>
+      <div className='w-full md:max-w-md max-w-full h-auto px-6 md:px-0'>
+        <p className='text-lg md:text-xl text-center font-bold text-white pb-2'>Este site usa cookies</p>
+        <p className='text-md md:text-lg text-white text-left text-justify'>Este site utiliza cookies unicamente para melhorar sua experiência de navegação. Nenhum dado pessoal será coletado sem a sua autorização. Clique em aceitar e navegue com total segurança!
+          <Link href="/terms" className={"underline hover:no-underline text-sm md:text-md px-3 py-1 font-medium text-white"}>Termos &amp; Condições</Link></p>
+
         <br />
-        <p className='text-white'>This website uses cookies to improve your user experience. By continuing to browse the site, you agree to the use of cookies.</p>
-        <br />
-        <div className="flex justify-center">
-          <button ref={buttonRef} className='bg-[#27ae60] border-4 rounded border-white text-lg p-4 cursor-pointer'>Accepted</button>
+        <div className='w-full flex justify-center'>
+          <button ref={buttonRef} className='animate-blink-button rounded-full text-lg md:text-xl w-32 h-full mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal bg-green-600 text-white border-2 border-white cursor-pointer transform transition hover:scale-105 duration-200 ease-in-out'>Aceitar</button>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
