@@ -80,7 +80,7 @@ const Lighthouse: React.FC = () => {
 
   return (
     <>
-      <div className="pb-12 flex mx-auto border-t-8 border-b-8 border-green-600 border-dashed grid grid-cols-2 lg:grid-cols-3 grid-rows-3 lg:grid-rows-2 gap-4 w-3/4 max-w-3/4">
+      <div className="pb-6 flex mx-auto border-t-8 border-b-8 border-green-600 border-dashed grid grid-cols-2 lg:grid-cols-3 grid-rows-3 lg:grid-rows-2 gap-4 w-3/4 max-w-3/4">
         {items.map((item, index) => (
           <LoadingItem key={index} text={item} />
         ))}

@@ -30,7 +30,7 @@ module.exports = {
             width: '0'
           },
           to: {
-            width: '23ch'
+            width: '28ch'
           },
         },
 
@@ -46,7 +46,7 @@ module.exports = {
       },
       animation: {
         'waving-hand': 'wave 2s linear infinite',
-        'typing': 'typing 3s steps(23), blink 2s infinite',
+        'typing': 'typing 3s steps(28), blink 2s infinite',
       },
 
 

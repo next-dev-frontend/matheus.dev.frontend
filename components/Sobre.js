@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
 import Image from "next/legacy/image";
+import Link from 'next/link';
 import { Howl } from 'howler';
 import dynamic from "next/dynamic";
 const Lighthouse = dynamic(() => import('../components/Lighthouse'));
@@ -11,8 +11,18 @@ const Sobre = () => {
     volume: 1.0,
   });
 
-  const imgHover = () => {
+  const handleHover = () => {
     hoverFx.play();
+  };
+
+  //efeitos sonoros de clicks
+  const clickFx = new Howl({
+    src: ['../effects/clickFx.mp3'],
+    volume: 1.0,
+  });
+  //controle de som dos elementos
+  const handleClick = () => {
+    clickFx.play();
   };
 
   return (
@@ -22,41 +32,34 @@ const Sobre = () => {
       <div className="rounded">
         <h2 className="flex p-2 pt-4 text-2xl md:text-3xl lg:text-4xl md:text-left">
           <span className="animate-waving-hand">👋🏻 &nbsp;</span>{" "}
-          <span className='inline-block overflow-hidden whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>Sejam todos bem-vindos,</span>
+          <span className='inline-block overflow-hidden whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>Seja bem-vindo&#40;a&#41;,</span>
         </h2>
         <br />
 
-        <div className="p-2 text-justify text-lg md:text-xl lg:text-2xl">
+        <div className="p-2 text-justify text-md md:text-lg lg:text-xl">
           <p className="indent-8">
-            É um grande prazer recebê-los aqui. Meu nome é Matheus,
+            É um grande prazer recebê-lo&#40;a&#41; aqui. Meu nome é Matheus,
             tenho 43 anos e possuo graduação em Ciência
             da Computação desde o ano de 2016, trilho uma jornada
-            que se reinventou no final de 2020 quando tive meu primeiro
-            contato com o Next.js. Sempre me aventurei em conhecer
-            novas linguagens e tecnologias que vinham surgindo ao
-            longo do tempo, e confesso que já havia programado
-            para web no passado e não gostei muito da experiência.
-            Me lembro que tudo era complexo e tínhamos poucas fontes de
-            informação sobre as linguagens, e a internet ainda estava dando seus passos iniciais.
-            Com o surgimento de bibliotecas e frameworks modernos, como React e Next,
-            e agora também com tecnologias de inteligência artificial, além de diversas
-            ferramentas e aplicações, desenvolver para web está se tornando cada vez mais
-            inspirador e gratificante.
+            que se reinventou no final de 2020 quando tive meu primeiro contato com o <Link onMouseEnter={handleHover} onMouseClick={handleClick} href="https://nextjs.org/" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>Next.js</Link>, e
+            logo em seguida, com <Link onMouseEnter={handleHover} onMouseClick={handleClick} href="https://tailwindcss.com/" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>Tailwind</Link> e
+            o <Link onMouseEnter={handleHover} onMouseClick={handleClick} href="https://learn.microsoft.com/pt-br/training/paths/build-javascript-applications-typescript" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>Typescript</Link>.
           </p>
 
-        </div>
+          <p className="indent-8 pt-4">
+            Sempre me aventurei em conhecer novas linguagens e tecnologias que vinham
+            surgindo ao longo do tempo, e confesso que já havia programado
+            para web no passado e minha experiência não foi das mais agradáveis.
+            Me lembro que a padronização de código era menos rigorosa, os navegadores
+            possuiam diferentes interpretações de códigos para HTML e CSS e ainda tínhamos
+            poucas fontes sólidas de informação na internet, pois a mesma, ainda dava
+            seus passos iniciais. Os livros eram um pouco caros e muito disputados nas
+            bibliotecas. Neste período eu me interessava mais por programação desktop e
+            acabei abandonando de vez a programação web.
+          </p>
 
-        <br />
-
-        <h3 className="flex p-2 pt-4 text-2xl md:text-3xl lg:text-4xl justify-center">
-          <span className='inline-block overflow-hidden whitespace-nowrap font-bold font-mono animate-typing border-r-4 text-indigo-500'>
-            Tecnologias e Projetos
-          </span>
-        </h3>
-
-        <div className="indent-8 p-2 text-justify text-lg md:text-xl lg:text-2xl">
           <div className="flex items-center justify-center py-8">
-            <div onMouseEnter={imgHover} onMouseLeave={imgHover} className="group box w-96 h-96 [perspective:1000px]">
+            <div onMouseEnter={handleHover} onMouseLeave={handleHover} className="group box w-96 h-96 [perspective:1000px]">
               <div className="relative content h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                 <div className="absolute inset-0">
                   <Image
@@ -86,8 +89,29 @@ const Sobre = () => {
             </div>
           </div>
 
-          <div className="p-2 text-justify text-lg md:text-xl lg:text-2xl">
-            <p>
+          <p className="indent-8 pt-4">
+            Com o avanço significativo da internet dos anos 2000 até os tempos atuais,
+            somado ao surgimento de bibliotecas e frameworks modernos, como React.js e
+            Next.js, e agora também com tecnologias de inteligência artificial, além
+            de diversas ferramentas e aplicações online, desenvolver para web está se
+            tornando cada vez mais inspirador e gratificante. Isso tudo me motivou a seguir
+            firme novamente no caminho da programação web afim de me consolidar no mercado de trabalho.
+          </p>
+
+        </div>
+
+        <br />
+
+        <h2 className="flex p-2 pt-4 text-2xl md:text-3xl lg:text-4xl justify-center">
+          <span className='inline-block overflow-hidden whitespace-nowrap font-bold font-mono animate-typing border-r-4 text-indigo-500'>
+            Tecnologias e Projetos
+          </span>
+        </h2>
+
+        <div className="indent-8 p-2 text-justify w-full">
+
+          <div className="text-justify text-md md:text-lg lg:text-xl">
+            <p className="indent-8 pt-4">
               Atualmente, decidi enveredar pelo mundo da programação web,
               abraçando tecnologias contemporâneas como React/Next.js,
               TailwindCSS e TypeScript, para dar vida a sites e aplicativos web
@@ -99,12 +123,37 @@ const Sobre = () => {
           </div>
 
         </div>
+
+        <br />
+        <Lighthouse />
         <br />
 
-        <Lighthouse />
+        <div className="indent-8 p-2 text-justify w-full">
 
-        <div className="p-2 text-justify text-lg md:text-xl lg:text-2xl">
-          <p className="p-2 py-2 pt-8 text-justify text-lg md:text-xl lg:text-2xl">
+          <div className="text-justify text-md md:text-lg lg:text-xl">
+            <p className="indent-8 pt-4 pb-2">
+              Nos últimos três anos, eu estudei muito sobre programação web front-end e também sobre segurança web,
+              entendendo toda estrutura de um projeto next.js e aplicando as melhores práticas aos meus projetos.
+              Tenho muito ainda para desvendar, más acredito que estou seguindo o caminho certo. Meu próximo passo
+              agora é desenvolver websites e aplicativos que utilizem o back-end, pois pretendo me tornar um programador
+              full stack.
+            </p>
+          </div>
+
+        </div>
+        <br />
+
+
+
+
+
+
+
+
+
+
+        <div className="p-2 text-justify text-md md:text-lg lg:text-xl">
+          <p className="p-2 pt-8 text-justify">
             🚀 Neste espaço, convido vocês a explorar mais sobre minha
             formação e histórico profissional, as linguagens e metodologias
             que utilizo, além de acesso a códigos fonte de alguns projetos e
@@ -114,9 +163,9 @@ const Sobre = () => {
 
       </div>
 
-      <div className="p-2 text-justify text-lg md:text-xl lg:text-2xl">
+      <div className="p-2 text-justify text-md md:text-lg lg:text-xl">
 
-        <p className="indent-8 p-2 pb-6 pt-8 text-justify text-lg md:text-xl lg:text-2xl">
+        <p className="indent-8 p-2 pb-6 text-justify">
           É com entusiasmo que compartilho fragmentos da minha trajetória.
           Cada projeto representa uma oportunidade de crescimento e aprendizado,
           onde eu sempre tento explorar e absorver o máximo de informações.
@@ -124,7 +173,7 @@ const Sobre = () => {
           incríveis tecnologias e anseio pelo que o horizonte tecnológico nos reserva.
         </p>
 
-        <p className="p-2 pb-6 text-lg md:text-xl lg:text-2xl">
+        <p className="p-2 pb-6">
           Com estima, <br />
           Matheus
         </p>

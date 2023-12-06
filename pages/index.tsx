@@ -144,6 +144,7 @@ const Home = () => {
     toogleFx.play();
   };
 
+
   //controle de som dos elementos
   const handleClick = () => {
     clickFx.play();
