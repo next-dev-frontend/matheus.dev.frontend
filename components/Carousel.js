@@ -58,7 +58,7 @@ const Carousel = () => {
           <IoIosArrowBack />
         </button>
 
-        <div className="flex mx-auto border-8 hover:border-16 border-gray-100 border-double border-dotted rounded-full w-40 h-40">
+        <div className="flex mx-auto border-8 hover:border-16 border-gray-100 border-double border-dotted rounded-full w-44 h-44">
           <Image
             src={images[currentImage]}
             alt={`Foto ${currentImage + 1}`}

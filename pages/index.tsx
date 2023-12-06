@@ -4,11 +4,12 @@ import { FaVolumeMute, FaVolumeUp, FaMailBulk, FaMapMarkerAlt, FaWhatsapp, FaHtm
 import { SiGithub, SiLinkedin, SiTailwindcss, SiTypescript } from 'react-icons/si';
 import { Howl, Howler } from 'howler';
 import dynamic from 'next/dynamic';
-const Carousel = dynamic(() => import('../components/Carousel'));
 //const Formacao = dynamic(() => import('../components/Formacao'));
 const Sobre = dynamic(() => import('../components/Sobre'));
+const Carousel = dynamic(() => import('../components/Carousel'));
 //const Tecnologias = dynamic(() => import('../components/Tecnologias'));
 const Projetos = dynamic(() => import('../components/Projetos'));
+
 const SocialShare = dynamic(() => import('../components/SocialShare'));
 const Analytics = dynamic(() => import('../components/Analytics'));
 

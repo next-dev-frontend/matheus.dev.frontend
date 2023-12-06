@@ -41,9 +41,9 @@ const Sobre = () => {
             É um grande prazer recebê-lo&#40;a&#41; aqui. Meu nome é Matheus,
             tenho 43 anos e possuo graduação em Ciência
             da Computação desde o ano de 2016, trilho uma jornada
-            que se reinventou no final de 2020 quando tive meu primeiro contato com o <Link onMouseEnter={handleHover} onMouseClick={handleClick} href="https://nextjs.org/" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>Next.js</Link>, e
-            logo em seguida, com <Link onMouseEnter={handleHover} onMouseClick={handleClick} href="https://tailwindcss.com/" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>Tailwind</Link> e
-            o <Link onMouseEnter={handleHover} onMouseClick={handleClick} href="https://learn.microsoft.com/pt-br/training/paths/build-javascript-applications-typescript" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>Typescript</Link>.
+            que se reinventou no final de 2020 quando tive meu primeiro contato com o <Link onMouseEnter={handleHover} onClick={handleClick} href="https://nextjs.org/" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>Next.js</Link>, e
+            logo em seguida, com <Link onMouseEnter={handleHover} onClick={handleClick} href="https://tailwindcss.com/" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>Tailwind</Link> e
+            o <Link onMouseEnter={handleHover} onClick={handleClick} href="https://learn.microsoft.com/pt-br/training/paths/build-javascript-applications-typescript" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>Typescript</Link>.
           </p>
 
           <p className="indent-8 pt-4">
