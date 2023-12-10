@@ -1,6 +1,10 @@
+import { Howl } from 'howler';
 import Image from "next/legacy/image";
 import Link from 'next/link';
-import { Howl } from 'howler';
+import { PiHandPalmBold } from "react-icons/pi";
+import { FaReact } from "react-icons/fa";
+import { AiFillSchedule, AiFillHtml5 } from "react-icons/ai";
+import { GiJourney } from "react-icons/gi";
 import dynamic from "next/dynamic";
 const Lighthouse = dynamic(() => import('../components/Lighthouse'));
 
@@ -31,10 +35,9 @@ const Sobre = () => {
 
       <div className="rounded">
         <h2 className="flex p-2 pt-4 text-2xl md:text-3xl lg:text-4xl md:text-left">
-          <span className="animate-waving-hand">👋🏻 &nbsp;</span>{" "}
+          <span className="animate-waving-hand pr-4"><PiHandPalmBold className="w-11 h-11 text-gray-500" /></span>{" "}
           <span className='inline-block overflow-hidden whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>Seja bem-vindo&#40;a&#41;,</span>
         </h2>
-        <br />
 
         <div className="p-2 text-justify text-md md:text-lg lg:text-xl">
           <p className="indent-8">
@@ -47,15 +50,31 @@ const Sobre = () => {
           </p>
 
           <p className="indent-8 pt-4">
+            Neste espaço, convido você a explorar mais sobre minha
+            formação e histórico profissional, as linguagens e metodologias
+            que utilizo, além de acesso a códigos fonte de alguns projetos e
+            componentes Next.js que tive a alegria de criar.
+          </p>
+          <br />
+
+          <h2 className="flex pt-8 text-2xl md:text-3xl lg:text-4xl md:text-left">
+            <span className="pr-4"><AiFillHtml5 className="w-11 h-11 text-gray-500" /></span>{" "}
+            <span className='inline-block overflow-hidden whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>De volta pra WEB</span>
+          </h2>
+
+          <p className="indent-8 pt-4">
             Sempre me aventurei em conhecer novas linguagens e tecnologias que vinham
             surgindo ao longo do tempo, e confesso que já havia programado
-            para web no passado e minha experiência não foi das mais agradáveis.
+            para web no passado e minha experiência não foi muito agradável.
             Me lembro que a padronização de código era menos rigorosa, os navegadores
             possuiam diferentes interpretações de códigos para HTML e CSS e ainda tínhamos
             poucas fontes sólidas de informação na internet, pois a mesma, ainda dava
             seus passos iniciais. Os livros eram um pouco caros e muito disputados nas
             bibliotecas. Neste período eu me interessava mais por programação desktop e
-            acabei abandonando de vez a programação web.
+            acabei abandonando de vez a programação web. Anos depois, eu me deparei com
+            o poderoso react.js aliado ao next.js e me encontrei mergulhando novamente no
+            desenvolvimento web, só que desta vez, com uma empolgação única que nunca havia
+            sentido com outras linguagens.
           </p>
 
           <div className="flex items-center justify-center py-8">
@@ -102,16 +121,17 @@ const Sobre = () => {
 
         <br />
 
-        <h2 className="flex p-2 pt-4 text-2xl md:text-3xl lg:text-4xl justify-center">
+        <h2 className="flex p-2 pt-4 text-2xl md:text-3xl lg:text-4xl justify-left">
+          <span className="pr-4"><FaReact className='w-11 h-11 text-gray-500' /></span>{" "}
           <span className='inline-block overflow-hidden whitespace-nowrap font-bold font-mono animate-typing border-r-4 text-indigo-500'>
-            Tecnologias e Projetos
+            Tecnologias Atuais
           </span>
         </h2>
 
         <div className="indent-8 p-2 text-justify w-full">
 
           <div className="text-justify text-md md:text-lg lg:text-xl">
-            <p className="indent-8 pt-4">
+            <p className="indent-8">
               Atualmente, decidi enveredar pelo mundo da programação web,
               abraçando tecnologias contemporâneas como React/Next.js,
               TailwindCSS e TypeScript, para dar vida a sites e aplicativos web
@@ -132,33 +152,48 @@ const Sobre = () => {
 
           <div className="text-justify text-md md:text-lg lg:text-xl">
             <p className="indent-8 pt-4 pb-2">
-              Nos últimos três anos, eu estudei muito sobre programação web front-end e também sobre segurança web,
-              entendendo toda estrutura de um projeto next.js e aplicando as melhores práticas aos meus projetos.
-              Tenho muito ainda para desvendar, más acredito que estou seguindo o caminho certo. Meu próximo passo
-              agora é desenvolver websites e aplicativos que utilizem o back-end, pois pretendo me tornar um programador
-              full stack.
+              Nos últimos três anos, segui estudando programação web &#40;principalmente front-end&#41;,
+              SEO para otimização em motores de busca, webdesign para criação visual dos sites,
+              marketing digital para divulgação em diversas plataformas e redes sociais,
+              segurança de websites seguindo as melhores práticas da CSP, aplicando testes e entendendo
+              toda estrutura de projetos next.js. Tenho muito ainda para desvendar, más acredito que
+              estou seguindo o caminho certo. Meu próximo passo agora é desenvolver websites e aplicativos
+              que utilizem o back-end, pois pretendo me tornar um programador react full stack.
             </p>
           </div>
 
         </div>
         <br />
 
+        <h2 className="flex p-2 pt-4 text-2xl md:text-3xl lg:text-4xl justify-left">
+          <span className="pr-4"><GiJourney className='w-11 h-11 text-gray-500' /></span>{" "}
+          <span className='inline-block overflow-hidden whitespace-nowrap font-bold font-mono animate-typing border-r-4 text-indigo-500'>
+            Trajetória profissional
+          </span>
+        </h2>
 
+        <div className="indent-8 p-2 text-justify w-full">
 
+          <div className="text-justify text-md md:text-lg lg:text-xl">
+            <p className="indent-8">
+              Acesse o meu currículo no botão abaixo para saber mais sobre minha trajetória
+              como programador e como empresário no setor de TI, além de mais detalhes sobre minha formação
+              e as linguagens e ferramentas que utilizo e que já tive contato no passado.
+            </p>
+          </div>
 
+        </div>
 
-
-
-
-
-
-        <div className="p-2 text-justify text-md md:text-lg lg:text-xl">
-          <p className="p-2 pt-8 text-justify">
-            🚀 Neste espaço, convido vocês a explorar mais sobre minha
-            formação e histórico profissional, as linguagens e metodologias
-            que utilizo, além de acesso a códigos fonte de alguns projetos e
-            componentes Next.js que tive a alegria de criar.
-          </p>
+        <div className='w-full text-center pt-8 pb-4'>
+          <Link href="../currículo.pdf" className='w-full items-center' title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>
+            <button
+              className="rounded-full shadow-md text-md mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal bg-green-600 text-white transform transition hover:scale-105 duration-200 ease-in-out"
+            //onClick={handleCvClick}
+            //onMouseEnter={handleHover}
+            >
+              Currículo.pdf
+            </button>
+          </Link>
         </div>
 
       </div>
