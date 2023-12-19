@@ -42,6 +42,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <ScrollToTop />
       <BgIconsEffect />
       <Component {...pageProps} />
+
     </>
   );
 };

@@ -8,7 +8,7 @@ import { GiJourney } from "react-icons/gi";
 import dynamic from "next/dynamic";
 const Lighthouse = dynamic(() => import('../components/Lighthouse'));
 
-const Sobre = () => {
+const Tecnologias = () => {
 
   const hoverFx = new Howl({
     src: ['../effects/hoverFx.mp3'],
@@ -36,7 +36,7 @@ const Sobre = () => {
       <div className="rounded">
         <h2 className="flex p-2 pt-4 text-2xl md:text-3xl lg:text-4xl md:text-left">
           <span className="animate-waving-hand pr-4"><PiHandPalmBold className="w-11 h-11 text-gray-500" /></span>{" "}
-          <span className='inline-block overflow-hidden whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>Seja bem-vindo&#40;a&#41;,</span>
+          <span className='inline-block overflow-hidden whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>Tecnologias e Ferramentas</span>
         </h2>
 
         <div className="p-2 text-justify text-md md:text-lg lg:text-xl">
@@ -116,7 +116,6 @@ const Sobre = () => {
             tornando cada vez mais inspirador e gratificante. Isso tudo me motivou a seguir
             firme novamente no caminho da programação web afim de me consolidar no mercado de trabalho.
           </p>
-
 
         </div>
 
@@ -218,4 +217,4 @@ const Sobre = () => {
     </div>
   );
 }
-export default Sobre;
+export default Tecnologias;

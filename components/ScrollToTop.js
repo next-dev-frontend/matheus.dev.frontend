@@ -44,7 +44,7 @@ const ScrollToTop = () => {
     <>
       {isVisible && (
         <button
-          className="animation-bonce z-40 bg-white bg-opacity-80 text-purple-500 hover:text-white border-2 border-indigo-500 hover:border-white fixed hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 transition bottom-12 right-6 p-3 rounded-full"
+          className="animation-bonce z-40 bg-white bg-opacity-80 text-purple-500 hover:text-white border-2 border-indigo-500 hover:border-white fixed hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 transition bottom-16 right-6 p-3 rounded-full"
           onClick={scrollToTop}
           onMouseEnter={handleHoverScroll}
         >

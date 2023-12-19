@@ -35,7 +35,7 @@ const SocialShare = () => {
         onClick={handleClickSocial}
 
 
-        className={`flex group z-50 cursor-pointer text-purple-500 hover:text-white border-2 border-indigo-500 fixed bottom-12 left-6 p-3 rounded-full shadow-md ${open ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white border-white' : 'bg-white text-purple-500 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 border-indigo-500 hover:border-white'}`}
+        className={`flex group z-50 cursor-pointer text-purple-500 hover:text-white border-2 border-indigo-500 fixed bottom-16 left-6 p-3 rounded-full shadow-md ${open ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white border-white' : 'bg-white text-purple-500 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 border-indigo-500 hover:border-white'}`}
       >
         {open ? (
           <FaTimes className="w-6 h-6" />
@@ -46,7 +46,7 @@ const SocialShare = () => {
 
 
       {/* :SOCIALS CONTAINER */}
-      <div className={`${open ? "flex" : "hidden"} flex-col pl-1.5 md:pl-24 pb-28 md:pb-8`}>
+      <div className={`${open ? "flex" : "hidden"} flex-col pl-1.5 md:pl-24 pb-32 md:pb-12`}>
 
 
         {/* ::Links container */}
