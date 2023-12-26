@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { FaSun, FaRegMoon, FaBars, FaTimes } from 'react-icons/fa';
 import { Howl, Howler } from 'howler';
 import dynamic from 'next/dynamic';
-const Sobre = dynamic(() => import('./Sobre'));
-const Tecnologias = dynamic(() => import('./Tecnologias'));
+import Sobre from './Sobre';
+import Tecnologias from './Tecnologias';
+import Projetos from './Projetos';
 
 interface MenuProps {
   onBgColorChange: (color: string) => void;
@@ -36,6 +37,19 @@ const Menu: React.FC<MenuProps> = ({ onBgColorChange }) => {
   });
 
 
+
+
+  //controle de som dos elementos
+  const handleClick = () => {
+    clickFx.play();
+  };
+
+
+  const handleHover = () => {
+    hoverFx.play();
+  };
+
+
   //controle de click nas tabs
   const handleTabChange = (tab) => {
     setActiveTab(tab);
@@ -56,17 +70,6 @@ const Menu: React.FC<MenuProps> = ({ onBgColorChange }) => {
     setLightbulbOn(!lightbulbOn);
     onBgColorChange(newColor);
     toogleFx.play();
-  };
-
-
-  //controle de som dos elementos
-  const handleClick = () => {
-    clickFx.play();
-  };
-
-
-  const handleHover = () => {
-    hoverFx.play();
   };
 
 
@@ -171,7 +174,7 @@ const Menu: React.FC<MenuProps> = ({ onBgColorChange }) => {
         <Tecnologias />
       )}
       {activeTab === 'tab3' && (
-        <Sobre />
+        <Projetos />
       )}
     </div>
 

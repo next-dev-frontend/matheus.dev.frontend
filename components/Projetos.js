@@ -1,4 +1,5 @@
-import React from 'react';
+
+import { useSoundEffects } from '../components/SoundEffects';
 
 const Projetos = () => {
   return (

@@ -2,12 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FaMailBulk, FaMapMarkerAlt, FaWhatsapp, FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaSun, FaRegMoon, FaBars, FaTimes } from 'react-icons/fa';
 import { SiGithub, SiLinkedin, SiTailwindcss, SiTypescript } from 'react-icons/si';
-import { Howl, Howler } from 'howler';
+import { useSoundEffects } from '../components/SoundEffects';
 import dynamic from 'next/dynamic';
 const Menu = dynamic(() => import('../components/Menu'));
 const Carousel = dynamic(() => import('../components/Carousel'));
 const SoundBack = dynamic(() => import('../components/SoundBack'));
-import { useSoundEffects } from '../components/SoundEffects';
 const SocialShare = dynamic(() => import('../components/SocialShare'));
 const Analytics = dynamic(() => import('../components/Analytics'));
 
@@ -199,7 +198,6 @@ const Home: React.FC = () => {
 
             </div>
           </div>
-
 
           <Menu onBgColorChange={handleBgColorChange} />
 

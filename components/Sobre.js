@@ -1,33 +1,15 @@
-import { Howl } from 'howler';
 import Image from "next/legacy/image";
 import Link from 'next/link';
 import { PiHandPalmBold } from "react-icons/pi";
 import { FaReact } from "react-icons/fa";
-import { AiFillSchedule, AiFillHtml5 } from "react-icons/ai";
+import { AiFillHtml5 } from "react-icons/ai";
 import { GiJourney } from "react-icons/gi";
+import { useSoundEffects } from '../components/SoundEffects';
 import dynamic from "next/dynamic";
 const Lighthouse = dynamic(() => import('../components/Lighthouse'));
 
 const Sobre = () => {
-
-  const hoverFx = new Howl({
-    src: ['../effects/hoverFx.mp3'],
-    volume: 1.0,
-  });
-
-  const handleHover = () => {
-    hoverFx.play();
-  };
-
-  //efeitos sonoros de clicks
-  const clickFx = new Howl({
-    src: ['../effects/clickFx.mp3'],
-    volume: 1.0,
-  });
-  //controle de som dos elementos
-  const handleClick = () => {
-    clickFx.play();
-  };
+  const { playClickFx, playHoverFx } = useSoundEffects();
 
   return (
 
@@ -44,9 +26,9 @@ const Sobre = () => {
             É um grande prazer recebê-lo&#40;a&#41; aqui. Meu nome é Matheus,
             tenho 43 anos e possuo graduação em Ciência
             da Computação desde o ano de 2016, trilho uma jornada
-            que se reinventou no final de 2020 quando tive meu primeiro contato com o <Link onMouseEnter={handleHover} onClick={handleClick} href="https://nextjs.org/" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>Next.js</Link>, e
-            logo em seguida, com <Link onMouseEnter={handleHover} onClick={handleClick} href="https://tailwindcss.com/" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>Tailwind</Link> e
-            o <Link onMouseEnter={handleHover} onClick={handleClick} href="https://learn.microsoft.com/pt-br/training/paths/build-javascript-applications-typescript" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>Typescript</Link>.
+            que se reinventou no final de 2020 quando tive meu primeiro contato com o <Link onMouseEnter={playHoverFx} onClick={playClickFx} href="https://nextjs.org/" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>Next.js</Link>, e
+            logo em seguida, com <Link onMouseEnter={playHoverFx} onClick={playClickFx} href="https://tailwindcss.com/" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>Tailwind</Link> e
+            o <Link onMouseEnter={playHoverFx} onClick={playClickFx} href="https://learn.microsoft.com/pt-br/training/paths/build-javascript-applications-typescript" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>Typescript</Link>.
           </p>
 
           <p className="indent-8 pt-4">
@@ -78,7 +60,7 @@ const Sobre = () => {
           </p>
 
           <div className="flex items-center justify-center py-8">
-            <div onMouseEnter={handleHover} onMouseLeave={handleHover} className="group box w-96 h-96 [perspective:1000px]">
+            <div onMouseEnter={playHoverFx} onMouseLeave={playHoverFx} className="group box w-96 h-96 [perspective:1000px]">
               <div className="relative content h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                 <div className="absolute inset-0">
                   <Image
@@ -189,8 +171,8 @@ const Sobre = () => {
           <Link href="../currículo.pdf" className='w-full items-center' title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>
             <button
               className="rounded-full shadow-md text-md mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal bg-green-600 text-white transform transition hover:scale-105 duration-200 ease-in-out"
-              onClick={handleClick}
-              onMouseEnter={handleHover}
+              onClick={playClickFx}
+              onMouseEnter={playHoverFx}
             >
               Currículo.pdf
             </button>
