@@ -1,150 +1,134 @@
-import React from 'react';
+import Image from "next/legacy/image";
 import Link from 'next/link';
-import { PiHandPalmBold } from "react-icons/pi";
-import { FaReact } from "react-icons/fa";
-import { AiFillHtml5 } from "react-icons/ai";
-import { GiJourney } from "react-icons/gi";
-import { useSoundEffects } from '../components/SoundEffects';
+import { FaCode, FaLaptopCode, FaReact, FaNodeJs, FaCss3 } from "react-icons/fa";
+import { Howl } from 'howler';
 
 const Tecnologias = () => {
-  const { playClickFx, playHoverFx } = useSoundEffects();
+
+  const hoverFx = new Howl({
+    src: ['../effects/hoverFx.mp3'],
+    volume: 1.0,
+  });
+
+  const mouseHover = () => {
+    hoverFx.play();
+  };
+
+
+  const clickFx = new Howl({
+    src: ['../effects/clickFx.mp3'],
+    volume: 1.0,
+  });
+
+  const mouseClick = () => {
+    clickFx.play();
+  };
+
+
+  const stacksData = [
+    {
+      icon: <FaReact />,
+      name: 'React.js',
+      description: 'Biblioteca JavaScript para construção de interfaces de usuário.',
+      knowledge: 80, // Seu nível de conhecimento em porcentagem
+    },
+    {
+      icon: <FaNodeJs />,
+      name: 'Node.js',
+      description: 'Ambiente de execução JavaScript server-side.',
+      knowledge: 70, // Seu nível de conhecimento em porcentagem
+    },
+    {
+      icon: <FaCss3 />,
+      name: 'CSS3',
+      description: 'Linguagem de estilo para descrever a apresentação de um documento HTML.',
+      knowledge: 90, // Seu nível de conhecimento em porcentagem
+    },
+    // Adicione mais stacks conforme necessário
+  ];
+
 
   return (
     <div className="relative z-10 font-mono p-4 h-full max-w-3xl text-gray-600 bg-white bg-opacity-80 rounded shadow-lg border-2 border-gray-400">
 
       <div className="rounded">
-        <h2 className="flex p-2 pt-4 text-2xl md:text-3xl lg:text-4xl md:text-left">
-          <span className="animate-waving-hand pr-4"><PiHandPalmBold className="w-11 h-11 text-gray-500" /></span>{" "}
-          <span className='inline-block overflow-hidden whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>Seja bem-vindo&#40;a&#41;,</span>
+        <h2 className="flex p-2 pt-4 text-3xl md:text-4xl md:text-left">
+          <span className="pr-4"><FaCode className="w-9 h-9 md:w-10 md:h-10 text-pink-500" /></span>{" "}
+          <span className='inline-block overflow-hidden whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>Tecnologias que utilizo</span>
         </h2>
 
-        <div className="p-2 text-justify text-md md:text-lg lg:text-xl">
+        <div className="p-2 pt-4 text-justify text-lg md:text-xl">
           <p className="indent-8">
-            É um grande prazer recebê-lo&#40;a&#41; aqui. Meu nome é Matheus,
-            tenho 43 anos e possuo graduação em Ciência
-            da Computação desde o ano de 2016, trilho uma jornada
-            que se reinventou no final de 2020 quando tive meu primeiro contato com o <Link onMouseEnter={playHoverFx} onClick={playClickFx} href="https://nextjs.org/" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>Next.js</Link>, e
-            logo em seguida, com <Link onMouseEnter={playHoverFx} onClick={playClickFx} href="https://tailwindcss.com/" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>Tailwind</Link> e
-            o <Link onMouseEnter={playHoverFx} onClick={playClickFx} href="https://learn.microsoft.com/pt-br/training/paths/build-javascript-applications-typescript" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>Typescript</Link>.
+            Nesta sessão eu mostrarei quais são as tecnologias que mais utilizo e o nível de experiência que tenho
+            em cada uma delas. Lembrando que avaliar o nível de conhecimento de uma linguagem não é algo tão simples,
+            pois a quantidade de conteúdo e informações de tais tecnologias são extremamente grandes e complexas, e exigem
+            muito tempo de estudo e prática. Minha intensão principal aqui é mostrar um pouco do que sei sobre cada linguagem e
+            informar quais linguagens tenho mais experiencia em relação as outras.
+            Não pretendo destacar todas as linguagens e ferramentas que já utilizei desde que comecei a programar. Vou focar
+            nas tecnologias que venho trabalhando no momento atual, pois meu objetivo é engressar novamente no mercado de trabalho
+            como programador web React/Next.
           </p>
+        </div>
 
-          <p className="indent-8 pt-4">
-            Neste espaço, convido você a explorar mais sobre minha
-            formação e histórico profissional, as linguagens e metodologias
-            que utilizo, além de acesso a códigos fonte de alguns projetos e
-            componentes Next.js que tive a alegria de criar.
-          </p>
-          <br />
+        <div className="text-gray-500 text-4xl text-center font-bold uppercase flex flex-col justify-around">
 
-          <h2 className="flex pt-8 text-2xl md:text-3xl lg:text-4xl md:text-left">
-            <span className="pr-4"><AiFillHtml5 className="w-11 h-11 text-gray-500" /></span>{" "}
-            <span className='inline-block overflow-hidden whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>De volta pra WEB</span>
-          </h2>
-
-          <p className="indent-8 pt-4">
-            Sempre me aventurei em conhecer novas linguagens e tecnologias que vinham
-            surgindo ao longo do tempo, e confesso que já havia programado
-            para web no passado e minha experiência não foi muito agradável.
-            Me lembro que a padronização de código era menos rigorosa, os navegadores
-            possuiam diferentes interpretações de códigos para HTML e CSS e ainda tínhamos
-            poucas fontes sólidas de informação na internet, pois a mesma, ainda dava
-            seus passos iniciais. Os livros eram um pouco caros e muito disputados nas
-            bibliotecas. Neste período eu me interessava mais por programação desktop e
-            acabei abandonando de vez a programação web. Anos depois, eu me deparei com
-            o poderoso react.js aliado ao next.js e me encontrei mergulhando novamente no
-            desenvolvimento web, só que desta vez, com uma empolgação única que nunca havia
-            sentido com outras linguagens.
-          </p>
-
-
-
-          <p className="indent-8 pt-4">
-            Com o avanço significativo da internet dos anos 2000 até os tempos atuais,
-            somado ao surgimento de bibliotecas e frameworks modernos, como React.js e
-            Next.js, e agora também com tecnologias de inteligência artificial, além
-            de diversas ferramentas e aplicações online, desenvolver para web está se
-            tornando cada vez mais inspirador e gratificante. Isso tudo me motivou a seguir
-            firme novamente no caminho da programação web afim de me consolidar no mercado de trabalho.
-          </p>
-
+          <div className="overflow-hidden h-14">
+            <div className="animate-slide"><span className="inline-block text-white py-1 px-3 pl-12 pr-12 mb-11 mt-1 bg-blue-500">React.js</span></div>
+            <div><span className="inline-block text-white py-1 px-3 pl-16 pr-16 mb-11 bg-gray-900">Next.js</span></div>
+            <div><span className="inline-block text-white py-1 px-3 pl-12 pr-12 mb-11 bg-blue-500">Typescript</span></div>
+            <div><span className="inline-block text-white py-1 px-3 pl-12 pr-12 mb-11 bg-purple-300">Tailwind</span></div>
+            <div><span className="inline-block text-white py-1 px-3 mb-16 pr-16 mb-11 bg-orange-500">HTML5</span></div>
+          </div>
 
         </div>
 
-        <br />
-
-        <h2 className="flex p-2 pt-4 text-2xl md:text-3xl lg:text-4xl justify-left">
-          <span className="pr-4"><FaReact className='w-11 h-11 text-gray-500' /></span>{" "}
-          <span className='inline-block overflow-hidden whitespace-nowrap font-bold font-mono animate-typing border-r-4 text-indigo-500'>
-            Tecnologias Atuais
-          </span>
+        <h2 className="flex p-2 pt-8 text-3xl md:text-4xl md:text-left">
+          <span className="animate-bounce pr-4"><FaLaptopCode className="w-9 h-9 md:w-10 md:h-10 text-pink-500" /></span>{" "}
+          <span className='inline-block overflow-hidden whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>Minha stack atual</span>
         </h2>
 
-        <div className="indent-8 p-2 text-justify w-full">
-
-          <div className="text-justify text-md md:text-lg lg:text-xl">
-            <p className="indent-8">
-              Atualmente, decidi enveredar pelo mundo da programação web,
-              abraçando tecnologias contemporâneas como React/Next.js,
-              TailwindCSS e TypeScript, para dar vida a sites e aplicativos web
-              de forma mais eficiente e robusta, presando pela máxima segurança,
-              buscando a melhor classificação de SEO, aplicando responsividade e acessibilidade,
-              seguindo as melhores práticas de programação para obter o melhor desempenho
-              possível nas aplicações.
-            </p>
-          </div>
-
+        <div className="flex flex-col space-y-4 py-8">
+          {stacksData.map((stack, index) => (
+            <div key={index} className="flex items-center space-x-4">
+              <div className="text-2xl text-blue-500">{stack.icon}</div>
+              <div>
+                <h3 className="text-lg font-semibold">{stack.name}</h3>
+                <p className="text-sm text-gray-600">{stack.description}</p>
+                <div className="flex items-center mt-2">
+                  <div className="w-48 bg-gray-200 rounded-md">
+                    <div
+                      className="bg-blue-500 text-white rounded-md py-1 text-center"
+                      style={{ width: `${stack.knowledge}%` }}
+                    >
+                    </div>
+                  </div>
+                  <span className="ml-2">{stack.knowledge}%</span>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
-
-        <div className="indent-8 p-2 text-justify w-full">
-
-          <div className="text-justify text-md md:text-lg lg:text-xl">
-            <p className="indent-8 pt-4 pb-2">
-              Nos últimos três anos, segui estudando programação web &#40;principalmente front-end&#41;,
-              SEO para otimização em motores de busca, webdesign para criação visual dos sites,
-              marketing digital para divulgação em diversas plataformas e redes sociais,
-              segurança de websites seguindo as melhores práticas da CSP, aplicando testes e entendendo
-              toda estrutura de projetos next.js. Tenho muito ainda para desvendar, más acredito que
-              estou seguindo o caminho certo. Meu próximo passo agora é desenvolver websites e aplicativos
-              que utilizem o back-end, pois pretendo me tornar um programador react full stack.
-            </p>
-          </div>
-
+        <div className="p-2 pt-4 text-justify text-lg md:text-xl">
+          <p className="indent-8">
+            Para saber mais sobre as linguagens que já programei e meu histórico profissional, veja aqui o meu currículo, onde destaco
+            minha jornada como programador e empresário no ramo de TI, desde o ano 2000.
+          </p>
         </div>
-        <br />
-
-        <h2 className="flex p-2 pt-4 text-2xl md:text-3xl lg:text-4xl justify-left">
-          <span className="pr-4"><GiJourney className='w-11 h-11 text-gray-500' /></span>{" "}
-          <span className='inline-block overflow-hidden whitespace-nowrap font-bold font-mono animate-typing border-r-4 text-indigo-500'>
-            Trajetória profissional
-          </span>
-        </h2>
-
-        <div className="indent-8 p-2 text-justify w-full">
-
-          <div className="text-justify text-md md:text-lg lg:text-xl">
-            <p className="indent-8">
-              Acesse o meu currículo no botão abaixo para saber mais sobre minha trajetória
-              como programador e como empresário no setor de TI, além de mais detalhes sobre minha formação
-              e as linguagens e ferramentas que utilizo e que já tive contato no passado.
-            </p>
-          </div>
-
-        </div>
-
-        <div className='w-full text-center pt-8 pb-4'>
-          <Link href="../currículo.pdf" className='w-full items-center' title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>
-            <button
-              className="rounded-full shadow-md text-md mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal bg-green-600 text-white transform transition hover:scale-105 duration-200 ease-in-out"
-              onClick={playClickFx}
-              onMouseEnter={playHoverFx}
-            >
-              Currículo.pdf
-            </button>
-          </Link>
-        </div>
-
       </div>
+
+      <div className='w-full text-center pt-8 pb-4'>
+        <Link href="../currículo.pdf" className='w-full items-center' title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>
+          <button
+            className="rounded-full shadow-md text-md mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal bg-green-600 text-white transform transition hover:scale-105 duration-200 ease-in-out"
+            onClick={mouseClick}
+            onMouseEnter={mouseHover}
+          >
+            Currículo.pdf
+          </button>
+        </Link>
+      </div>
+
 
     </div>
   );

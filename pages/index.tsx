@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { FaMailBulk, FaMapMarkerAlt, FaWhatsapp, FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaSun, FaRegMoon, FaBars, FaTimes } from 'react-icons/fa';
+import { FaVolumeMute, FaVolumeUp, FaMailBulk, FaMapMarkerAlt, FaWhatsapp, FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaSun, FaRegMoon, FaBars, FaTimes } from 'react-icons/fa';
 import { SiGithub, SiLinkedin, SiTailwindcss, SiTypescript } from 'react-icons/si';
-import { useSoundEffects } from '../components/SoundEffects';
+import { Howl, Howler } from 'howler';
 import dynamic from 'next/dynamic';
-const Menu = dynamic(() => import('../components/Menu'));
 const Carousel = dynamic(() => import('../components/Carousel'));
-const SoundBack = dynamic(() => import('../components/SoundBack'));
+const Sobre = dynamic(() => import('../components/Sobre'));
+const Tecnologias = dynamic(() => import('../components/Tecnologias'));
+const Projetos = dynamic(() => import('../components/Projetos'));
 const SocialShare = dynamic(() => import('../components/SocialShare'));
 const Analytics = dynamic(() => import('../components/Analytics'));
 
@@ -21,26 +22,31 @@ const IconJump = ({ icon, delay }) => {
   );
 };
 
-const Home: React.FC = () => {
+const Home = () => {
   const [textVisible, setTextVisible] = useState(false);
-  const [background, setBackground] = useState('bg-gray-700');
-  const { playClickFx, playClickCvFx, playHoverFx, playWhatsFx } = useSoundEffects();
+  const [activeTab, setActiveTab] = useState('tab1');
+  const [bgColor, setBgColor] = useState('bg-gray-700');
+  const [isMenuOpen, setMenuOpen] = useState(false);
+  const [lightbulbOn, setLightbulbOn] = useState(false);
+  const [muted, setMuted] = useState(true);
+  const [sound, setSound] = useState(null);
 
-  const handleBgColorChange = (color: string) => {
-    setBackground(color);
-  };
-
-  //efeito blur ao carregar página
+  //pré-carregar e repetir música de fundo
   useEffect(() => {
-    const textTimeout = setTimeout(() => {
-      setTextVisible(true);
-    }, 100);
+    function preloadSound() {
+      const soundToPreload = 'sound3.mp3';
 
-    return () => {
-      clearTimeout(textTimeout);
-    };
+      const newSound = new Howl({
+        src: [`/sounds/${soundToPreload}`],
+        volume: 0.6,
+        loop: true,
+      });
+
+      setSound(newSound);
+    }
+
+    preloadSound();
   }, []);
-
 
   // animação pulo de logos das linguagens
   const toggleAnimateJump = () => {
@@ -64,16 +70,120 @@ const Home: React.FC = () => {
   }, []);
 
 
+  //controle do botão de música e efeitos
+  const toggleMute = () => {
+    const newMuted = !Howler._muted;
+    Howler.mute(newMuted);
+    setMuted(newMuted);
+
+    if (newMuted) {
+      if (sound) {
+        sound.stop();
+      }
+    } else {
+      if (sound) {
+        sound.play();
+      }
+    }
+  };
+
+  // forçar Howler ser iniciado com o estado de 'muted'.
+  useEffect(() => {
+    Howler.mute(muted);
+  }, [muted]);
+
+
+  //efeitos sonoros de clicks
+  const clickFx = new Howl({
+    src: ['../effects/clickFx.mp3'],
+    volume: 1.0,
+  });
+
+  //efeitos sonoros de click no botão currículo
+  const clickCvFx = new Howl({
+    src: ['../effects/clickCvFx.mp3'],
+    volume: 2.0,
+  });
+
+  //efeitos sonoro de hover
+  const hoverFx = new Howl({
+    src: ['../effects/hoverFx.mp3'],
+    volume: 1.0,
+  });
+
+  //efeito sonoro no botão luz
+  const toogleFx = new Howl({
+    src: ['../effects/toogleFx.mp3'],
+    volume: 0.8,
+  });
+
+  //efeito sonoro no botão whatsapp
+  const whatsFx = new Howl({
+    src: ['../effects/whatsFx2.mp3'],
+    volume: 0.3,
+  });
+
+  //controle de click nas tabs
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    setMenuOpen(false);
+    clickFx.play();
+  };
+
+  //controle do botão menu (dispositivos móveis)
+  const handleMenuToggle = () => {
+    setMenuOpen(!isMenuOpen);
+    clickFx.play();
+  };
+
+  //controle do botão luz
+  const handleLightbulbClick = () => {
+    setBgColor((prevColor) => (prevColor === 'bg-gray-300' ? 'bg-gray-700' : 'bg-gray-300'));
+    setLightbulbOn(!lightbulbOn);
+    toogleFx.play();
+  };
+
+  //controle de som dos elementos
+  const handleClick = () => {
+    clickFx.play();
+  };
+
+  const handleCvClick = () => {
+    clickCvFx.play();
+  };
+
+  const handleHover = () => {
+    hoverFx.play();
+  };
+
+  const whatsAppHover = () => {
+    whatsFx.play();
+  };
+
+  //efeito blur ao carregar página
+  useEffect(() => {
+    const textTimeout = setTimeout(() => {
+      setTextVisible(true);
+    }, 100);
+
+    return () => {
+      clearTimeout(textTimeout);
+    };
+  }, []);
+
 
   return (
     <div>
-      <div className={`z-10 flex overflow-y-auto w-full max-w-full h-full min-h-screen bg-no-repeat items-start justify-center mx-auto bg-opacity-60 ${background} ${textVisible ? 'animate-fade-in' : 'opacity-0'}`}>
+      <div className={`z-10 flex overflow-y-auto w-full max-w-full h-full min-h-screen bg-no-repeat items-start justify-center mx-auto bg-opacity-60 ${bgColor} ${textVisible ? 'animate-fade-in' : 'opacity-0'}`}>
         <div className={`flex flex-col md:flex-row w-screen mx-auto max-w-6xl gap-4 px-4 py-8`}>
 
           {/* Sidebar (Mobile: Below) */}
           <div className="w-full justify-center min-w-fit md:max-w-1/4 items-center md:w-1/3 bg-white bg-opacity-80 rounded h-full p-4 sm:order-1 shadow-lg border-2 border-gray-400 relative">
 
-            <SoundBack />
+            <button onClick={toggleMute} onMouseEnter={handleHover} title='Audio'>
+              {muted ? <FaVolumeMute title='Ativar Efeitos Sonoros' className='text-gray-500 w-10 h-10 p-2 rounded-full hover:bg-white' /> : <FaVolumeUp title="Desativar Efeitos Sonoros" className='text-purple-500 w-10 h-10 p-2 rounded-full hover:bg-white' />}
+            </button>
+
             <Carousel />
 
             <div className="text-center pt-4">
@@ -108,8 +218,8 @@ const Home: React.FC = () => {
               <Link href="/currículo.pdf" title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>
                 <button
                   className="rounded-full shadow-md text-md mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal bg-green-600 text-white transform transition hover:scale-105 duration-200 ease-in-out"
-                  onClick={playClickCvFx}
-                  onMouseEnter={playHoverFx}
+                  onClick={handleCvClick}
+                  onMouseEnter={handleHover}
                 >
                   Currículo.pdf
                 </button>
@@ -121,8 +231,8 @@ const Home: React.FC = () => {
                 <Link href="https://api.whatsapp.com/send?phone=5519996750375" title="Entre em contato pelo WhatsApp" rel="noopener noreferrer" target='_blank'>
                   <button
                     className="group relative flex w-max mx-auto h-auto p-2 px-4 font-medium overflow-hidden rounded-lg bg-gray-100 text-md shadow-md"
-                    onClick={playClickFx}
-                    onMouseEnter={playWhatsFx}
+                    onClick={handleClick}
+                    onMouseEnter={whatsAppHover}
                   >
                     <div className="absolute inset-0 w-2 bg-green-600 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
                     <FaWhatsapp className="relative w-6 h-6 text-green-600 group-hover:text-white" />
@@ -135,8 +245,8 @@ const Home: React.FC = () => {
               <div className="text-md flex items-center justify-center gap-1 pt-8 pb-4">
                 <FaMailBulk className="w-4 h-4 text-blue-500" />
                 <Link
-                  onClick={playClickFx}
-                  onMouseEnter={playHoverFx}
+                  onClick={handleClick}
+                  onMouseEnter={handleHover}
                   href="mailto:matheus.dev.frontend@gmail.com" title="Envie uma menagem por e-mail"
                 >
                   <p className='text-gray-500 hover:text-blue-500 underline hover:no-underline decoration-blue-500 decoration-2'>matheus.dev.frontend@gmail.com</p>
@@ -151,8 +261,8 @@ const Home: React.FC = () => {
               <div className="flex justify-center py-2 pt-4 pb-7">
                 <ul className="flex gap-4 md:gap-6">
                   <li
-                    onClick={playClickFx}
-                    onMouseEnter={playHoverFx}
+                    onClick={handleClick}
+                    onMouseEnter={handleHover}
                   >
                     <a
                       href="https://github.com/next-dev-frontend"
@@ -167,8 +277,8 @@ const Home: React.FC = () => {
                   </li>
 
                   <li
-                    onClick={playClickFx}
-                    onMouseEnter={playHoverFx}
+                    onClick={handleClick}
+                    onMouseEnter={handleHover}
                   >
                     <a
                       href="#home"
@@ -199,32 +309,134 @@ const Home: React.FC = () => {
             </div>
           </div>
 
-          <Menu onBgColorChange={handleBgColorChange} />
+
+
+          {/* Content */}
+          <div className="w-full md:w-3/4 flex flex-col sm:order-2 text-sm md:text-md lg:text-lg z-30">
+            {/* Tab Bar */}
+            <div className="flex justify-between items-center mb-2 w-full">
+
+              <div onMouseEnter={handleHover} className="md:hidden z-40">
+                <button
+                  className={`p-2 rounded-full shadow-md mb-2 transition-colors ${isMenuOpen ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-purple-500 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
+                  onClick={handleMenuToggle}
+                >
+                  {isMenuOpen ? <FaTimes className="w-6 h-6" /> : <FaBars className="w-6 h-6" />}
+                </button>
+              </div>
+
+              <div className={`z-10 hidden md:flex ${isMenuOpen ? 'hidden' : ''}`}>
+                <button
+                  className={`rounded-full shadow-md mr-2 mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal transition-colors ${activeTab === 'tab1' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-gray-800 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
+                  onClick={() => handleTabChange('tab1')}
+                  onMouseEnter={handleHover}
+                >
+                  Sobre
+                </button>
+
+                <button
+                  className={`rounded-full shadow-md mr-2 mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal transition-colors ${activeTab === 'tab2' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-gray-800 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
+                  onClick={() => handleTabChange('tab2')}
+                  onMouseEnter={handleHover}
+                >
+                  Tecnologias
+                </button>
+
+                <button
+                  className={`rounded-full shadow-md mr-2 mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal transition-colors ${activeTab === 'tab3' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-gray-800 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
+                  onClick={() => handleTabChange('tab3')}
+                  onMouseEnter={handleHover}
+                >
+                  Projetos
+                </button>
+
+              </div>
+
+              <label onMouseEnter={handleHover} htmlFor="lightbulb-toggle" className="relative h-8 w-14 cursor-pointer">
+                <input
+                  type="checkbox"
+                  id="lightbulb-toggle"
+                  className="peer sr-only"
+                  checked={lightbulbOn}
+                  onChange={handleLightbulbClick}
+                />
+                <span className={`absolute inset-y-0 start-0 m-1 z-10 inline-flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white transition-all ${lightbulbOn ? 'peer-checked:start-6 peer-checked:text-white' : ''}`}>
+                  {lightbulbOn ? <FaRegMoon className="h-4 w-4" /> : <FaSun className="h-4 w-4" />}
+                </span>
+                <span className={`absolute inset-0 rounded-full shadow-md bg-white bg-opacity-80 transition ${lightbulbOn ? 'peer-checked:bg-white bg-opacity-90' : ''}`}></span>
+              </label>
+
+            </div>
+
+            {/* Dropdown Menu para Dispositivos Móveis */}
+            {isMenuOpen && (
+              <div className="md:hidden absolute bg-transparent pl-12 pt-0 z-30">
+                <div className="flex flex-col border-2 border-gray-100 rounded-md gap-2 p-2 items-center justify-center bg-indigo-900 bg-opacity-80 shadow-md relative">
+
+                  <button
+                    className={`rounded-full w-full max-w-full mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal transition-colors ${activeTab === 'tab1' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-gray-800 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
+                    onClick={() => handleTabChange('tab1')}
+                    onMouseEnter={handleHover}
+                  >
+                    Sobre
+                  </button>
+
+                  <button
+                    className={`rounded-full w-full max-w-full mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal transition-colors ${activeTab === 'tab2' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-gray-800 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
+                    onClick={() => handleTabChange('tab2')}
+                    onMouseEnter={handleHover}
+                  >
+                    Tecnologias
+                  </button>
+
+                  <button
+                    className={`rounded-full w-full max-w-full mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal transition-colors ${activeTab === 'tab3' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-gray-800 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
+                    onClick={() => handleTabChange('tab3')}
+                    onMouseEnter={handleHover}
+                  >
+                    Projetos
+                  </button>
+
+                </div>
+              </div>
+            )}
+
+            {/* Tab Content */}
+            {activeTab === 'tab1' && (
+              <Sobre />
+            )}
+            {activeTab === 'tab2' && (
+              <Tecnologias />
+            )}
+            {activeTab === 'tab3' && (
+              <Projetos />
+            )}
+          </div>
 
         </div>
       </div>
 
-      <div className={`flex w-full justify-center ${background} bg-opacity-40 text-xs py-0.5`}>
+      <div className={`flex w-full justify-center ${bgColor} bg-opacity-40 text-xs py-0.5`}>
       </div>
-      <div className={`flex w-full justify-center ${background} bg-opacity-20 text-xs py-0.5`}>
+      <div className={`flex w-full justify-center ${bgColor} bg-opacity-20 text-xs py-0.5`}>
       </div>
 
 
       <div className={`flex right-0 w-full justify-center gap-4 text-xs py-1 bg-gray-500 bg-opacity-50`}>
-        <Link onClick={playClickFx} onMouseEnter={playHoverFx} href="/terms" className='no-underline hover:underline px-3 py-1 font-medium text-white bg-pink-700 bg-opacity-30 rounded-full' title="veja os termos de uso" rel="noopener noreferrer">
+        <Link onClick={handleClick} onMouseEnter={handleHover} href="/terms" className='no-underline hover:underline px-3 py-1 font-medium text-white bg-pink-700 bg-opacity-30 rounded-full' title="veja os termos de uso" rel="noopener noreferrer">
           Termos &amp; Condições
         </Link>
-        <Link onClick={playClickFx} onMouseEnter={playHoverFx} href="/policy" className='no-underline hover:underline px-3 py-1 font-medium text-white bg-pink-700 bg-opacity-30 rounded-full' title="veja os termos de privacidade" rel="noopener noreferrer">
+        <Link onClick={handleClick} onMouseEnter={handleHover} href="/policy" className='no-underline hover:underline px-3 py-1 font-medium text-white bg-pink-700 bg-opacity-30 rounded-full' title="veja os termos de privacidade" rel="noopener noreferrer">
           Política de Privacidade
         </Link>
-        <Link onClick={playClickFx} onMouseEnter={playHoverFx} href="https://pixabay.com" className='no-underline hover:underline px-3 py-1 font-medium text-white bg-pink-700 bg-opacity-30 rounded-full' title="imagens by Pixabay" rel="noopener noreferrer" target='_blank'>
+        <Link onClick={handleClick} onMouseEnter={handleHover} href="https://pixabay.com" className='no-underline hover:underline px-3 py-1 font-medium text-white bg-pink-700 bg-opacity-30 rounded-full' title="imagens by Pixabay" rel="noopener noreferrer" target='_blank'>
           Efeitos Sonoros por Pixabay
         </Link>
       </div>
 
-      <div className={`flex w-full justify-center ${background} bg-opacity-20 text-xs py-0.5`}>
+      <div className={`flex w-full justify-center ${bgColor} bg-opacity-20 text-xs py-0.5`}>
       </div>
-      <div className={`flex w-full justify-center ${background} bg-opacity-40 text-xs py-0.5`}>
+      <div className={`flex w-full justify-center ${bgColor} bg-opacity-40 text-xs py-0.5`}>
       </div>
       <Analytics />
       <SocialShare />

@@ -43,10 +43,27 @@ module.exports = {
           },
         },
 
+        //animação de texto nome das linguagens
+        slide: {
+          '0%, 100%': {
+            'margin-top': '-270px',
+          },
+          '5%, 33%': {
+            'margin-top': '-180px',
+          },
+          '38%, 66%': {
+            'margin-top': '-90px',
+          },
+          '71%, 99.99%': {
+            'margin-top': '0px'
+          }
+        },
+
       },
       animation: {
         'waving-hand': 'wave 2s linear infinite',
         'typing': 'typing 3s steps(28), blink 2s infinite',
+        'slide': 'slide 5s linear infinite', //animação de texto nome das linguagens
       },
 
 

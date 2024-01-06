@@ -1,5 +1,4 @@
 
-import { useSoundEffects } from '../components/SoundEffects';
 
 const Projetos = () => {
   return (

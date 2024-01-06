@@ -4,31 +4,50 @@ import { PiHandPalmBold } from "react-icons/pi";
 import { FaReact } from "react-icons/fa";
 import { AiFillHtml5 } from "react-icons/ai";
 import { GiJourney } from "react-icons/gi";
-import { useSoundEffects } from '../components/SoundEffects';
+import { Howl } from 'howler';
 import dynamic from "next/dynamic";
 const Lighthouse = dynamic(() => import('../components/Lighthouse'));
 
 const Sobre = () => {
-  const { playClickFx, playHoverFx } = useSoundEffects();
+
+  const hoverFx = new Howl({
+    src: ['../effects/hoverFx.mp3'],
+    volume: 1.0,
+  });
+
+  const mouseHover = () => {
+    hoverFx.play();
+  };
+
+
+  const clickFx = new Howl({
+    src: ['../effects/clickFx.mp3'],
+    volume: 1.0,
+  });
+
+  const mouseClick = () => {
+    clickFx.play();
+  };
+
 
   return (
 
     <div className="relative z-10 font-mono p-4 h-full max-w-3xl text-gray-600 bg-white bg-opacity-80 rounded shadow-lg border-2 border-gray-400">
 
       <div className="rounded">
-        <h2 className="flex p-2 pt-4 text-2xl md:text-3xl lg:text-4xl md:text-left">
-          <span className="animate-waving-hand pr-4"><PiHandPalmBold className="w-11 h-11 text-gray-500" /></span>{" "}
+        <h2 className="flex p-2 pt-4 text-3xl md:text-4xl md:text-left">
+          <span className="animate-waving-hand pr-4"><PiHandPalmBold className="w-10 h-10 md:w-11 md:h-11 text-pink-500" /></span>{" "}
           <span className='inline-block overflow-hidden whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>Seja bem-vindo&#40;a&#41;,</span>
         </h2>
 
-        <div className="p-2 text-justify text-md md:text-lg lg:text-xl">
+        <div className="p-2 pt-4 text-justify text-lg md:text-xl">
           <p className="indent-8">
             É um grande prazer recebê-lo&#40;a&#41; aqui. Meu nome é Matheus,
             tenho 43 anos e possuo graduação em Ciência
             da Computação desde o ano de 2016, trilho uma jornada
-            que se reinventou no final de 2020 quando tive meu primeiro contato com o <Link onMouseEnter={playHoverFx} onClick={playClickFx} href="https://nextjs.org/" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>Next.js</Link>, e
-            logo em seguida, com <Link onMouseEnter={playHoverFx} onClick={playClickFx} href="https://tailwindcss.com/" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>Tailwind</Link> e
-            o <Link onMouseEnter={playHoverFx} onClick={playClickFx} href="https://learn.microsoft.com/pt-br/training/paths/build-javascript-applications-typescript" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>Typescript</Link>.
+            que se reinventou no final de 2020 quando tive meu primeiro contato com o <Link onMouseEnter={mouseHover} onClick={mouseClick} href="https://nextjs.org/" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="nextjs.org" rel="noopener noreferrer" target='_blank'>Next.js</Link>, e
+            logo em seguida, com <Link onMouseEnter={mouseHover} onClick={mouseClick} href="https://tailwindcss.com/" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="tailwindcss.com" rel="noopener noreferrer" target='_blank'>Tailwind</Link> e
+            o <Link onMouseEnter={mouseHover} onClick={mouseClick} href="https://learn.microsoft.com/pt-br/training/paths/build-javascript-applications-typescript" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="learn.microsoft.com" rel="noopener noreferrer" target='_blank'>Typescript</Link>.
           </p>
 
           <p className="indent-8 pt-4">
@@ -39,8 +58,8 @@ const Sobre = () => {
           </p>
           <br />
 
-          <h2 className="flex pt-8 text-2xl md:text-3xl lg:text-4xl md:text-left">
-            <span className="pr-4"><AiFillHtml5 className="w-11 h-11 text-gray-500" /></span>{" "}
+          <h2 className="flex pt-8 text-3xl md:text-4xl md:text-left">
+            <span className="pr-4"><AiFillHtml5 className="w-10 h-10 md:w-11 md:h-11 text-pink-500" /></span>{" "}
             <span className='inline-block overflow-hidden whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>De volta pra WEB</span>
           </h2>
 
@@ -60,7 +79,7 @@ const Sobre = () => {
           </p>
 
           <div className="flex items-center justify-center py-8">
-            <div onMouseEnter={playHoverFx} onMouseLeave={playHoverFx} className="group box w-96 h-96 [perspective:1000px]">
+            <div onMouseEnter={mouseHover} onMouseLeave={mouseHover} className="group box w-96 h-96 [perspective:1000px]">
               <div className="relative content h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                 <div className="absolute inset-0">
                   <Image
@@ -104,8 +123,8 @@ const Sobre = () => {
 
         <br />
 
-        <h2 className="flex p-2 pt-4 text-2xl md:text-3xl lg:text-4xl justify-left">
-          <span className="pr-4"><FaReact className='w-11 h-11 text-gray-500' /></span>{" "}
+        <h2 className="flex p-2 pt-4 text-3xl md:text-4xl justify-left">
+          <span className="pr-4"><FaReact className='w-10 h-10 md:w-11 md:h-11 text-pink-500' /></span>{" "}
           <span className='inline-block overflow-hidden whitespace-nowrap font-bold font-mono animate-typing border-r-4 text-indigo-500'>
             Tecnologias Atuais
           </span>
@@ -113,14 +132,13 @@ const Sobre = () => {
 
         <div className="indent-8 p-2 text-justify w-full">
 
-          <div className="text-justify text-md md:text-lg lg:text-xl">
+          <div className="text-justify text-lg md:text-xl">
             <p className="indent-8">
               Atualmente, decidi enveredar pelo mundo da programação web,
               abraçando tecnologias contemporâneas como React/Next.js,
               TailwindCSS e TypeScript, para dar vida a sites e aplicativos web
-              de forma mais eficiente e robusta, presando pela máxima segurança,
-              buscando a melhor classificação de SEO, aplicando responsividade e acessibilidade,
-              seguindo as melhores práticas de programação para obter o melhor desempenho
+              de forma mais eficiente e robusta, seguindo as melhores práticas de
+              programação para obter o melhor desempenho
               possível nas aplicações.
             </p>
           </div>
@@ -133,23 +151,23 @@ const Sobre = () => {
 
         <div className="indent-8 p-2 text-justify w-full">
 
-          <div className="text-justify text-md md:text-lg lg:text-xl">
+          <div className="text-justify text-lg md:text-xl">
             <p className="indent-8 pt-4 pb-2">
               Nos últimos três anos, segui estudando programação web &#40;principalmente front-end&#41;,
               SEO para otimização em motores de busca, webdesign para criação visual dos sites,
               marketing digital para divulgação em diversas plataformas e redes sociais,
-              segurança de websites seguindo as melhores práticas da CSP, aplicando testes e entendendo
-              toda estrutura de projetos next.js. Tenho muito ainda para desvendar, más acredito que
-              estou seguindo o caminho certo. Meu próximo passo agora é desenvolver websites e aplicativos
-              que utilizem o back-end, pois pretendo me tornar um programador react full stack.
+              segurança de websites seguindo as melhores práticas da CSP, PWA com next.js, aplicando testes e
+              aprendendo muito sobre a estrutura de um projeto react com next.js. Tenho muito ainda para desvendar,
+              más acredito que estou no caminho certo. Meu próximo passo agora é desenvolver websites e aplicativos
+              que utilizam o back-end com node.js e mongo.db.
             </p>
           </div>
 
         </div>
         <br />
 
-        <h2 className="flex p-2 pt-4 text-2xl md:text-3xl lg:text-4xl justify-left">
-          <span className="pr-4"><GiJourney className='w-11 h-11 text-gray-500' /></span>{" "}
+        <h2 className="flex p-2 pt-4 text-3xl md:text-4xl justify-left">
+          <span className="pr-4"><GiJourney className='w-10 h-10 md:w-11 md:h-11 text-pink-500' /></span>{" "}
           <span className='inline-block overflow-hidden whitespace-nowrap font-bold font-mono animate-typing border-r-4 text-indigo-500'>
             Trajetória profissional
           </span>
@@ -157,7 +175,7 @@ const Sobre = () => {
 
         <div className="indent-8 p-2 text-justify w-full">
 
-          <div className="text-justify text-md md:text-lg lg:text-xl">
+          <div className="text-justify text-lg md:text-xl">
             <p className="indent-8">
               Acesse o meu currículo no botão abaixo para saber mais sobre minha trajetória
               como programador e como empresário no setor de TI, além de mais detalhes sobre minha formação
@@ -171,8 +189,8 @@ const Sobre = () => {
           <Link href="../currículo.pdf" className='w-full items-center' title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>
             <button
               className="rounded-full shadow-md text-md mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal bg-green-600 text-white transform transition hover:scale-105 duration-200 ease-in-out"
-              onClick={playClickFx}
-              onMouseEnter={playHoverFx}
+              onClick={mouseClick}
+              onMouseEnter={mouseHover}
             >
               Currículo.pdf
             </button>
@@ -181,7 +199,7 @@ const Sobre = () => {
 
       </div>
 
-      <div className="p-2 text-justify text-md md:text-lg lg:text-xl">
+      <div className="p-2 text-justify text-lg md:text-xl">
 
         <p className="indent-8 p-2 pb-6 text-justify">
           É com entusiasmo que compartilho fragmentos da minha trajetória.
@@ -198,6 +216,7 @@ const Sobre = () => {
       </div>
 
     </div>
+
   );
 }
 export default Sobre;
