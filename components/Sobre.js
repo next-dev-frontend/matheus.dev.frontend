@@ -159,7 +159,7 @@ const Sobre = () => {
               segurança de websites seguindo as melhores práticas da CSP, PWA com next.js, aplicando testes e
               aprendendo muito sobre a estrutura de um projeto react com next.js. Tenho muito ainda para desvendar,
               más acredito que estou no caminho certo. Meu próximo passo agora é desenvolver websites e aplicativos
-              que utilizam o back-end com node.js e mongo.db.
+              que utilizam o back-end com node.js.
             </p>
           </div>
 

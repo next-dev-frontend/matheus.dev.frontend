@@ -70,14 +70,12 @@ const Tecnologias = () => {
           </p>
         </div>
 
-        <div className="text-gray-500 text-4xl text-center font-bold uppercase flex flex-col justify-around">
+        <div className="text-gray-500 text-4xl text-center font-bold uppercase py-8 flex flex-col justify-around">
 
           <div className="overflow-hidden h-14">
-            <div className="animate-slide"><span className="inline-block text-white py-1 px-3 pl-12 pr-12 mb-11 mt-1 bg-blue-500">React.js</span></div>
-            <div><span className="inline-block text-white py-1 px-3 pl-16 pr-16 mb-11 bg-gray-900">Next.js</span></div>
-            <div><span className="inline-block text-white py-1 px-3 pl-12 pr-12 mb-11 bg-blue-500">Typescript</span></div>
-            <div><span className="inline-block text-white py-1 px-3 pl-12 pr-12 mb-11 bg-purple-300">Tailwind</span></div>
-            <div><span className="inline-block text-white py-1 px-3 mb-16 pr-16 mb-11 bg-orange-500">HTML5</span></div>
+            <div className="animate-slide border-dashed"><span className="inline-block text-white py-1 px-3 pl-8 pr-8 mb-11 mt-1 bg-yellow-500">Javascript</span></div>
+            <div><span className="inline-block text-white py-1 px-3 pl-24 pr-24 mb-11 bg-gray-900">Next</span></div>
+            <div><span className="inline-block text-white py-1 px-3 pl-20 pr-20 mb-11 bg-blue-500">React</span></div>
           </div>
 
         </div>

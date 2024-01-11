@@ -63,7 +63,7 @@ module.exports = {
       animation: {
         'waving-hand': 'wave 2s linear infinite',
         'typing': 'typing 3s steps(28), blink 2s infinite',
-        'slide': 'slide 5s linear infinite', //animação de texto nome das linguagens
+        'slide': 'slide 7s linear infinite', //animação de texto nome das linguagens
       },
 
 
