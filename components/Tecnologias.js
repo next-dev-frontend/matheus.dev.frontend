@@ -1,4 +1,3 @@
-import Image from "next/legacy/image";
 import Link from 'next/link';
 import { FaCode, FaLaptopCode, FaReact, FaNodeJs, FaCss3 } from "react-icons/fa";
 import { Howl } from 'howler';
@@ -57,7 +56,7 @@ const Tecnologias = () => {
           <span className='inline-block overflow-hidden whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>Tecnologias que utilizo</span>
         </h2>
 
-        <div className="p-2 pt-4 text-justify text-lg md:text-xl">
+        <div className="p-2 pt-4 pb-8 text-justify text-lg md:text-xl">
           <p className="indent-8">
             Nesta sessão eu mostrarei quais são as tecnologias que mais utilizo e o nível de experiência que tenho
             em cada uma delas. Lembrando que avaliar o nível de conhecimento de uma linguagem não é algo tão simples,
@@ -70,17 +69,21 @@ const Tecnologias = () => {
           </p>
         </div>
 
-        <div className="text-gray-500 text-4xl text-center font-bold uppercase py-8 flex flex-col justify-around">
-
-          <div className="overflow-hidden h-14">
-            <div className="animate-slide border-dashed"><span className="inline-block text-white py-1 px-3 pl-8 pr-8 mb-11 mt-1 bg-yellow-500">Javascript</span></div>
-            <div><span className="inline-block text-white py-1 px-3 pl-24 pr-24 mb-11 bg-gray-900">Next</span></div>
-            <div><span className="inline-block text-white py-1 px-3 pl-20 pr-20 mb-11 bg-blue-500">React</span></div>
+        <div className="flex w-full py-4 mx-auto items-center justify-center bg-black font-bold text-white border-4 border-dashed border-white">
+          <div className=" text-center space-y-12">
+            <div className="text-center text-3xl md:text-4xl lg:text-5xl font-bold">
+              <div className="relative inline-grid grid-cols-1 grid-rows-1 gap-12 overflow-hidden">
+                <span className="animate-word col-span-full row-span-full">React.js</span>
+                <span className="animate-word-delay-1 col-span-full row-span-full">Desenvolvedor Web</span>
+                <span className="animate-word-delay-2 col-span-full row-span-full">Tailwind</span>
+                <span className="animate-word-delay-3 col-span-full row-span-full">Typescript</span>
+                <span className="animate-word-delay-4 col-span-full row-span-full">Next.js</span>
+              </div>
+            </div>
           </div>
-
         </div>
 
-        <h2 className="flex p-2 pt-8 text-3xl md:text-4xl md:text-left">
+        <h2 className="flex p-2 pt-12 text-3xl md:text-4xl md:text-left">
           <span className="animate-bounce pr-4"><FaLaptopCode className="w-9 h-9 md:w-10 md:h-10 text-pink-500" /></span>{" "}
           <span className='inline-block overflow-hidden whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>Minha stack atual</span>
         </h2>
