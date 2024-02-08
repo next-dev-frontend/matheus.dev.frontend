@@ -1,6 +1,9 @@
 import Link from 'next/link';
-import { FaCode, FaLaptopCode, FaReact, FaNodeJs, FaCss3 } from "react-icons/fa";
+import { FaCode, FaLaptopCode, FaReact, FaNodeJs, FaCss3, FaHtml5, FaJs } from "react-icons/fa";
+import { SiTailwindcss, SiTypescript } from 'react-icons/si';
+import { TbBrandNextjs } from 'react-icons/tb';
 import { Howl } from 'howler';
+
 
 const Tecnologias = () => {
 
@@ -26,24 +29,55 @@ const Tecnologias = () => {
 
   const stacksData = [
     {
-      icon: <FaReact />,
-      name: 'React.js',
-      description: 'Biblioteca JavaScript para construção de interfaces de usuário.',
-      knowledge: 80, // Seu nível de conhecimento em porcentagem
-    },
-    {
-      icon: <FaNodeJs />,
-      name: 'Node.js',
-      description: 'Ambiente de execução JavaScript server-side.',
-      knowledge: 70, // Seu nível de conhecimento em porcentagem
+      icon: <FaHtml5 />,
+      name: 'HTML5',
+      date: '2014',
+      knowledge: 80,
+      description: 'Linguagem de marcação para estruturar o conteúdo na web.',
     },
     {
       icon: <FaCss3 />,
       name: 'CSS3',
       description: 'Linguagem de estilo para descrever a apresentação de um documento HTML.',
-      knowledge: 90, // Seu nível de conhecimento em porcentagem
+      knowledge: 60,
     },
-    // Adicione mais stacks conforme necessário
+    {
+      icon: <FaJs />,
+      name: 'JavaScript',
+      description: 'Linguagem de programação de alto nível.',
+      knowledge: 50,
+    },
+    {
+      icon: <FaReact />,
+      name: 'React.js',
+      description: 'Biblioteca JavaScript para construção de interfaces de usuário.',
+      knowledge: 40,
+    },
+    {
+      icon: <TbBrandNextjs />,
+      name: 'Next.js',
+      description: 'Framework React para desenvolvimento de aplicações web.',
+      knowledge: 40,
+    },
+    {
+      icon: <SiTailwindcss />,
+      name: 'Tailwind CSS',
+      description: 'Framework CSS utilitário para desenvolvimento rápido.',
+      knowledge: 30,
+    },
+    {
+      icon: <FaNodeJs />,
+      name: 'Node.js',
+      description: 'Ambiente de execução JavaScript server-side.',
+      knowledge: 10,
+    },
+    {
+      icon: <SiTypescript />,
+      name: 'TypeScript',
+      description: 'Superset do JavaScript que adiciona tipagem estática.',
+      knowledge: 25,
+    },
+
   ];
 
 
@@ -60,12 +94,11 @@ const Tecnologias = () => {
           <p className="indent-8">
             Nesta sessão eu mostrarei quais são as tecnologias que mais utilizo e o nível de experiência que tenho
             em cada uma delas. Lembrando que avaliar o nível de conhecimento de uma linguagem não é algo tão simples,
-            pois a quantidade de conteúdo e informações de tais tecnologias são extremamente grandes e complexas, e exigem
+            pois a quantidade de conteúdo e informações de tais tecnologias podem ser extremamente grandes e complexas, e exigem
             muito tempo de estudo e prática. Minha intensão principal aqui é mostrar um pouco do que sei sobre cada linguagem e
             informar quais linguagens tenho mais experiencia em relação as outras.
             Não pretendo destacar todas as linguagens e ferramentas que já utilizei desde que comecei a programar. Vou focar
-            nas tecnologias que venho trabalhando no momento atual, pois meu objetivo é engressar novamente no mercado de trabalho
-            como programador web React/Next.
+            nas tecnologias que venho trabalhando no momento atual.
           </p>
         </div>
 
@@ -85,26 +118,44 @@ const Tecnologias = () => {
 
         <h2 className="flex p-2 pt-12 text-3xl md:text-4xl md:text-left">
           <span className="animate-bounce pr-4"><FaLaptopCode className="w-9 h-9 md:w-10 md:h-10 text-pink-500" /></span>{" "}
-          <span className='inline-block overflow-hidden whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>Minha stack atual</span>
+          <span className='inline-block overflow-hidden whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>
+            Minha stack atual
+          </span>
         </h2>
 
         <div className="flex flex-col space-y-4 py-8">
           {stacksData.map((stack, index) => (
-            <div key={index} className="flex items-center space-x-4">
-              <div className="text-2xl text-blue-500">{stack.icon}</div>
-              <div>
-                <h3 className="text-lg font-semibold">{stack.name}</h3>
-                <p className="text-sm text-gray-600">{stack.description}</p>
-                <div className="flex items-center mt-2">
-                  <div className="w-48 bg-gray-200 rounded-md">
+            <div key={index} className="flex items-center space-x-4 py-0">
+
+              <div className='w-full'>
+                <div className="flex text-4xl text-pink-500 pb-2">{stack.icon}
+                  <h3 className="text-2xl md:text-3xl text-purple-500 px-2 font-semibold">{stack.name}</h3>
+                </div>
+
+                <hr className="h-0.5 w-1/3 bg-pink-500" />
+
+                <p className="text-sm md:text-md font-bold text-indigo-600 pt-4">Descrição da linguagem:</p>
+                <p className="text-md md:text-lg text-gray-600">{stack.description}</p>
+
+
+                <p className="text-sm md:text-md font-bold text-indigo-600 pt-4">Nível de conhecimento desde {stack.date}.</p>
+                <div className="flex items-center">
+                  <span className="mr-2">{stack.knowledge}%</span>
+                  <div className="w-64 bg-gray-100 rounded-md">
                     <div
-                      className="bg-blue-500 text-white rounded-md py-1 text-center"
+                      className="bg-purple-500 text-white rounded-md py-1 text-center"
                       style={{ width: `${stack.knowledge}%` }}
                     >
                     </div>
                   </div>
-                  <span className="ml-2">{stack.knowledge}%</span>
+
                 </div>
+
+
+
+                <p className="text-sm md:text-md font-bold text-indigo-600 pt-4">conhecimentos específicos:</p>
+
+                <br /><br />
               </div>
             </div>
           ))}
@@ -131,7 +182,7 @@ const Tecnologias = () => {
       </div>
 
 
-    </div>
+    </div >
   );
 };
 
