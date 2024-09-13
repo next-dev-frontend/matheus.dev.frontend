@@ -37,13 +37,13 @@ const Sobre = () => {
       <div className="rounded">
         <h2 className="flex p-2 pt-4 text-3xl md:text-4xl md:text-left">
           <span className="animate-waving-hand pr-4"><PiHandPalmBold className="w-10 h-10 md:w-11 md:h-11 text-pink-500" /></span>{" "}
-          <span className='inline-block overflow-hidden whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>Seja bem-vindo&#40;a&#41;,</span>
+          <span className='flex inline-block overflow-hidden whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>Olá. Seja bem-vindo&#40;a&#41;,</span>
         </h2>
 
         <div className="p-2 pt-4 text-justify text-lg md:text-xl">
           <p className="indent-8">
             É um grande prazer recebê-lo&#40;a&#41; aqui. Meu nome é Matheus,
-            tenho 43 anos e possuo graduação em Ciência
+            tenho 44 anos e possuo graduação em Ciência
             da Computação desde o ano de 2016, trilho uma jornada
             que se reinventou no final de 2020 quando tive meu primeiro contato com o <Link onMouseEnter={mouseHover} onClick={mouseClick} href="https://nextjs.org/" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="nextjs.org" rel="noopener noreferrer" target='_blank'>Next.js</Link>, e
             logo em seguida, com <Link onMouseEnter={mouseHover} onClick={mouseClick} href="https://tailwindcss.com/" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="tailwindcss.com" rel="noopener noreferrer" target='_blank'>Tailwind</Link> e

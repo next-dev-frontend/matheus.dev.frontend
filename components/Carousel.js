@@ -54,26 +54,27 @@ const Carousel = () => {
     <div className="relative mx-auto w-full h-auto flex items-center justify-center">
       <div className="flex justify-center w-full h-auto items-center z-30">
 
-        <button onClick={prevImgClick} onMouseEnter={handleHover} title='Voltar' className="text-gray-600 font-bold px-2 cursor-pointer p-2 rounded-full hover:bg-gray-100">
+        {/* <button onClick={prevImgClick} onMouseEnter={handleHover} title='Voltar' className="text-gray-600 font-bold px-2 cursor-pointer p-2 rounded-full hover:bg-gray-100">
           <IoIosArrowBack />
-        </button>
+        </button> */}
 
-        <div className="flex mx-auto border-8 hover:border-16 border-gray-100 border-double border-dotted rounded-full w-44 h-44">
+        <div className="flex mx-auto border-4 border-indigo-500 border-double border-dotted rounded-full w-40 h-40">
           <Image
             src={images[currentImage]}
-            alt={`Foto ${currentImage + 1}`}
+            // alt={`Foto ${currentImage + 1}`}
+            alt={`Foto do Matheus`}
             width={512}
             height={512}
             priority
             onMouseEnter={handleHover}
             onMouseLeave={handleHover}
-            className='rounded-full transform transition hover:scale-110 duration-300 ease-in-out'
+            className='rounded-full transform transition hover:scale-105 duration-300 ease-in-out'
           />
         </div>
 
-        <button onClick={nextImgClick} onMouseEnter={handleHover} title='Avançar' className="text-gray-600 font-bold px-2 cursor-pointer p-2 rounded-full hover:bg-gray-100">
+        {/* <button onClick={nextImgClick} onMouseEnter={handleHover} title='Avançar' className="text-gray-600 font-bold px-2 cursor-pointer p-2 rounded-full hover:bg-gray-100">
           <IoIosArrowForward />
-        </button>
+        </button> */}
 
       </div>
     </div>
