@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FaVolumeMute, FaVolumeUp, FaMailBulk, FaMapMarkerAlt, FaWhatsapp, FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaSun, FaRegMoon, FaBars, FaTimes } from 'react-icons/fa';
-import { SiGithub, SiLinkedin, SiTailwindcss, SiTypescript } from 'react-icons/si';
+import { SiGithub, SiLinkedin, SiTailwindcss, SiTypescript, SiNetlify } from 'react-icons/si';
 import { Howl, Howler } from 'howler';
 import dynamic from 'next/dynamic';
 const Carousel = dynamic(() => import('../components/Carousel'));
@@ -25,9 +25,9 @@ const IconJump = ({ icon, delay }) => {
 const Home = () => {
   const [textVisible, setTextVisible] = useState(false);
   const [activeTab, setActiveTab] = useState('tab1');
-  const [bgColor, setBgColor] = useState('bg-gray-700');
+  const [bgColor, setBgColor] = useState('bg-gray-300');
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const [lightbulbOn, setLightbulbOn] = useState(false);
+  const [lightbulbOn, setLightbulbOn] = useState(true);
   const [muted, setMuted] = useState(true);
   const [sound, setSound] = useState(null);
 
@@ -138,7 +138,7 @@ const Home = () => {
 
   //controle do botão luz
   const handleLightbulbClick = () => {
-    setBgColor((prevColor) => (prevColor === 'bg-gray-300' ? 'bg-gray-700' : 'bg-gray-300'));
+    setBgColor((prevColor) => (prevColor === 'bg-gray-700' ? 'bg-gray-300' : 'bg-gray-700'));
     setLightbulbOn(!lightbulbOn);
     toogleFx.play();
   };
@@ -190,8 +190,8 @@ const Home = () => {
               <p className="text-lg lg:text-xl text-white font-medium rounded-md p-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-lg">
                 Matheus S. Lopes
               </p>
-              <p className="text-sm p-1 pt-2 text-gray-500">
-                Bacharelado em Ciência da Computação.
+              <p className="text-sm md:text-md p-1 pt-2 text-gray-500">
+                Bacharel em Ciência da Computação.
               </p>
               <hr className="my-4 h-0.5 w-5/6 mx-auto border-0 bg-gray-300 opacity-100 shadow-lg" />
               <div className="mt-2 animate-gradient">
@@ -199,7 +199,7 @@ const Home = () => {
                   Desenvolvedor Web
                 </h2>
                 <h2 className="text-sm md:text-md lg:text-lg">
-                  React.js / Next.js / Tailwind
+                  React.js / Next.js / Tailwind.css
                 </h2>
               </div>
 
@@ -241,25 +241,25 @@ const Home = () => {
                 </Link>
               </div>
 
-
-              <div className="text-md flex items-center justify-center gap-1 pt-8 pb-4">
-                <FaMailBulk className="w-4 h-4 text-blue-500" />
-                <Link
-                  onClick={handleClick}
-                  onMouseEnter={handleHover}
-                  href="mailto:matheus.dev.frontend@gmail.com" title="Envie uma menagem por e-mail"
-                >
-                  <p className='text-gray-500 hover:text-blue-500 underline hover:no-underline decoration-blue-500 decoration-2'>matheus.dev.frontend@gmail.com</p>
-                </Link>
-              </div>
-
-              <div className="text-md flex items-center justify-center gap-0 md:gap-1 my-3">
-                <FaMapMarkerAlt className="w-4 h-4 text-blue-500" />
-                <p className='text-gray-500'>Santo Antônio de Posse - SP</p>
-              </div>
-
-              <div className="flex justify-center py-2 pt-4 pb-7">
+              <div className="flex justify-center py-2 pt-10">
                 <ul className="flex gap-4 md:gap-6">
+
+                  <li
+                    onClick={handleClick}
+                    onMouseEnter={handleHover}
+                  >
+                    <a
+                      href="https://app.netlify.com/teams/next-dev-frontend/sites"
+                      title="Netfily"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      className="text-gray-500 transition hover:text-green-900"
+                    >
+                      <span className="sr-only">Netlify</span>
+                      <SiNetlify className="w-9 h-9 text-gray-500 hover:text-green-900" />
+                    </a>
+                  </li>
+
                   <li
                     onClick={handleClick}
                     onMouseEnter={handleHover}
@@ -281,7 +281,7 @@ const Home = () => {
                     onMouseEnter={handleHover}
                   >
                     <a
-                      href="#home"
+                      href="https://www.linkedin.com/in/matheus-dev-nextjs/"
                       title="LinkedIn"
                       rel="noopener noreferrer"
                       target="_blank"
@@ -292,6 +292,22 @@ const Home = () => {
                     </a>
                   </li>
                 </ul>
+              </div>
+
+              <div className="text-md flex items-center justify-center gap-1 pt-6 pb-4">
+                <FaMailBulk className="w-4 h-4 text-blue-500" />
+                <Link
+                  onClick={handleClick}
+                  onMouseEnter={handleHover}
+                  href="mailto:matheus.dev.frontend@gmail.com" title="Envie uma menagem por e-mail"
+                >
+                  <p className='text-sm md:text-md text-gray-500 hover:text-blue-500 underline hover:no-underline decoration-blue-500 decoration-2'>matheus.dev.frontend@gmail.com</p>
+                </Link>
+              </div>
+
+              <div className="text-sm md:text-md flex items-center justify-center gap-0 md:gap-1 my-3">
+                <FaMapMarkerAlt className="w-4 h-4 text-blue-500" />
+                <p className='text-gray-500'>Santo Antônio de Posse - SP</p>
               </div>
 
               <hr className="h-0.5 w-5/6 mx-auto border-0 bg-gray-300 opacity-100 shadow-lg" />
@@ -308,8 +324,6 @@ const Home = () => {
 
             </div>
           </div>
-
-
 
           {/* Content */}
           <div className="w-full md:w-3/4 flex flex-col sm:order-2 text-sm md:text-md lg:text-lg z-30">
@@ -421,15 +435,14 @@ const Home = () => {
       <div className={`flex w-full justify-center ${bgColor} bg-opacity-20 text-xs py-0.5`}>
       </div>
 
-
-      <div className={`flex right-0 w-full justify-center gap-4 text-xs py-1 bg-gray-500 bg-opacity-50`}>
-        <Link onClick={handleClick} onMouseEnter={handleHover} href="/terms" className='no-underline hover:underline px-3 py-1 font-medium text-white bg-pink-700 bg-opacity-30 rounded-full' title="veja os termos de uso" rel="noopener noreferrer">
+      <div className={`flex right-0 w-full text-center justify-center gap-4 text-xs py-1 bg-gray-500 bg-opacity-50`}>
+        <Link onClick={handleClick} onMouseEnter={handleHover} href="/terms" className='no-underline hover:underline px-3 py-1 text-white bg-pink-700 bg-opacity-30 rounded-full' title="veja os termos de uso" rel="noopener noreferrer">
           Termos &amp; Condições
         </Link>
-        <Link onClick={handleClick} onMouseEnter={handleHover} href="/policy" className='no-underline hover:underline px-3 py-1 font-medium text-white bg-pink-700 bg-opacity-30 rounded-full' title="veja os termos de privacidade" rel="noopener noreferrer">
+        <Link onClick={handleClick} onMouseEnter={handleHover} href="/policy" className='no-underline hover:underline px-3 py-1 text-white bg-pink-700 bg-opacity-30 rounded-full' title="veja os termos de privacidade" rel="noopener noreferrer">
           Política de Privacidade
         </Link>
-        <Link onClick={handleClick} onMouseEnter={handleHover} href="https://pixabay.com" className='no-underline hover:underline px-3 py-1 font-medium text-white bg-pink-700 bg-opacity-30 rounded-full' title="imagens by Pixabay" rel="noopener noreferrer" target='_blank'>
+        <Link onClick={handleClick} onMouseEnter={handleHover} href="https://pixabay.com" className='no-underline hover:underline px-3 py-1 text-white bg-pink-700 bg-opacity-30 rounded-full' title="imagens by Pixabay" rel="noopener noreferrer" target='_blank'>
           Efeitos Sonoros por Pixabay
         </Link>
       </div>

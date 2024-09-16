@@ -51,7 +51,7 @@ const Carousel = () => {
 
 
   return (
-    <div className="relative mx-auto w-full h-auto flex items-center justify-center">
+    <div className="relative w-full h-auto flex items-center justify-center">
       <div className="flex justify-center w-full h-auto items-center z-30">
 
         {/* <button onClick={prevImgClick} onMouseEnter={handleHover} title='Voltar' className="text-gray-600 font-bold px-2 cursor-pointer p-2 rounded-full hover:bg-gray-100">

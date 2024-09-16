@@ -35,12 +35,12 @@ const Sobre = () => {
     <div className="relative z-10 font-mono p-4 h-full max-w-3xl text-gray-600 bg-white bg-opacity-80 rounded shadow-lg border-2 border-gray-400">
 
       <div className="rounded">
-        <h2 className="flex p-2 pt-4 text-3xl md:text-4xl md:text-left">
-          <span className="animate-waving-hand pr-4"><PiHandPalmBold className="w-10 h-10 md:w-11 md:h-11 text-pink-500" /></span>{" "}
-          <span className='flex inline-block overflow-hidden whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>Olá. Seja bem-vindo&#40;a&#41;,</span>
+        <h2 className="flex p-2 pt-4 text-xl md:text-2xl lg:text-3xl md:text-left">
+          <span className="flexanimate-waving-hand pr-4"><PiHandPalmBold className="w-8 h-8 md:w-9 md:h-9 text-pink-500" /></span>{" "}
+          <span className='inline-block overflow-hidden md:whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>Olá. Seja bem-vindo&#40;a&#41;,</span>
         </h2>
 
-        <div className="p-2 pt-4 text-justify text-lg md:text-xl">
+        <div className="p-2 pt-4 text-justify text-md md:text-lg lg:text-xl">
           <p className="indent-8">
             É um grande prazer recebê-lo&#40;a&#41; aqui. Meu nome é Matheus,
             tenho 44 anos e possuo graduação em Ciência
@@ -58,8 +58,8 @@ const Sobre = () => {
           </p>
           <br />
 
-          <h2 className="flex pt-8 text-3xl md:text-4xl md:text-left">
-            <span className="pr-4"><AiFillHtml5 className="w-10 h-10 md:w-11 md:h-11 text-pink-500" /></span>{" "}
+          <h2 className="flex pt-8 text-xl md:text-2xl lg:text-3xl md:text-left">
+            <span className="pr-4"><AiFillHtml5 className="w-8 h-8 md:w-9 md:h-9 text-pink-500" /></span>{" "}
             <span className='inline-block overflow-hidden whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>De volta pra WEB</span>
           </h2>
 
@@ -123,16 +123,16 @@ const Sobre = () => {
 
         <br />
 
-        <h2 className="flex p-2 pt-4 text-3xl md:text-4xl justify-left">
-          <span className="pr-4"><FaReact className='w-10 h-10 md:w-11 md:h-11 text-pink-500' /></span>{" "}
+        <h2 className="flex p-2 pt-4 text-xl md:text-2xl lg:text-3xl justify-left">
+          <span className="pr-4"><FaReact className='w-8 h-8 md:w-9 md:h-9 text-pink-500' /></span>{" "}
           <span className='inline-block overflow-hidden whitespace-nowrap font-bold font-mono animate-typing border-r-4 text-indigo-500'>
             Tecnologias Atuais
           </span>
         </h2>
 
-        <div className="indent-8 p-2 text-justify w-full">
+        <div className="indent-8 p-2 text-justify w-full text-md md:text-lg lg:text-xl">
 
-          <div className="text-justify text-lg md:text-xl">
+          <div className="text-justify">
             <p className="indent-8">
               Atualmente, decidi enveredar pelo mundo da programação web,
               abraçando tecnologias contemporâneas como React/Next.js,
@@ -149,9 +149,9 @@ const Sobre = () => {
         <Lighthouse />
         <br />
 
-        <div className="indent-8 p-2 text-justify w-full">
+        <div className="indent-8 p-2 text-justify w-full text-md md:text-lg lg:text-xl">
 
-          <div className="text-justify text-lg md:text-xl">
+          <div className="text-justify">
             <p className="indent-8 pt-4 pb-2">
               Nos últimos três anos, segui estudando programação web &#40;principalmente front-end&#41;,
               SEO para otimização em motores de busca, webdesign para criação visual dos sites,
@@ -166,16 +166,16 @@ const Sobre = () => {
         </div>
         <br />
 
-        <h2 className="flex p-2 pt-4 text-3xl md:text-4xl justify-left">
-          <span className="pr-4"><GiJourney className='w-10 h-10 md:w-11 md:h-11 text-pink-500' /></span>{" "}
-          <span className='inline-block overflow-hidden whitespace-nowrap font-bold font-mono animate-typing border-r-4 text-indigo-500'>
+        <h2 className="flex p-2 pt-4 text-xl md:text-2xl lg:text-3xl justify-left">
+          <span className="pr-4"><GiJourney className='w-8 h-8 md:w-9 md:h-9 text-pink-500' /></span>{" "}
+          <span className='inline-block overflow-hidden md:whitespace-nowrap font-bold font-mono animate-typing border-r-4 text-indigo-500'>
             Trajetória profissional
           </span>
         </h2>
 
-        <div className="indent-8 p-2 text-justify w-full">
+        <div className="indent-8 p-2 text-justify w-full text-md md:text-lg lg:text-xl">
 
-          <div className="text-justify text-lg md:text-xl">
+          <div className="text-justify">
             <p className="indent-8">
               Acesse o meu currículo no botão abaixo para saber mais sobre minha trajetória
               como programador e como empresário no setor de TI, além de mais detalhes sobre minha formação
@@ -188,7 +188,7 @@ const Sobre = () => {
         <div className='w-full text-center pt-8 pb-4'>
           <Link href="../currículo.pdf" className='w-full items-center' title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>
             <button
-              className="rounded-full shadow-md text-md mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal bg-green-600 text-white transform transition hover:scale-105 duration-200 ease-in-out"
+              className="rounded-full shadow-md text-md md:text-lg mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal bg-green-600 text-white transform transition hover:scale-105 duration-200 ease-in-out"
               onClick={mouseClick}
               onMouseEnter={mouseHover}
             >
@@ -199,7 +199,7 @@ const Sobre = () => {
 
       </div>
 
-      <div className="p-2 text-justify text-lg md:text-xl">
+      <div className="p-2 text-md md:text-lg lg:text-xl">
 
         <p className="indent-8 p-2 pb-6 text-justify">
           É com entusiasmo que compartilho fragmentos da minha trajetória.
