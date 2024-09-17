@@ -186,7 +186,7 @@ const Sobre = () => {
         <div className='w-full text-center pt-8 pb-4'>
           <Link href="../currículo.pdf" className='w-full items-center' title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>
             <button
-              className="rounded-full shadow-md text-md md:text-lg mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal bg-green-600 text-white transform transition hover:scale-105 duration-200 ease-in-out"
+              className="rounded-full shadow-md text-md md:text-lg mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal bg-green-700 text-white transform transition hover:scale-105 duration-200 ease-in-out"
               onClick={mouseClick}
             >
               Currículo.pdf

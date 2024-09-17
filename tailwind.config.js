@@ -10,7 +10,7 @@ module.exports = {
         transparent: 'transparent',
         color1: '#142039', //gray
         color2: '#ff6341', //orange
-        color3: '#27ae60' //green
+        color3: '#128a45' //green
       },
 
       keyframes: {
