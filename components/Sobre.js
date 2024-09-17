@@ -45,9 +45,9 @@ const Sobre = () => {
             É um grande prazer recebê-lo&#40;a&#41; aqui. Meu nome é Matheus,
             tenho 44 anos e possuo graduação em Ciência
             da Computação desde o ano de 2016, trilho uma jornada
-            que se reinventou no final de 2020 quando tive meu primeiro contato com o <Link onMouseEnter={mouseHover} onClick={mouseClick} href="https://nextjs.org/" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="nextjs.org" rel="noopener noreferrer" target='_blank'>Next.js</Link>, e
-            logo em seguida, com <Link onMouseEnter={mouseHover} onClick={mouseClick} href="https://tailwindcss.com/" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="tailwindcss.com" rel="noopener noreferrer" target='_blank'>Tailwind</Link> e
-            o <Link onMouseEnter={mouseHover} onClick={mouseClick} href="https://learn.microsoft.com/pt-br/training/paths/build-javascript-applications-typescript" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="learn.microsoft.com" rel="noopener noreferrer" target='_blank'>Typescript</Link>.
+            que se reinventou no final de 2020 quando tive meu primeiro contato com o <Link onClick={mouseClick} href="https://nextjs.org/" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="nextjs.org" rel="noopener noreferrer" target='_blank'>Next.js</Link>, e
+            logo em seguida, com <Link onClick={mouseClick} href="https://tailwindcss.com/" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="tailwindcss.com" rel="noopener noreferrer" target='_blank'>Tailwind</Link> e
+            o <Link onClick={mouseClick} href="https://learn.microsoft.com/pt-br/training/paths/build-javascript-applications-typescript" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="learn.microsoft.com" rel="noopener noreferrer" target='_blank'>Typescript</Link>.
           </p>
 
           <p className="indent-8 pt-4">
@@ -79,29 +79,29 @@ const Sobre = () => {
           </p>
 
           <div className="flex items-center justify-center py-8">
-            <div onMouseEnter={mouseHover} onMouseLeave={mouseHover} className="group box w-96 h-96 [perspective:1000px]">
-              <div className="relative content h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+            <div
+              onMouseEnter={mouseHover}
+              onMouseLeave={mouseHover}
+              className="group box w-full max-w-sm [perspective:1000px]"
+            >
+              <div className="relative w-full aspect-square rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                 <div className="absolute inset-0">
                   <Image
                     src="/banners/bg-nextjs.webp"
                     alt="nextjs imagem"
-                    width={500}
-                    height={500}
-                    layout="responsive"
+                    layout="fill"
                     objectFit="cover"
-                    className="h-full w-full rounded-xl object-cover"
+                    className="rounded-xl"
                     priority
                   />
                 </div>
-                <div className="absolute inset-0 h-full w-full rounded-xl bg-black text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                <div className="absolute inset-0 rounded-xl bg-black text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
                   <Image
                     src="/banners/bg2-nextjs.webp"
                     alt="nextjs imagem"
-                    width={500}
-                    height={500}
-                    layout="responsive"
+                    layout="fill"
                     objectFit="cover"
-                    className="h-full w-full rounded-xl object-cover"
+                    className="rounded-xl"
                     priority
                   />
                 </div>
@@ -111,14 +111,12 @@ const Sobre = () => {
 
           <p className="indent-8 pt-4">
             Com o avanço significativo da internet dos anos 2000 até os tempos atuais,
-            somado ao surgimento de bibliotecas e frameworks modernos, como React.js e
+            somado ao surgimento de bibliotecas e frameworks modernos como React.js e
             Next.js, e agora também com tecnologias de inteligência artificial, além
             de diversas ferramentas e aplicações online, desenvolver para web está se
             tornando cada vez mais inspirador e gratificante. Isso tudo me motivou a seguir
             firme novamente no caminho da programação web afim de me consolidar no mercado de trabalho.
           </p>
-
-
         </div>
 
         <br />
@@ -190,7 +188,6 @@ const Sobre = () => {
             <button
               className="rounded-full shadow-md text-md md:text-lg mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal bg-green-600 text-white transform transition hover:scale-105 duration-200 ease-in-out"
               onClick={mouseClick}
-              onMouseEnter={mouseHover}
             >
               Currículo.pdf
             </button>

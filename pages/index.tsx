@@ -3,11 +3,11 @@ import Link from 'next/link';
 import { FaVolumeMute, FaVolumeUp, FaMailBulk, FaMapMarkerAlt, FaWhatsapp, FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaSun, FaRegMoon, FaBars, FaTimes } from 'react-icons/fa';
 import { SiGithub, SiLinkedin, SiTailwindcss, SiTypescript, SiNetlify } from 'react-icons/si';
 import { Howl, Howler } from 'howler';
+import Sobre from '../components/Sobre';
+import Tecnologias from '../components/Tecnologias';
+import Projetos from '../components/Projetos';
 import dynamic from 'next/dynamic';
 const Carousel = dynamic(() => import('../components/Carousel'));
-const Sobre = dynamic(() => import('../components/Sobre'));
-const Tecnologias = dynamic(() => import('../components/Tecnologias'));
-const Projetos = dynamic(() => import('../components/Projetos'));
 const SocialShare = dynamic(() => import('../components/SocialShare'));
 const Analytics = dynamic(() => import('../components/Analytics'));
 
@@ -59,12 +59,12 @@ const Home = () => {
       elements.forEach((element) => {
         element.classList.add('animate-jump');
       });
-    }, 9); // 9 segundos
+    }, 5); // 9 segundos
   };
 
   // Configurar o intervalo para reiniciar a animação a cada 9 segundos
   useEffect(() => {
-    const intervalId = setInterval(toggleAnimateJump, 9000);
+    const intervalId = setInterval(toggleAnimateJump, 5000);
     // Limpar o intervalo quando o componente for desmontado
     return () => clearInterval(intervalId);
   }, []);
@@ -187,9 +187,9 @@ const Home = () => {
             <Carousel />
 
             <div className="text-center pt-4">
-              <p className="text-lg lg:text-xl text-white font-medium rounded-md p-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-lg">
+              <h1 className="text-lg lg:text-xl text-white font-medium rounded-md p-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-lg">
                 Matheus S. Lopes
-              </p>
+              </h1>
               <p className="text-sm md:text-md p-1 pt-2 text-gray-500">
                 Bacharel em Ciência da Computação.
               </p>
@@ -219,7 +219,6 @@ const Home = () => {
                 <button
                   className="rounded-full shadow-md text-md mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal bg-green-600 text-white transform transition hover:scale-105 duration-200 ease-in-out"
                   onClick={handleCvClick}
-                  onMouseEnter={handleHover}
                 >
                   Currículo.pdf
                 </button>
@@ -246,7 +245,6 @@ const Home = () => {
 
                   <li
                     onClick={handleClick}
-                    onMouseEnter={handleHover}
                   >
                     <a
                       href="https://app.netlify.com/teams/next-dev-frontend/sites"
@@ -262,7 +260,6 @@ const Home = () => {
 
                   <li
                     onClick={handleClick}
-                    onMouseEnter={handleHover}
                   >
                     <a
                       href="https://github.com/next-dev-frontend"
@@ -278,7 +275,6 @@ const Home = () => {
 
                   <li
                     onClick={handleClick}
-                    onMouseEnter={handleHover}
                   >
                     <a
                       href="https://www.linkedin.com/in/matheus-dev-nextjs/"
@@ -298,7 +294,6 @@ const Home = () => {
                 <FaMailBulk className="w-4 h-4 text-blue-500" />
                 <Link
                   onClick={handleClick}
-                  onMouseEnter={handleHover}
                   href="mailto:matheus.dev.frontend@gmail.com" title="Envie uma menagem por e-mail"
                 >
                   <p className='text-sm md:text-md text-gray-500 hover:text-blue-500 underline hover:no-underline decoration-blue-500 decoration-2'>matheus.dev.frontend@gmail.com</p>
@@ -330,7 +325,7 @@ const Home = () => {
             {/* Tab Bar */}
             <div className="flex justify-between items-center mb-2 w-full">
 
-              <div onMouseEnter={handleHover} className="md:hidden z-40">
+              <div className="md:hidden z-40">
                 <button
                   className={`p-2 rounded-full shadow-md mb-2 transition-colors ${isMenuOpen ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-purple-500 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
                   onClick={handleMenuToggle}
@@ -343,7 +338,6 @@ const Home = () => {
                 <button
                   className={`rounded-full shadow-md mr-2 mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal transition-colors ${activeTab === 'tab1' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-gray-800 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
                   onClick={() => handleTabChange('tab1')}
-                  onMouseEnter={handleHover}
                 >
                   Sobre
                 </button>
@@ -351,7 +345,6 @@ const Home = () => {
                 <button
                   className={`rounded-full shadow-md mr-2 mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal transition-colors ${activeTab === 'tab2' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-gray-800 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
                   onClick={() => handleTabChange('tab2')}
-                  onMouseEnter={handleHover}
                 >
                   Tecnologias
                 </button>
@@ -359,14 +352,13 @@ const Home = () => {
                 <button
                   className={`rounded-full shadow-md mr-2 mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal transition-colors ${activeTab === 'tab3' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-gray-800 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
                   onClick={() => handleTabChange('tab3')}
-                  onMouseEnter={handleHover}
                 >
                   Projetos
                 </button>
 
               </div>
 
-              <label onMouseEnter={handleHover} htmlFor="lightbulb-toggle" className="relative h-8 w-14 cursor-pointer">
+              <label htmlFor="lightbulb-toggle" className="relative h-8 w-14 cursor-pointer">
                 <input
                   type="checkbox"
                   id="lightbulb-toggle"
@@ -390,7 +382,6 @@ const Home = () => {
                   <button
                     className={`rounded-full w-full max-w-full mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal transition-colors ${activeTab === 'tab1' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-gray-800 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
                     onClick={() => handleTabChange('tab1')}
-                    onMouseEnter={handleHover}
                   >
                     Sobre
                   </button>
@@ -398,7 +389,6 @@ const Home = () => {
                   <button
                     className={`rounded-full w-full max-w-full mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal transition-colors ${activeTab === 'tab2' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-gray-800 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
                     onClick={() => handleTabChange('tab2')}
-                    onMouseEnter={handleHover}
                   >
                     Tecnologias
                   </button>
@@ -406,7 +396,6 @@ const Home = () => {
                   <button
                     className={`rounded-full w-full max-w-full mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal transition-colors ${activeTab === 'tab3' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-gray-800 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
                     onClick={() => handleTabChange('tab3')}
-                    onMouseEnter={handleHover}
                   >
                     Projetos
                   </button>
@@ -436,13 +425,13 @@ const Home = () => {
       </div>
 
       <div className={`flex right-0 w-full text-center justify-center gap-4 text-xs py-1 bg-gray-500 bg-opacity-50`}>
-        <Link onClick={handleClick} onMouseEnter={handleHover} href="/terms" className='no-underline hover:underline px-3 py-1 text-white bg-pink-700 bg-opacity-30 rounded-full' title="veja os termos de uso" rel="noopener noreferrer">
+        <Link onClick={handleClick} href="/terms" className='no-underline hover:underline px-3 py-1 text-white bg-pink-700 bg-opacity-30 rounded-full' title="veja os termos de uso" rel="noopener noreferrer">
           Termos &amp; Condições
         </Link>
-        <Link onClick={handleClick} onMouseEnter={handleHover} href="/policy" className='no-underline hover:underline px-3 py-1 text-white bg-pink-700 bg-opacity-30 rounded-full' title="veja os termos de privacidade" rel="noopener noreferrer">
+        <Link onClick={handleClick} href="/policy" className='no-underline hover:underline px-3 py-1 text-white bg-pink-700 bg-opacity-30 rounded-full' title="veja os termos de privacidade" rel="noopener noreferrer">
           Política de Privacidade
         </Link>
-        <Link onClick={handleClick} onMouseEnter={handleHover} href="https://pixabay.com" className='no-underline hover:underline px-3 py-1 text-white bg-pink-700 bg-opacity-30 rounded-full' title="imagens by Pixabay" rel="noopener noreferrer" target='_blank'>
+        <Link onClick={handleClick} href="https://pixabay.com" className='no-underline hover:underline px-3 py-1 text-white bg-pink-700 bg-opacity-30 rounded-full' title="imagens by Pixabay" rel="noopener noreferrer" target='_blank'>
           Efeitos Sonoros por Pixabay
         </Link>
       </div>

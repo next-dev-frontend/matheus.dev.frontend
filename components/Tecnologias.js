@@ -32,7 +32,7 @@ const Tecnologias = () => {
       icon: <FaHtml5 />,
       name: 'HTML5',
       date: '2014',
-      knowledge: 80,
+      knowledge: 'Avançado',
       description: 'Linguagem de marcação para estruturar o conteúdo na web.',
     },
     {
@@ -40,49 +40,49 @@ const Tecnologias = () => {
       name: 'CSS3',
       date: '2014',
       description: 'Linguagem de estilo para descrever a apresentação de um documento HTML.',
-      knowledge: 60,
+      knowledge: 'Avançado',
     },
     {
       icon: <FaJs />,
       name: 'JavaScript',
       date: '2014',
       description: 'Linguagem de programação de alto nível.',
-      knowledge: 60,
+      knowledge: 'Avançado',
     },
     {
       icon: <FaReact />,
       name: 'React.js',
       date: '2020',
       description: 'Biblioteca JavaScript para construção de interfaces de usuário.',
-      knowledge: 40,
+      knowledge: 'Intermediário',
     },
     {
       icon: <TbBrandNextjs />,
       name: 'Next.js',
       date: '2020',
       description: 'Framework React para desenvolvimento de aplicações web.',
-      knowledge: 40,
+      knowledge: 'Intermediário',
     },
     {
       icon: <SiTailwindcss />,
       name: 'Tailwind CSS',
       date: '2020',
       description: 'Framework CSS utilitário para desenvolvimento rápido.',
-      knowledge: 30,
+      knowledge: 'Intermediário',
     },
     {
       icon: <FaNodeJs />,
       name: 'Node.js',
       date: '2020',
       description: 'Ambiente de execução JavaScript server-side.',
-      knowledge: 10,
+      knowledge: 'Básico',
     },
     {
       icon: <SiTypescript />,
       name: 'TypeScript',
       date: '2020',
       description: 'Superset do JavaScript que adiciona tipagem estática.',
-      knowledge: 25,
+      knowledge: 'Intermediário',
     },
 
   ];
@@ -98,8 +98,8 @@ const Tecnologias = () => {
             <div className="text-center text-3xl md:text-4xl lg:text-5xl font-bold">
               <div className="relative inline-grid grid-cols-1 grid-rows-1 gap-12 overflow-hidden">
                 <span className="animate-word col-span-full row-span-full">React.js</span>
-                <span className="animate-word-delay-1 col-span-full row-span-full">Desenvolvedor Web</span>
-                <span className="animate-word-delay-2 col-span-full row-span-full">Tailwind</span>
+                <span className="animate-word-delay-1 col-span-full row-span-full">Dev. Web</span>
+                <span className="animate-word-delay-2 col-span-full row-span-full">Tailwind.css</span>
                 <span className="animate-word-delay-3 col-span-full row-span-full">Typescript</span>
                 <span className="animate-word-delay-4 col-span-full row-span-full">Next.js</span>
               </div>
@@ -137,22 +137,12 @@ const Tecnologias = () => {
 
                 <hr className="h-0.5 w-1/3 bg-pink-500" />
 
-                <p className="text-sm md:text-md font-bold text-indigo-600 pt-4">Descrição da linguagem:</p>
-                <p className="text-sm md:text-md text-gray-600">{stack.description}</p>
+                <p className="text-sm md:text-md font-bold text-indigo-600 pt-4">- Descrição da linguagem: <span className="text-gray-600">{stack.description}</span></p>
 
+                <p className="text-sm md:text-md font-bold text-indigo-600 pt-4">- Início dos estudos: <span className="text-gray-600">{stack.date}</span></p>
 
-                <p className="text-sm md:text-md font-bold text-indigo-600 pt-4">Nível de conhecimento desde {stack.date}.</p>
-                <div className="flex items-center">
-                  <span className="mr-2">{stack.knowledge}%</span>
-                  <div className="w-64 bg-white rounded-md">
-                    <div
-                      className="bg-green-600 text-white rounded-md py-1 text-center"
-                      style={{ width: `${stack.knowledge}%` }}
-                    >
-                    </div>
-                  </div>
+                <p className="text-sm md:text-md font-bold text-indigo-600 pt-4">- Nível de conhecimento: <span className="text-gray-600">{stack.knowledge}</span></p>
 
-                </div>
 
                 <br /><br />
               </div>

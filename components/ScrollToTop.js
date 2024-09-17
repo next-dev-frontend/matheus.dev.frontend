@@ -10,17 +10,8 @@ const ScrollToTop = () => {
     volume: 1.0,
   });
 
-  const scrollHoverFx = new Howl({
-    src: ['../effects/hoverFx.mp3'],
-    volume: 1.0,
-  });
-
-  const handleHoverScroll = () => {
-    scrollHoverFx.play();
-  };
-
   const handleScroll = () => {
-    if (window.pageYOffset > 100) {
+    if (window.pageYOffset > 600) {
       setIsVisible(true);
     } else {
       setIsVisible(false);
@@ -46,7 +37,6 @@ const ScrollToTop = () => {
         <button
           className="animation-bonce z-40 bg-white bg-opacity-80 text-purple-500 hover:text-white border-2 border-indigo-500 hover:border-white fixed hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 transition bottom-16 right-6 p-3 rounded-full"
           onClick={scrollToTop}
-          onMouseEnter={handleHoverScroll}
         >
           <FaArrowUp className='w-6 h-6' />
         </button>

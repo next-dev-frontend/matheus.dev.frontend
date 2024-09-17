@@ -4,7 +4,7 @@ class MyDocument extends Document {
   render() {
 
     return (
-      <Html lang="en">
+      <Html lang="pt-BR">
         <Head>
           <meta name="google-site-verification" content="rRKlKFWnlhU_kUGxe4fgENDoEIIcYSSc1DbdpRMn1kY" />
           <meta name="theme-color" content="#ff6341" />
