@@ -109,7 +109,7 @@ const Tecnologias = () => {
 
         <h2 className="flex p-2 pt-8 text-xl md:text-2xl lg:text-3xl md:text-left">
           <span className="animate-bounce pr-4"><FaLaptopCode className="w-8 h-8 md:w-9 md:h-9 text-pink-500" /></span>{" "}
-          <span className='inline-block overflow-hidden whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>
+          <span className='inline-block overflow-hidden md:whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>
             Stack atual
           </span>
         </h2>

@@ -60,7 +60,7 @@ const Sobre = () => {
 
           <h2 className="flex pt-8 text-xl md:text-2xl lg:text-3xl md:text-left">
             <span className="pr-4"><AiFillHtml5 className="w-8 h-8 md:w-9 md:h-9 text-pink-500" /></span>{" "}
-            <span className='inline-block overflow-hidden whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>De volta pra WEB</span>
+            <span className='inline-block overflow-hidden md:whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>De volta pra WEB</span>
           </h2>
 
           <p className="indent-8 pt-4">
@@ -123,7 +123,7 @@ const Sobre = () => {
 
         <h2 className="flex p-2 pt-4 text-xl md:text-2xl lg:text-3xl justify-left">
           <span className="pr-4"><FaReact className='w-8 h-8 md:w-9 md:h-9 text-pink-500' /></span>{" "}
-          <span className='inline-block overflow-hidden whitespace-nowrap font-bold font-mono animate-typing border-r-4 text-indigo-500'>
+          <span className='inline-block overflow-hidden md:whitespace-nowrap font-bold font-mono animate-typing border-r-4 text-indigo-500'>
             Tecnologias Atuais
           </span>
         </h2>

@@ -176,7 +176,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Dev Web Next.js</title>
+        <title>Dev Next.js</title>
         <meta name="description" content="Neste espaço, convido você a explorar mais sobre minha formação e histórico profissional, as linguagens e metodologias que utilizo, além de acesso a códigos fonte de alguns projetos e componentes Next.js que tive a alegria de criar." />
       </Head>
       <div>
@@ -184,10 +184,10 @@ const Home = () => {
         <Analytics />
 
         <div className={`z-10 flex overflow-y-auto w-full max-w-full h-full min-h-screen bg-no-repeat items-start justify-center mx-auto bg-opacity-60 ${bgColor} `}>
-          <div className={`flex flex-col md:flex-row w-screen mx-auto max-w-6xl gap-4 px-4 py-8`}>
+          <div className={`flex flex-col md:flex-row w-screen mx-auto max-w-6xl gap-4 px-1 md:px-4 py-1 md:py-4`}>
 
             {/* Sidebar (Mobile: Below) */}
-            <div className="w-full justify-center min-w-fit md:max-w-1/4 items-center md:w-1/3 bg-white bg-opacity-80 rounded h-full p-4 sm:order-1 shadow-lg border-2 border-gray-400 relative">
+            <div className="w-full justify-center md:max-w-1/4 items-center md:w-1/3 bg-white bg-opacity-80 rounded h-full p-4 sm:order-1 shadow-lg border-2 border-gray-400 relative">
 
               <button onClick={toggleMute} onMouseEnter={handleHover} title='Audio'>
                 {muted ? <FaVolumeMute title='Ativar Efeitos Sonoros' className='text-gray-500 w-10 h-10 p-2 rounded-full hover:bg-white' /> : <FaVolumeUp title="Desativar Efeitos Sonoros" className='text-purple-500 w-10 h-10 p-2 rounded-full hover:bg-white' />}
@@ -441,15 +441,15 @@ const Home = () => {
         <div className={`flex w-full justify-center ${bgColor} bg-opacity-20 text-xs py-0.5`}>
         </div>
 
-        <div className={`flex right-0 w-full text-center justify-center gap-4 text-xs py-1 bg-gray-500 bg-opacity-50`}>
-          <Link onClick={handleClick} href="/terms" className='no-underline hover:underline px-3 py-1 text-white bg-pink-700 bg-opacity-30 rounded-full' title="veja os termos de uso" rel="noopener noreferrer">
+        <div className={`flex right-0 w-full text-center justify-center gap-4 text-xs px-1 py-1 bg-gray-500 bg-opacity-50`}>
+          <Link onClick={handleClick} href="/terms" className=' my-auto no-underline hover:underline px-3 py-1 text-white bg-pink-700 bg-opacity-30 rounded-full' title="veja os termos de uso" rel="noopener noreferrer">
             Termos &amp; Condições
           </Link>
-          <Link onClick={handleClick} href="/policy" className='no-underline hover:underline px-3 py-1 text-white bg-pink-700 bg-opacity-30 rounded-full' title="veja os termos de privacidade" rel="noopener noreferrer">
-            Política de Privacidade
+          <Link onClick={handleClick} href="https://pixabay.com" className='my-auto no-underline hover:underline px-3 py-1 text-white bg-pink-700 bg-opacity-30 rounded-full' title="imagens by Pixabay" rel="noopener noreferrer" target='_blank'>
+            Áudio por Pixabay
           </Link>
-          <Link onClick={handleClick} href="https://pixabay.com" className='no-underline hover:underline px-3 py-1 text-white bg-pink-700 bg-opacity-30 rounded-full' title="imagens by Pixabay" rel="noopener noreferrer" target='_blank'>
-            Efeitos Sonoros por Pixabay
+          <Link onClick={handleClick} href="/policy" className='my-auto no-underline hover:underline px-3 py-1 text-white bg-pink-700 bg-opacity-30 rounded-full' title="veja os termos de privacidade" rel="noopener noreferrer">
+            Política de Privacidade
           </Link>
         </div>
 
