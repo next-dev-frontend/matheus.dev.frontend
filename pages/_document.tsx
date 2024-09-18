@@ -7,7 +7,7 @@ class MyDocument extends Document {
       <Html lang="pt-BR">
         <Head>
           <meta name="google-site-verification" content="rRKlKFWnlhU_kUGxe4fgENDoEIIcYSSc1DbdpRMn1kY" />
-          <meta name="theme-color" content="#ff6341" />
+          <meta name="theme-color" content="#2563eb" />
         </Head>
         <body className="scrollbar scrollbar-thumb-pink-500 scrollbar-track-purple-200 overflow-x-hidden overflow-y-auto scrollbar-hide md:scrollbar-default">
           <Main />
