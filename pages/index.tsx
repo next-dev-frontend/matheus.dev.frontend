@@ -184,7 +184,7 @@ const Home = () => {
         <Analytics />
 
         <div className={`z-10 flex overflow-y-auto w-full max-w-full h-full min-h-screen bg-no-repeat items-start justify-center mx-auto bg-opacity-60 ${bgColor} `}>
-          <div className={`flex flex-col md:flex-row w-screen mx-auto max-w-6xl gap-4 px-1 md:px-4 py-1 md:py-4`}>
+          <div className={`flex flex-col md:flex-row w-screen mx-auto max-w-6xl gap-4 px-2 md:px-4 py-2 md:py-4`}>
 
             {/* Sidebar (Mobile: Below) */}
             <div className="w-full justify-center md:max-w-1/4 items-center md:w-1/3 bg-white bg-opacity-80 rounded h-full p-4 sm:order-1 shadow-lg border-2 border-gray-400 relative">
