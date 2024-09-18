@@ -334,6 +334,7 @@ const Home = () => {
 
                 <div className="md:hidden z-40">
                   <button
+                    aria-labelledby="menu"
                     className={`p-2 rounded-full shadow-md mb-2 transition-colors ${isMenuOpen ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-purple-500 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
                     onClick={handleMenuToggle}
                   >
@@ -343,6 +344,7 @@ const Home = () => {
 
                 <div className={`z-10 hidden md:flex ${isMenuOpen ? 'hidden' : ''}`}>
                   <button
+                    aria-label="Sobre o Matheus"
                     className={`rounded-full shadow-md mr-2 mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal transition-colors ${activeTab === 'tab1' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-gray-800 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
                     onClick={() => handleTabChange('tab1')}
                   >
@@ -350,6 +352,7 @@ const Home = () => {
                   </button>
 
                   <button
+                    aria-label="Stack atual"
                     className={`rounded-full shadow-md mr-2 mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal transition-colors ${activeTab === 'tab2' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-gray-800 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
                     onClick={() => handleTabChange('tab2')}
                   >
@@ -357,6 +360,7 @@ const Home = () => {
                   </button>
 
                   <button
+                    aria-label="Projetos recentes"
                     className={`rounded-full shadow-md mr-2 mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal transition-colors ${activeTab === 'tab3' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-gray-800 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
                     onClick={() => handleTabChange('tab3')}
                   >
@@ -367,6 +371,7 @@ const Home = () => {
 
                 <label htmlFor="lightbulb-toggle" className="relative h-8 w-14 cursor-pointer">
                   <input
+                    aria-label="Menu de opções"
                     type="checkbox"
                     id="lightbulb-toggle"
                     className="peer sr-only"
@@ -387,6 +392,7 @@ const Home = () => {
                   <div className="flex flex-col border-2 border-gray-100 rounded-md gap-2 p-2 items-center justify-center bg-indigo-900 bg-opacity-80 shadow-md relative">
 
                     <button
+                      aria-label="Sobre o Matheus"
                       className={`rounded-full w-full max-w-full mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal transition-colors ${activeTab === 'tab1' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-gray-800 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
                       onClick={() => handleTabChange('tab1')}
                     >
@@ -394,6 +400,7 @@ const Home = () => {
                     </button>
 
                     <button
+                      aria-label="Stack atual"
                       className={`rounded-full w-full max-w-full mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal transition-colors ${activeTab === 'tab2' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-gray-800 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
                       onClick={() => handleTabChange('tab2')}
                     >
@@ -401,6 +408,7 @@ const Home = () => {
                     </button>
 
                     <button
+                      aria-label="Projetos recentes"
                       className={`rounded-full w-full max-w-full mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal transition-colors ${activeTab === 'tab3' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-gray-800 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
                       onClick={() => handleTabChange('tab3')}
                     >

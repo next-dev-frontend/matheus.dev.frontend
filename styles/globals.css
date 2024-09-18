@@ -187,9 +187,9 @@ body {
 }
 
 .animate-gradient {
-  animation: gradient-animation 2s ease infinite;
-  background-size: 200% 200%;
-  background-image: linear-gradient(45deg, #f06, #09f, #f06, #09f);
+  animation: gradient-animation 20s ease infinite;
+  background-size: 300% 100%;
+  background-image: linear-gradient(90deg, #f06, #09f, #f06, #09f);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
