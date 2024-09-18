@@ -181,6 +181,8 @@ const Home = () => {
       </Head>
       <div>
 
+        <Analytics />
+
         <div className={`z-10 flex overflow-y-auto w-full max-w-full h-full min-h-screen bg-no-repeat items-start justify-center mx-auto bg-opacity-60 ${bgColor} `}>
           <div className={`flex flex-col md:flex-row w-screen mx-auto max-w-6xl gap-4 px-4 py-8`}>
 
@@ -334,7 +336,7 @@ const Home = () => {
 
                 <div className="md:hidden z-40">
                   <button
-                    aria-labelledby="menu"
+                    aria-label="menu de opções"
                     className={`p-2 rounded-full shadow-md mb-2 transition-colors ${isMenuOpen ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-purple-500 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
                     onClick={handleMenuToggle}
                   >
@@ -455,7 +457,7 @@ const Home = () => {
         </div>
         <div className={`flex w-full justify-center ${bgColor} bg-opacity-40 text-xs py-0.5`}>
         </div>
-        <Analytics />
+
         <SocialShare />
 
       </div>
