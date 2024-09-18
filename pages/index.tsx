@@ -176,7 +176,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Desenvolvedor Web Next.js</title>
+        <title>Dev Web Next.js</title>
         <meta name="description" content="Neste espaço, convido você a explorar mais sobre minha formação e histórico profissional, as linguagens e metodologias que utilizo, além de acesso a códigos fonte de alguns projetos e componentes Next.js que tive a alegria de criar." />
       </Head>
       <div>

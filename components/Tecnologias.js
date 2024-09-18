@@ -116,13 +116,12 @@ const Tecnologias = () => {
 
         <div className="p-2 pt-4 pb-8 text-justify text-md md:text-lg lg:text-xl">
           <p className="indent-8">
-            Nesta sessão eu mostrarei quais são as tecnologias que mais utilizo e o nível de experiência que tenho
+            Nesta sessão eu mostrarei quais são as tecnologias que mais utilizo e o tempo de experiencia que tenho
             em cada uma delas. Lembrando que avaliar o nível de conhecimento de uma linguagem não é algo tão simples,
             pois a quantidade de conteúdo e informações de tais tecnologias podem ser extremamente grandes e complexas, e exigem
-            muito tempo de estudo e prática. Minha intensão principal aqui é mostrar um pouco do que sei sobre cada linguagem e
-            informar quais linguagens tenho mais experiencia em relação as outras.
-            Não pretendo destacar todas as linguagens e ferramentas que já utilizei desde que comecei a programar. Vou focar
-            nas tecnologias que venho trabalhando no momento atual.
+            muito tempo de estudo e prática. Vou classificar meu nível de conhecimento baseado no tempo de contato que tenho com cada ferramenta.
+            Não pretendo destacar todas as linguagens e ferramentas que já utilizei desde que comecei a programar. Vou focar apenas
+            nas tecnologias que venho trabalhando atualmente.
           </p>
         </div>
 
@@ -137,11 +136,11 @@ const Tecnologias = () => {
 
                 <hr className="h-0.5 w-1/3 bg-pink-500" />
 
-                <p className="text-sm md:text-md font-bold text-indigo-600 pt-4">- Descrição da linguagem: <span className="text-gray-600">{stack.description}</span></p>
+                <p className="text-md md:text-lg font-bold text-indigo-600 pt-4">- Descrição da linguagem: <span className="text-gray-600">{stack.description}</span></p>
 
-                <p className="text-sm md:text-md font-bold text-indigo-600 pt-4">- Início dos estudos: <span className="text-gray-600">{stack.date}</span></p>
+                <p className="text-md md:text-lg font-bold text-indigo-600 pt-4">- Início dos estudos: <span className="text-gray-600">{stack.date}</span></p>
 
-                <p className="text-sm md:text-md font-bold text-indigo-600 pt-4">- Nível de conhecimento: <span className="text-gray-600">{stack.knowledge}</span></p>
+                <p className="text-md md:text-lg font-bold text-indigo-600 pt-4">- Nível de conhecimento: <span className="text-gray-600">{stack.knowledge}</span></p>
 
 
                 <br /><br />

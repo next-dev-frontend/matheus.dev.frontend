@@ -117,6 +117,36 @@ module.exports = withTM(
           config.optimization.providedExports = true;
           config.optimization.usedExports = true;
           config.optimization.sideEffects = true;
+
+          // Configurar Webpack para gerar bundles modernos e legados
+          config.output.filename = (pathData) => {
+            // Nomear arquivos separadamente para moderno e legado
+            return pathData.chunk.name === 'main' ? '[name]-modern.js' : '[name]-legacy.js';
+          };
+
+          config.module.rules.push({
+            test: /\.js$/,
+            include: /node_modules/,
+            use: {
+              loader: 'babel-loader',
+              options: {
+                presets: [
+                  [
+                    '@babel/preset-env',
+                    {
+                      targets: {
+                        esmodules: true, // Navegadores modernos
+                      },
+                      useBuiltIns: 'entry',
+                      corejs: 3,
+                    },
+                  ],
+                ],
+              },
+            },
+          });
+
+
         }
 
         return config;

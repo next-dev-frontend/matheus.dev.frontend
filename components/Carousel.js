@@ -63,8 +63,8 @@ const Carousel = () => {
             src={images[currentImage]}
             // alt={`Foto ${currentImage + 1}`}
             alt={`Foto do Matheus`}
-            width={512}
-            height={512}
+            width={320}
+            height={320}
             priority
             onMouseEnter={handleHover}
             onMouseLeave={handleHover}

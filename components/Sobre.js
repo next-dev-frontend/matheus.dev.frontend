@@ -36,7 +36,7 @@ const Sobre = () => {
 
       <div className="rounded">
         <h2 className="flex p-2 pt-4 text-xl md:text-2xl lg:text-3xl md:text-left">
-          <span className="flexanimate-waving-hand pr-4"><PiHandPalmBold className="w-8 h-8 md:w-9 md:h-9 text-pink-500" /></span>{" "}
+          <span className="flex animate-waving-hand pr-4"><PiHandPalmBold className="w-8 h-8 md:w-9 md:h-9 text-pink-500" /></span>{" "}
           <span className='inline-block overflow-hidden md:whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>Olá. Seja bem-vindo&#40;a&#41;,</span>
         </h2>
 

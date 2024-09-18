@@ -9,7 +9,7 @@ class MyDocument extends Document {
           <meta name="google-site-verification" content="rRKlKFWnlhU_kUGxe4fgENDoEIIcYSSc1DbdpRMn1kY" />
           <meta name="theme-color" content="#ff6341" />
         </Head>
-        <body className="scrollbar scrollbar-thumb-pink-500 scrollbar-track-gray-200 overflow-x-hidden overflow-y-auto scrollbar-hide md:scrollbar-default">
+        <body className="scrollbar scrollbar-thumb-pink-500 scrollbar-track-purple-200 overflow-x-hidden overflow-y-auto scrollbar-hide md:scrollbar-default">
           <Main />
           <NextScript />
         </body>

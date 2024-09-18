@@ -35,7 +35,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <link rel="apple-touch-icon" type="image/png" href="/favicon.ico" />
         <link rel="icon" href="/logos/logo-144x144.png" />
       </Head>
-      <NextNProgress color="#142039" startPosition={0.3} stopDelayMs={200} height={3} showOnShallow={true} />
+      <NextNProgress color="#2563eb" startPosition={0.3} stopDelayMs={200} height={3} showOnShallow={true} />
 
       <ScrollToTop />
       <BgIconsEffect />
