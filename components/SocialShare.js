@@ -9,7 +9,7 @@ const SocialShare = () => {
 
   const socialClickFx = new Howl({
     src: ['../effects/clickFx.mp3'],
-    volume: 1.0,
+    volume: 0.5,
   });
 
   const handleScroll = () => {

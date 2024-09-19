@@ -39,7 +39,7 @@ const Home = () => {
 
       const newSound = new Howl({
         src: [`/sounds/${soundToPreload}`],
-        volume: 0.6,
+        volume: 0.4,
         loop: true,
       });
 
@@ -97,25 +97,25 @@ const Home = () => {
   //efeitos sonoros de clicks
   const clickFx = new Howl({
     src: ['../effects/clickFx.mp3'],
-    volume: 1.0,
+    volume: 0.5,
   });
 
   //efeitos sonoros de click no botão currículo
   const clickCvFx = new Howl({
     src: ['../effects/clickCvFx.mp3'],
-    volume: 2.0,
+    volume: 1.0,
   });
 
   //efeitos sonoro de hover
   const hoverFx = new Howl({
     src: ['../effects/hoverFx.mp3'],
-    volume: 1.0,
+    volume: 0.5,
   });
 
   //efeito sonoro no botão luz
   const toogleFx = new Howl({
     src: ['../effects/toogleFx.mp3'],
-    volume: 0.8,
+    volume: 0.5,
   });
 
   //efeito sonoro no botão whatsapp

@@ -18,7 +18,7 @@ const LoadingItem: React.FC<LoadingItemProps> = ({ text }) => {
   useEffect(() => {
     autoFx.current = new Howl({
       src: ['../effects/loading7.mp3'],
-      volume: 0.2,
+      volume: 0.1,
     });
 
     return () => {

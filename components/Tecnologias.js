@@ -9,7 +9,7 @@ const Tecnologias = () => {
 
   const hoverFx = new Howl({
     src: ['../effects/hoverFx.mp3'],
-    volume: 1.0,
+    volume: 0.5,
   });
 
   const mouseHover = () => {
@@ -19,7 +19,7 @@ const Tecnologias = () => {
 
   const clickFx = new Howl({
     src: ['../effects/clickFx.mp3'],
-    volume: 1.0,
+    volume: 0.5,
   });
 
   const mouseClick = () => {

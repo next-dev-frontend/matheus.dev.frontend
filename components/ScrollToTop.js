@@ -7,7 +7,7 @@ const ScrollToTop = () => {
 
   const scrollClickFx = new Howl({
     src: ['../effects/scrollFx.mp3'],
-    volume: 1.0,
+    volume: 0.5,
   });
 
   const handleScroll = () => {
