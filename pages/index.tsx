@@ -2,13 +2,13 @@ import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FaVolumeMute, FaVolumeUp, FaMailBulk, FaMapMarkerAlt, FaWhatsapp, FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaSun, FaRegMoon, FaBars, FaTimes } from 'react-icons/fa';
-import { SiGithub, SiLinkedin, SiTailwindcss, SiTypescript, SiNetlify } from 'react-icons/si';
+import { SiGithub, SiLinkedin, SiTailwindcss, SiTypescript, SiNetlify, SiVercel, SiFacebook } from 'react-icons/si';
 import { Howl, Howler } from 'howler';
+import Carousel from '../components/Carousel';
 import Sobre from '../components/Sobre';
 import Tecnologias from '../components/Tecnologias';
 import Projetos from '../components/Projetos';
 import dynamic from 'next/dynamic';
-const Carousel = dynamic(() => import('../components/Carousel'));
 const SocialShare = dynamic(() => import('../components/SocialShare'));
 const Analytics = dynamic(() => import('../components/Analytics'));
 
@@ -256,6 +256,21 @@ const Home = () => {
                       onClick={handleClick}
                     >
                       <a
+                        href="https://www.linkedin.com/in/matheus-dev-nextjs/"
+                        title="LinkedIn"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        className="text-gray-500 transition hover:text-[#142039]"
+                      >
+                        <span className="sr-only">LinkedIn</span>
+                        <SiLinkedin className="w-8 h-8 text-gray-500 hover:text-sky-600" />
+                      </a>
+                    </li>
+
+                    <li
+                      onClick={handleClick}
+                    >
+                      <a
                         href="https://app.netlify.com/teams/next-dev-frontend/sites"
                         title="Netfily"
                         rel="noopener noreferrer"
@@ -264,6 +279,21 @@ const Home = () => {
                       >
                         <span className="sr-only">Netlify</span>
                         <SiNetlify className="w-9 h-9 text-gray-500 hover:text-green-900" />
+                      </a>
+                    </li>
+
+                    <li
+                      onClick={handleClick}
+                    >
+                      <a
+                        href="https://vercel.com/matheus-santos-lopes-projects"
+                        title="Vercel"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        className="text-gray-500 transition hover:text-black"
+                      >
+                        <span className="sr-only">Vercel</span>
+                        <SiVercel className="w-8 h-8 text-gray-500 hover:text-black" />
                       </a>
                     </li>
 
@@ -282,20 +312,6 @@ const Home = () => {
                       </a>
                     </li>
 
-                    <li
-                      onClick={handleClick}
-                    >
-                      <a
-                        href="https://www.linkedin.com/in/matheus-dev-nextjs/"
-                        title="LinkedIn"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        className="text-gray-500 transition hover:text-[#142039]"
-                      >
-                        <span className="sr-only">LinkedIn</span>
-                        <SiLinkedin className="w-8 h-8 text-gray-500 hover:text-sky-600" />
-                      </a>
-                    </li>
                   </ul>
                 </div>
 
@@ -390,8 +406,8 @@ const Home = () => {
 
               {/* Dropdown Menu para Dispositivos Móveis */}
               {isMenuOpen && (
-                <div className="md:hidden absolute bg-transparent pl-12 pt-0 z-30">
-                  <div className="flex flex-col border-2 border-gray-100 rounded-md gap-2 p-2 items-center justify-center bg-indigo-900 bg-opacity-80 shadow-md relative">
+                <div className="md:hidden absolute bg-transparent pl-11 pt-0 z-30">
+                  <div className="flex flex-col border-2 border-gray-100 rounded-md gap-2 p-2 items-center justify-center bg-purple-700 bg-opacity-80 shadow-md relative">
 
                     <button
                       aria-label="Sobre o Matheus"
@@ -445,11 +461,11 @@ const Home = () => {
           <Link onClick={handleClick} href="/terms" className=' my-auto no-underline hover:underline px-3 py-1 text-white bg-pink-700 bg-opacity-30 rounded-full' title="veja os termos de uso" rel="noopener noreferrer">
             Termos &amp; Condições
           </Link>
-          <Link onClick={handleClick} href="https://pixabay.com" className='my-auto no-underline hover:underline px-3 py-1 text-white bg-pink-700 bg-opacity-30 rounded-full' title="imagens by Pixabay" rel="noopener noreferrer" target='_blank'>
-            Áudio por Pixabay
-          </Link>
           <Link onClick={handleClick} href="/policy" className='my-auto no-underline hover:underline px-3 py-1 text-white bg-pink-700 bg-opacity-30 rounded-full' title="veja os termos de privacidade" rel="noopener noreferrer">
             Política de Privacidade
+          </Link>
+          <Link onClick={handleClick} href="https://pixabay.com" className='my-auto no-underline hover:underline px-3 py-1 text-white bg-pink-700 bg-opacity-30 rounded-full' title="imagens by Pixabay" rel="noopener noreferrer" target='_blank'>
+            Áudio por Pixabay
           </Link>
         </div>
 

@@ -36,7 +36,7 @@ const SocialShare = () => {
 
   return (
 
-    <div className="flex items-center w-max max-w-full fixed left-0 bottom-0 z-40">
+    <div className="flex items-center w-max max-w-full fixed left-1 bottom-0 z-40">
 
       {isVisible && (
 
@@ -59,7 +59,7 @@ const SocialShare = () => {
         <div className={`${open ? "flex" : "hidden"} flex-col pl-1.5 md:pl-24 pb-32 md:pb-12`}>
 
           {/* ::Links container */}
-          <div className="grid grid-cols-1 md:grid-cols-5 w-full border-2 border-gray-100 rounded-md gap-2 p-2 items-center justify-center bg-indigo-900 bg-opacity-80 shadow-md relative">
+          <div className="grid grid-cols-1 md:grid-cols-5 w-full border-2 border-gray-100 rounded-md gap-2 p-2 items-center justify-center bg-purple-700 bg-opacity-80 shadow-md relative">
             {/* :::twitter */}
             <a href="#twitterlink" target="_blank" onClick={() => { setOpen(!open); handleClickSocial() }} className="w-16 h-16 inline-flex justify-center items-center bg-[#1DA1F2] hover:opacity-80" style={{ backgroundColor: "#1DA1F2" }}>
               <svg className="w-5 h-5 text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" /></svg>

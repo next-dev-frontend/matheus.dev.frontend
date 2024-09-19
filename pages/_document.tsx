@@ -10,7 +10,7 @@ class MyDocument extends Document {
           <meta name="theme-color" content="#8b5cf6" />
           <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         </Head>
-        <body className="scrollbar scrollbar-thumb-pink-500 scrollbar-track-purple-200 overflow-x-hidden overflow-y-auto scrollbar-hide md:scrollbar-default">
+        <body className="scrollbar scrollbar-thumb-indigo-700 scrollbar-track-purple-200 overflow-x-hidden overflow-y-auto scrollbar-hide md:scrollbar-default">
           <Main />
           <NextScript />
         </body>
