@@ -7,7 +7,7 @@ class MyDocument extends Document {
       <Html lang="pt-BR">
         <Head>
           <meta name="google-site-verification" content="rRKlKFWnlhU_kUGxe4fgENDoEIIcYSSc1DbdpRMn1kY" />
-          <meta name="theme-color" content="#8b5cf6" />
+          <meta name="theme-color" content="#c026d3" />
           <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         </Head>
         <body className="scrollbar scrollbar-thumb-pink-500 scrollbar-track-purple-200 overflow-x-hidden overflow-y-auto scrollbar-hide md:scrollbar-default">
