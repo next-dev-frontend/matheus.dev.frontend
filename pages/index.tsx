@@ -275,10 +275,10 @@ const Home = () => {
                         title="Netfily"
                         rel="noopener noreferrer"
                         target="_blank"
-                        className="text-gray-500 transition hover:text-green-900"
+                        className="text-gray-500 transition hover:text-green-800"
                       >
                         <span className="sr-only">Netlify</span>
-                        <SiNetlify className="w-9 h-9 text-gray-500 hover:text-green-900" />
+                        <SiNetlify className="w-9 h-9 text-gray-500 hover:text-green-800" />
                       </a>
                     </li>
 
