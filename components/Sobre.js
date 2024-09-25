@@ -35,12 +35,12 @@ const Sobre = () => {
     <div className="relative z-10 font-mono p-4 h-full max-w-3xl text-gray-600 bg-white bg-opacity-80 rounded shadow-lg border-2 border-gray-400">
 
       <div className="rounded">
-        <h2 className="flex p-2 pt-4 text-xl md:text-2xl lg:text-3xl md:text-left">
+        <h2 className="flex p-2 pt-4 text-2xl md:text-3xl md:text-left">
           <span className="flex animate-waving-hand pr-4"><PiHandPalmBold className="w-8 h-8 md:w-9 md:h-9 text-pink-500" /></span>{" "}
           <span className='inline-block overflow-hidden md:whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>Olá. Seja bem-vindo&#40;a&#41;,</span>
         </h2>
 
-        <div className="p-2 pt-4 text-justify text-md md:text-lg lg:text-xl">
+        <div className="p-2 pt-4 text-justify text-lg md:text-xl">
           <p className="indent-8">
             É um grande prazer recebê-lo&#40;a&#41; aqui. Meu nome é Matheus,
             tenho 44 anos e possuo graduação em Ciência
@@ -58,12 +58,12 @@ const Sobre = () => {
           </p>
           <br />
 
-          <h2 className="flex pt-8 text-xl md:text-2xl lg:text-3xl md:text-left">
+          <h2 className="flex pt-8 text-2xl md:text-3xl md:text-left">
             <span className="pr-4"><AiFillHtml5 className="w-8 h-8 md:w-9 md:h-9 text-pink-500" /></span>{" "}
             <span className='inline-block overflow-hidden md:whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>De volta pra WEB</span>
           </h2>
 
-          <p className="indent-8 pt-4">
+          <p className="indent-8 pt-4 text-lg md:text-xl">
             Sempre me aventurei em conhecer novas linguagens e tecnologias que vinham
             surgindo ao longo do tempo, e confesso que já havia programado
             para web no passado e minha experiência não foi muito agradável.
@@ -109,7 +109,7 @@ const Sobre = () => {
             </div>
           </div>
 
-          <p className="indent-8 pt-4">
+          <p className="indent-8 pt-4 text-lg md:text-xl">
             Com o avanço significativo da internet dos anos 2000 até os tempos atuais,
             somado ao surgimento de bibliotecas e frameworks modernos como React.js e
             Next.js, e agora também com tecnologias de inteligência artificial, além
@@ -121,14 +121,14 @@ const Sobre = () => {
 
         <br />
 
-        <h2 className="flex p-2 pt-4 text-xl md:text-2xl lg:text-3xl justify-left">
+        <h2 className="flex p-2 pt-4 text-2xl md:text-3xl justify-left">
           <span className="pr-4"><FaReact className='w-8 h-8 md:w-9 md:h-9 text-pink-500' /></span>{" "}
           <span className='inline-block overflow-hidden md:whitespace-nowrap font-bold font-mono animate-typing border-r-4 text-indigo-500'>
             Tecnologias Atuais
           </span>
         </h2>
 
-        <div className="indent-8 p-2 text-justify w-full text-md md:text-lg lg:text-xl">
+        <div className="indent-8 p-2 text-justify w-full text-lg md:text-xl">
 
           <div className="text-justify">
             <p className="indent-8">
@@ -147,7 +147,7 @@ const Sobre = () => {
         <Lighthouse />
         <br />
 
-        <div className="indent-8 p-2 text-justify w-full text-md md:text-lg lg:text-xl">
+        <div className="indent-8 p-2 text-justify w-full text-lg md:text-xl">
 
           <div className="text-justify">
             <p className="indent-8 pt-4 pb-2">
@@ -164,14 +164,14 @@ const Sobre = () => {
         </div>
         <br />
 
-        <h2 className="flex p-2 pt-4 text-xl md:text-2xl lg:text-3xl justify-left">
+        <h2 className="flex p-2 pt-4 text-2xl md:text-3xl justify-left">
           <span className="pr-4"><GiJourney className='w-8 h-8 md:w-9 md:h-9 text-pink-500' /></span>{" "}
           <span className='inline-block overflow-hidden md:whitespace-nowrap font-bold font-mono animate-typing border-r-4 text-indigo-500'>
             Trajetória profissional
           </span>
         </h2>
 
-        <div className="indent-8 p-2 text-justify w-full text-md md:text-lg lg:text-xl">
+        <div className="indent-8 p-2 text-justify w-full text-lg md:text-xl">
 
           <div className="text-justify">
             <p className="indent-8">
@@ -186,7 +186,7 @@ const Sobre = () => {
         <div className='w-full text-center pt-8 pb-4'>
           <Link href="../currículo.pdf" className='w-full items-center' title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>
             <button
-              className="rounded-full shadow-md text-md md:text-lg mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal bg-green-700 text-white transform transition hover:scale-105 duration-200 ease-in-out"
+              className="rounded-full shadow-md text-lg md:text-xl mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal bg-green-700 text-white transform transition hover:scale-105 duration-200 ease-in-out"
               onClick={mouseClick}
             >
               Currículo.pdf
@@ -196,7 +196,7 @@ const Sobre = () => {
 
       </div>
 
-      <div className="p-2 text-md md:text-lg lg:text-xl">
+      <div className="p-2 text-lg md:text-xl">
 
         <p className="indent-8 p-2 pb-6 text-justify">
           É com entusiasmo que compartilho fragmentos da minha trajetória.
@@ -206,10 +206,13 @@ const Sobre = () => {
           incríveis tecnologias e anseio pelo que o horizonte tecnológico nos reserva.
         </p>
 
-        <p className="p-2 pb-6">
-          Com estima, <br />
+        <p className="pl-2">
+          Com estima,
+        </p>
+        <p className="pl-2 pb-8">
           Matheus
         </p>
+
       </div>
 
     </div>

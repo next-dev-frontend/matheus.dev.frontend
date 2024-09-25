@@ -106,14 +106,14 @@ const Tecnologias = () => {
           </div>
         </div>
 
-        <h2 className="flex p-2 pt-8 text-xl md:text-2xl lg:text-3xl md:text-left">
+        <h2 className="flex p-2 pt-8 text-2xl md:text-3xl md:text-left">
           <span className="animate-bounce pr-4"><FaLaptopCode className="w-8 h-8 md:w-9 md:h-9 text-pink-500" /></span>{" "}
           <span className='inline-block overflow-hidden md:whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>
             Stack atual
           </span>
         </h2>
 
-        <div className="p-2 pt-4 pb-8 text-justify text-md md:text-lg lg:text-xl">
+        <div className="p-2 pt-4 pb-8 text-justify text-lg md:text-xl">
           <p className="indent-8">
             Nesta sessão eu mostrarei quais são as tecnologias que mais utilizo, o meu nível e o tempo de experiência que tenho
             com cada uma delas, destacando algumas práticas e habilidades adquiridas.
@@ -153,7 +153,7 @@ const Tecnologias = () => {
           })}
         </div>
 
-        <div className="text-justify text-md md:text-lg lg:text-xl">
+        <div className="text-justify text-lg md:text-xl">
           <p className="indent-8">
             Para saber mais sobre as linguagens que já programei e meu histórico profissional, veja aqui o meu currículo, onde destaco
             minha jornada como programador e empresário no ramo de TI, desde o ano 2000.
@@ -161,10 +161,10 @@ const Tecnologias = () => {
         </div>
       </div>
 
-      <div className='w-full text-center pt-8 pb-8'>
+      <div className='w-full text-center pt-10 pb-10'>
         <Link href="../currículo.pdf" className='w-full items-center' title="Abrir currículo em nova aba" rel="noopener noreferrer" target='_blank'>
           <button
-            className="rounded-full shadow-md text-md md:text-lg mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal bg-green-700 text-white transform transition hover:scale-105 duration-200 ease-in-out"
+            className="rounded-full shadow-md text-lg md:text-xl mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal bg-green-700 text-white transform transition hover:scale-105 duration-200 ease-in-out"
             onClick={mouseClick}
           >
             Currículo.pdf
