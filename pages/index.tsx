@@ -458,10 +458,10 @@ const Home = () => {
         </div>
 
         <div className={`flex right-0 w-full text-center justify-center gap-4 text-xs px-1 py-1 bg-gray-500 bg-opacity-50`}>
-          <Link onClick={handleClick} href="/terms" className=' my-auto no-underline hover:underline px-3 py-1 text-white bg-pink-700 bg-opacity-30 rounded-full' title="veja os termos de uso" rel="noopener noreferrer">
+          <Link onClick={handleClick} href="/termos" className=' my-auto no-underline hover:underline px-3 py-1 text-white bg-pink-700 bg-opacity-30 rounded-full' title="veja os termos de uso" rel="noopener noreferrer">
             Termos &amp; Condições
           </Link>
-          <Link onClick={handleClick} href="/policy" className='my-auto no-underline hover:underline px-3 py-1 text-white bg-pink-700 bg-opacity-30 rounded-full' title="veja os termos de privacidade" rel="noopener noreferrer">
+          <Link onClick={handleClick} href="/politica" className='my-auto no-underline hover:underline px-3 py-1 text-white bg-pink-700 bg-opacity-30 rounded-full' title="veja os termos de privacidade" rel="noopener noreferrer">
             Política de Privacidade
           </Link>
           <Link onClick={handleClick} href="https://pixabay.com" className='my-auto no-underline hover:underline px-3 py-1 text-white bg-pink-700 bg-opacity-30 rounded-full' title="imagens by Pixabay" rel="noopener noreferrer" target='_blank'>

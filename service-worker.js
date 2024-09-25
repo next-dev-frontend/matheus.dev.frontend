@@ -4,7 +4,9 @@ const urlsToCache = [
   '/offline',
   '/manifest.json',
   '/favicon.ico',
-  '/logo-about-insurances.webp',
+  '/foto1.webp',
+  '/bg-nextjs.webp',
+  '/bg2-nextjs.webp',
   '/logo-144x144.png',
 ];
 

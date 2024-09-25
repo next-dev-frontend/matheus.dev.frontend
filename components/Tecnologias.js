@@ -11,10 +11,6 @@ const Tecnologias = () => {
     volume: 0.5,
   });
 
-  const mouseHover = () => {
-    hoverFx.play();
-  };
-
   const clickFx = new Howl({
     src: ['../effects/clickFx.mp3'],
     volume: 0.5,
@@ -170,7 +166,6 @@ const Tecnologias = () => {
           <button
             className="rounded-full shadow-md text-md md:text-lg mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal bg-green-700 text-white transform transition hover:scale-105 duration-200 ease-in-out"
             onClick={mouseClick}
-            onMouseEnter={mouseHover}
           >
             Currículo.pdf
           </button>
