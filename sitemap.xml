@@ -6,32 +6,27 @@
       xmlns:xhtml="http://www.w3.org/1999/xhtml">
       
 	<url>
-		<loc>https://aboutinsurances.vercel.app/404</loc>
-		<lastmod>2024-09-24</lastmod>
+		<loc>https://matheus-dev-react.netlify.app/404</loc>
+		<lastmod>2024-09-25</lastmod>
 	</url>
 
 	<url>
-		<loc>https://aboutinsurances.vercel.app/500</loc>
-		<lastmod>2024-09-24</lastmod>
+		<loc>https://matheus-dev-react.netlify.app/500</loc>
+		<lastmod>2024-09-25</lastmod>
 	</url>
 
 	<url>
-		<loc>https://aboutinsurances.vercel.app</loc>
-		<lastmod>2024-09-24</lastmod>
+		<loc>https://matheus-dev-react.netlify.app</loc>
+		<lastmod>2024-09-25</lastmod>
 	</url>
 
 	<url>
-		<loc>https://aboutinsurances.vercel.app/offline</loc>
-		<lastmod>2024-09-24</lastmod>
+		<loc>https://matheus-dev-react.netlify.app/politica</loc>
+		<lastmod>2024-09-25</lastmod>
 	</url>
 
 	<url>
-		<loc>https://aboutinsurances.vercel.app/politica</loc>
-		<lastmod>2024-09-24</lastmod>
-	</url>
-
-	<url>
-		<loc>https://aboutinsurances.vercel.app/termos</loc>
-		<lastmod>2024-09-24</lastmod>
+		<loc>https://matheus-dev-react.netlify.app/termos</loc>
+		<lastmod>2024-09-25</lastmod>
 	</url>
 </urlset>

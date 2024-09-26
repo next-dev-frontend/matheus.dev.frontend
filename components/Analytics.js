@@ -35,7 +35,7 @@ const CookiePopup = ({ onClose }) => {
 
   return (
 
-    <div id='analytics' className={`flex fixed w-full max-w-full h-full font-sans items-center bg-indigo-900 bg-opacity-90 border-4 border-gray-100 border-dashed justify-center z-50 ${textVisible ? 'animate-fade-in' : 'opacity-0'}`}>
+    <div id='analytics' className={`flex fixed w-full max-w-full h-full font-sans items-center bg-indigo-700 bg-opacity-90 border-4 border-gray-100 border-dashed justify-center z-50 ${textVisible ? 'animate-fade-in' : 'opacity-0'}`}>
       <div className='w-full md:max-w-md max-w-full h-auto px-6 md:px-0'>
         <p className='text-lg md:text-xl text-center font-bold text-white pb-2'>Este site usa cookies</p>
         <p className='text-md md:text-lg text-white text-left text-justify'>Este site utiliza cookies unicamente para melhorar sua experiência de navegação. Nenhum dado pessoal será coletado sem a sua autorização. Clique em aceitar e navegue com total segurança!

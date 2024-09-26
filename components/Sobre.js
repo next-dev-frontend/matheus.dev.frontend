@@ -37,7 +37,7 @@ const Sobre = () => {
       <div className="rounded">
         <h2 className="flex p-2 pt-4 text-2xl md:text-3xl md:text-left">
           <span className="flex animate-waving-hand pr-4"><PiHandPalmBold className="w-8 h-8 md:w-9 md:h-9 text-pink-500" /></span>{" "}
-          <span className='inline-block overflow-hidden md:whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>Olá. Seja bem-vindo&#40;a&#41;,</span>
+          <span className='inline-block overflow-hidden whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>Olá. Seja bem-vindo&#40;a&#41;,</span>
         </h2>
 
         <div className="p-2 pt-4 text-justify text-lg md:text-xl">
@@ -60,7 +60,7 @@ const Sobre = () => {
 
           <h2 className="flex pt-8 text-2xl md:text-3xl md:text-left">
             <span className="pr-4"><AiFillHtml5 className="w-8 h-8 md:w-9 md:h-9 text-pink-500" /></span>{" "}
-            <span className='inline-block overflow-hidden md:whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>De volta pra WEB</span>
+            <span className='inline-block overflow-hidden whitespace-nowrap font-bold text-indigo-500 font-mono animate-typing border-r-4'>De volta pra WEB</span>
           </h2>
 
           <p className="indent-8 pt-4 text-lg md:text-xl">
@@ -92,7 +92,6 @@ const Sobre = () => {
                     layout="fill"
                     objectFit="cover"
                     className="rounded-xl"
-                    priority
                   />
                 </div>
                 <div className="absolute inset-0 rounded-xl bg-black text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -102,7 +101,6 @@ const Sobre = () => {
                     layout="fill"
                     objectFit="cover"
                     className="rounded-xl"
-                    priority
                   />
                 </div>
               </div>
@@ -123,7 +121,7 @@ const Sobre = () => {
 
         <h2 className="flex p-2 pt-4 text-2xl md:text-3xl justify-left">
           <span className="pr-4"><FaReact className='w-8 h-8 md:w-9 md:h-9 text-pink-500' /></span>{" "}
-          <span className='inline-block overflow-hidden md:whitespace-nowrap font-bold font-mono animate-typing border-r-4 text-indigo-500'>
+          <span className='inline-block overflow-hidden whitespace-nowrap font-bold font-mono animate-typing border-r-4 text-indigo-500'>
             Tecnologias Atuais
           </span>
         </h2>
@@ -166,7 +164,7 @@ const Sobre = () => {
 
         <h2 className="flex p-2 pt-4 text-2xl md:text-3xl justify-left">
           <span className="pr-4"><GiJourney className='w-8 h-8 md:w-9 md:h-9 text-pink-500' /></span>{" "}
-          <span className='inline-block overflow-hidden md:whitespace-nowrap font-bold font-mono animate-typing border-r-4 text-indigo-500'>
+          <span className='inline-block overflow-hidden whitespace-nowrap font-bold font-mono animate-typing border-r-4 text-indigo-500'>
             Trajetória profissional
           </span>
         </h2>

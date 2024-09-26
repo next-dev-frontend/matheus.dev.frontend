@@ -2,7 +2,7 @@ const sitemap = require('nextjs-sitemap-generator');
 const targetDirectory = './';
 
 sitemap({
-  baseUrl: 'https://aboutinsurances.vercel.app',
+  baseUrl: 'https://matheus-dev-react.netlify.app',
   pagesDirectory: __dirname + '/pages',
   ignoreIndexFiles: true,
   targetDirectory: targetDirectory,
@@ -19,4 +19,4 @@ sitemap({
   ],
 });
 
-console.log(`Sitemap generated and available at /${targetDirectory}`);
+console.log(`Sitemap gerado em /${targetDirectory}`);

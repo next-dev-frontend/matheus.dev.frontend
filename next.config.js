@@ -18,7 +18,7 @@ const nonceScriptSrc = crypto.randomBytes(16).toString('base64');
 
 const ContentSecurityPolicy = `
 base-uri 'self';  
-connect-src 'self' 'unsafe-inline' https://api-servidor.com webpack://* *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://*.analytics.google.com https://www.analytics.google.com https://analytics.google.com https://stats.g.doubleclick.net/g/collect https://www.google.com.br/ads/ga-audiences vitals.vercel-insights.com;
+connect-src 'self' 'unsafe-inline' webpack://* *.gstatic.com *.googletagmanager.com *.tagmanager.google.com *.google-analytics.com https://*.analytics.google.com https://www.analytics.google.com https://analytics.google.com https://stats.g.doubleclick.net/g/collect https://www.google.com.br/ads/ga-audiences;
 default-src 'none';
 font-src 'self';
 form-action 'self';  
@@ -64,7 +64,7 @@ const securityHeaders = [
   },
   {
     key: 'Access-Control-Allow-Origin',
-    value: 'https://*.gstatic.com https://*.google.com https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js https://analytics.google.com/g/collect https://www.google.com.br/ads/ga-audiences vitals.vercel-insights.com'
+    value: 'https://*.gstatic.com https://*.google.com https://*.googletagmanager.com https://*.tagmanager.google.com https://*.google-analytics.com https://www.googletagmanager.com/gtag/js https://analytics.google.com/g/collect https://www.google.com.br/ads/ga-audiences'
   },
   {
     key: 'X-DNS-Prefetch-Control',

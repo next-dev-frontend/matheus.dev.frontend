@@ -6,9 +6,9 @@ class MyDocument extends Document {
     return (
       <Html lang="pt-BR">
         <Head>
-          <meta name="google-site-verification" content="-nZJYt2hcYSXRU8rULzcBmhMNz640meQppM1287V2BE" />
-          <meta name="theme-color" content="#8b5cf6" />
-          <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+          <link rel="manifest" href="/manifest.json" />
+          <link rel="apple-touch-icon" type="image/png" href="/favicon.ico" />
+          <link rel="icon" href="/logos/logo-144x144.png" />
         </Head>
         <body className="scrollbar scrollbar-thumb-indigo-700 scrollbar-track-purple-200 overflow-x-hidden overflow-y-auto scrollbar-hide md:scrollbar-default">
           <Main />

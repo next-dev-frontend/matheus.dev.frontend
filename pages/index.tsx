@@ -63,7 +63,7 @@ const Home = () => {
     }, 5); // 9 segundos
   };
 
-  // Configurar o intervalo para reiniciar a animação a cada 9 segundos
+  // Configurar o intervalo para reiniciar a animação a cada 5 segundos
   useEffect(() => {
     const intervalId = setInterval(toggleAnimateJump, 5000);
     // Limpar o intervalo quando o componente for desmontado
@@ -176,8 +176,33 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Dev Next.js</title>
-        <meta name="description" content="Neste espaço, convido você a explorar mais sobre minha formação e histórico profissional, as linguagens e metodologias que utilizo, além de acesso a códigos fonte de alguns projetos e componentes Next.js que tive a alegria de criar." />
+        <title>Desenvolvedor Web React.Js | Matheus S. Lopes</title>
+        <meta name="description" content="Desenvolvedor web especializado em React.js, Next.js, e Tailwind CSS. Criação de sites otimizados e responsivos para empresas e landing pages." />
+
+        <meta name="application-name" content="Portfólio Dev Web Next.js" />
+
+        {/* Open Graph para Redes Sociais */}
+        <meta property="og:title" content="Desenvolvedor Web | Criação de Sites Institucionais e Landing Pages" />
+        <meta property="og:description" content="Especialista em desenvolvimento web, criando sites seguros, rápidos e responsivos com Next.js e React.js." />
+        <meta property="og:url" content="https://matheus-dev-react.netlify.app/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/banners/bg-nextjs.webp" />
+        <meta property="og:image:alt" content="Banner desenvolvedor web" />
+        <meta property="og:image:type" content="image/webp" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Portfólio Dev Web Next.js" />
+        <meta property="dc:creator" content="Matheus S. Lopes" />
+
+        {/* Tags de Artigos - SEO */}
+        <meta property="article:tag" content="Criação de Sites" />
+        <meta property="article:tag" content="Landing Pages" />
+        <meta property="article:tag" content="React.js" />
+        <meta property="article:tag" content="Next.js" />
+        <meta property="article:tag" content="Desenvolvimento Web" />
+        <meta property="article:tag" content="Javascript" />
+        <meta property="article:tag" content="Typescript" />
+        <meta property="article:tag" content="Tailwind" />
       </Head>
       <div>
 
@@ -362,25 +387,26 @@ const Home = () => {
 
                 <div className={`z-10 hidden md:flex ${isMenuOpen ? 'hidden' : ''}`}>
                   <button
+                    onClick={() => handleTabChange('tab1')}
                     aria-label="Sobre o Matheus"
                     className={`rounded-full shadow-md mr-2 mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal transition-colors ${activeTab === 'tab1' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-gray-800 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
-                    onClick={() => handleTabChange('tab1')}
                   >
                     Sobre
                   </button>
 
                   <button
+                    onClick={() => handleTabChange('tab2')}
                     aria-label="Stack atual"
                     className={`rounded-full shadow-md mr-2 mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal transition-colors ${activeTab === 'tab2' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-gray-800 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
-                    onClick={() => handleTabChange('tab2')}
                   >
                     Tecnologias
                   </button>
 
                   <button
+                    onClick={() => handleTabChange('tab3')}
                     aria-label="Projetos recentes"
                     className={`rounded-full shadow-md mr-2 mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal transition-colors ${activeTab === 'tab3' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-gray-800 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
-                    onClick={() => handleTabChange('tab3')}
+
                   >
                     Projetos
                   </button>
@@ -389,12 +415,12 @@ const Home = () => {
 
                 <label htmlFor="lightbulb-toggle" className="relative h-8 w-14 cursor-pointer">
                   <input
+                    onChange={handleLightbulbClick}
+                    checked={lightbulbOn}
                     aria-label="Menu de opções"
                     type="checkbox"
                     id="lightbulb-toggle"
                     className="peer sr-only"
-                    checked={lightbulbOn}
-                    onChange={handleLightbulbClick}
                   />
                   <span className={`absolute inset-y-0 start-0 m-1 z-10 inline-flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white transition-all ${lightbulbOn ? 'peer-checked:start-6 peer-checked:text-white' : ''}`}>
                     {lightbulbOn ? <FaRegMoon className="h-4 w-4" /> : <FaSun className="h-4 w-4" />}
@@ -410,25 +436,25 @@ const Home = () => {
                   <div className="flex flex-col border-2 border-gray-100 rounded-md gap-2 p-2 items-center justify-center bg-purple-700 bg-opacity-80 shadow-md relative">
 
                     <button
+                      onClick={() => handleTabChange('tab1')}
                       aria-label="Sobre o Matheus"
                       className={`rounded-full w-full max-w-full mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal transition-colors ${activeTab === 'tab1' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-gray-800 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
-                      onClick={() => handleTabChange('tab1')}
                     >
                       Sobre
                     </button>
 
                     <button
+                      onClick={() => handleTabChange('tab2')}
                       aria-label="Stack atual"
                       className={`rounded-full w-full max-w-full mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal transition-colors ${activeTab === 'tab2' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-gray-800 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
-                      onClick={() => handleTabChange('tab2')}
                     >
                       Tecnologias
                     </button>
 
                     <button
+                      onClick={() => handleTabChange('tab3')}
                       aria-label="Projetos recentes"
                       className={`rounded-full w-full max-w-full mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal transition-colors ${activeTab === 'tab3' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white' : 'bg-white bg-opacity-80 text-gray-800 hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 cursor-pointer'}`}
-                      onClick={() => handleTabChange('tab3')}
                     >
                       Projetos
                     </button>

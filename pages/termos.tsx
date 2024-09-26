@@ -10,7 +10,7 @@ export default function Termos() {
       path="/termos"
     >
       <section id='terms' className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 mx-auto flex w-full max-w-full h-full">
-        <div className="select-none container mx-auto pt-10 w-full max-w-full bg-gray-200 bg-opacity-50">
+        <div className="select-none container mx-auto pt-10 w-full max-w-full bg-gray-200 bg-opacity-70">
           <div className="w-full items-center pb-12 pl-8">
             <a href="/">
               <button id="botaoVoltar1" className="inline-block w-max mx-auto text-md md:text-lg lg:text-xl lg:mx-0 hover:no-underline bg-purple-500 border-4 border-white text-white hover:bg-indigo-500 rounded-full mt-4 lg:mt-0 py-4 px-8 focus:outline-none focus:shadow-outline transform transition hover:scale-100 duration-500 ease-in-out shadow-xl" >
