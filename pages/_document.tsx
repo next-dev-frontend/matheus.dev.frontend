@@ -8,7 +8,7 @@ class MyDocument extends Document {
         <Head>
           <link rel="manifest" href="/manifest.json" />
           <link rel="apple-touch-icon" type="image/png" href="/favicon.ico" />
-          <link rel="icon" href="/logos/logo-144x144.png" />
+          <link rel="icon" type="image/png" href="favicon-144x144.png" sizes="144x144" />
         </Head>
         <body className="scrollbar scrollbar-thumb-indigo-700 scrollbar-track-purple-200 overflow-x-hidden overflow-y-auto scrollbar-hide md:scrollbar-default">
           <Main />

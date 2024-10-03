@@ -51,6 +51,81 @@
 }
 
 
+
+/* loading e scroll imagens sites projetos */
+.image-scroll-container {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  /* Altura do contêiner visível */
+}
+
+.image-scroll-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(0);
+  /* Inicia no topo */
+  transition: none;
+  /* Remove transições extras */
+}
+
+.image-scroll-container:hover img {
+  animation: scrollDown 10s linear forwards;
+  /* Animação para descer até o final e parar */
+}
+
+.image-scroll-container img.mouse-leave {
+  animation: scrollUp 2s linear forwards;
+  /* Animação para voltar ao topo */
+}
+
+/* Animação de scroll para baixo */
+@keyframes scrollDown {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100%);
+    /* Desce 100% da altura da imagem */
+  }
+}
+
+/* Animação de scroll para cima */
+@keyframes scrollUp {
+  0% {
+    transform: translateY(-100%);
+    /* Começa no final */
+  }
+
+  100% {
+    transform: translateY(0);
+    /* Volta ao topo */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* background gradiente */
 body {
   background: linear-gradient(45deg, #0167ff, #28ddfd, #c71ed6, #0167ff, #c71ed6, #0167ff, #28ddfd, #c71ed6, #0167ff, #c71ed6, #28d);

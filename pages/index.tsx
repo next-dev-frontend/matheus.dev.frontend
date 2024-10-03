@@ -4,11 +4,11 @@ import Link from 'next/link';
 import { FaVolumeMute, FaVolumeUp, FaMailBulk, FaMapMarkerAlt, FaWhatsapp, FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaSun, FaRegMoon, FaBars, FaTimes } from 'react-icons/fa';
 import { SiGithub, SiLinkedin, SiTailwindcss, SiTypescript, SiNetlify, SiVercel, SiFacebook } from 'react-icons/si';
 import { Howl, Howler } from 'howler';
-import Carousel from '../components/Carousel';
 import Sobre from '../components/Sobre';
 import Tecnologias from '../components/Tecnologias';
 import Projetos from '../components/Projetos';
 import dynamic from 'next/dynamic';
+const Carousel = dynamic(() => import('../components/Carousel'));
 const SocialShare = dynamic(() => import('../components/SocialShare'));
 const Analytics = dynamic(() => import('../components/Analytics'));
 

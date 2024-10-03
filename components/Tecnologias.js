@@ -28,8 +28,6 @@ const Tecnologias = () => {
       description: 'Linguagem de marcação utilizada para estruturar e apresentar conteúdo na web, permitindo a criação de elementos semânticos e multimídia.',
       knowledge: 'Intermediário',
       aplication: 'Criação de páginas web responsivas utilizando HTML5, com foco em SEO e otimização para mecanismos de busca, aplicação de práticas de segurança com Content Security Policy (CSP) e inclusão de elementos de áudio e vídeo, garantindo acessibilidade e uma experiência de usuário aprimorada.',
-
-
     },
     {
       icon: <FaCss3 />,
@@ -40,12 +38,28 @@ const Tecnologias = () => {
       aplication: 'Desenvolvimento de layouts responsivos e estilização de páginas web, utilizando técnicas como Flexbox e Grid, além de aplicação de práticas de design acessível para melhorar a experiência do usuário.',
     },
     {
+      icon: <SiTailwindcss />,
+      name: 'Tailwind CSS',
+      date: '2020',
+      description: 'Framework CSS utilitário que facilita o desenvolvimento rápido de interfaces personalizadas, permitindo estilização eficiente e responsiva.',
+      knowledge: 'Intermediário',
+      aplication: 'Aplicação de classes utilitárias para criar layouts responsivos e estilizar componentes de forma rápida, promovendo consistência visual e aproveitando a customização para atender às necessidades específicas dos projetos.',
+    },
+    {
       icon: <FaJs />,
       name: 'JavaScript',
       date: '2014',
       description: 'Linguagem de programação de alto nível, amplamente utilizada para desenvolver interatividade em páginas web e aplicações dinâmicas.',
       knowledge: 'Intermediário',
       aplication: 'Desenvolvimento de funcionalidades interativas em websites, manipulação do DOM, e implementação de scripts para melhorar a experiência do usuário, com foco em boas práticas de programação e otimização de desempenho.',
+    },
+    {
+      icon: <SiTypescript />,
+      name: 'TypeScript',
+      date: '2020',
+      description: 'Superset do JavaScript que adiciona tipagem estática, melhorando a manutenção e escalabilidade de aplicações.',
+      knowledge: 'Básico',
+      aplication: ' Implementação de tipos em projetos JavaScript, contribuindo para a melhoria da legibilidade do código e identificação de erros em tempo de compilação, enquanto desenvolvo um entendimento mais profundo sobre a tipagem estática.',
     },
     {
       icon: <FaReact />,
@@ -63,30 +77,7 @@ const Tecnologias = () => {
       knowledge: 'Intermediário',
       aplication: 'Desenvolvimento de aplicações web escaláveis, utilizando recursos como roteamento dinâmico, geração de páginas estáticas e integração com APIs, garantindo uma experiência de usuário fluida e otimizada. Melhores práticas de SEO e responsividade.',
     },
-    {
-      icon: <SiTailwindcss />,
-      name: 'Tailwind CSS',
-      date: '2020',
-      description: 'Framework CSS utilitário que facilita o desenvolvimento rápido de interfaces personalizadas, permitindo estilização eficiente e responsiva.',
-      knowledge: 'Intermediário',
-      aplication: 'Aplicação de classes utilitárias para criar layouts responsivos e estilizar componentes de forma rápida, promovendo consistência visual e aproveitando a customização para atender às necessidades específicas dos projetos.',
-    },
-    {
-      icon: <FaNodeJs />,
-      name: 'Node.js',
-      date: '2020',
-      description: 'Ambiente de execução JavaScript server-side, permitindo a construção de aplicações de rede escaláveis e de alta performance.',
-      knowledge: 'Básico',
-      aplication: 'Criação de servidores simples, explorando a integração com pacotes do npm e fundamentos de middleware, com foco no entendimento da arquitetura de aplicações backend.',
-    },
-    {
-      icon: <SiTypescript />,
-      name: 'TypeScript',
-      date: '2020',
-      description: 'Superset do JavaScript que adiciona tipagem estática, melhorando a manutenção e escalabilidade de aplicações.',
-      knowledge: 'Básico',
-      aplication: ' Implementação de tipos em projetos JavaScript, contribuindo para a melhoria da legibilidade do código e identificação de erros em tempo de compilação, enquanto desenvolvo um entendimento mais profundo sobre a tipagem estática.',
-    },
+
   ];
 
   return (
@@ -127,6 +118,7 @@ const Tecnologias = () => {
             return (
               <div key={index} className="flex items-center space-x-4 py-0">
                 <div className='w-full'>
+
                   <div className="flex items-center justify-between text-3xl text-pink-500 pb-2">
                     {stack.icon}
                     <h3 className="text-xl md:text-2xl text-purple-500 px-2 font-semibold">{stack.name}</h3>
@@ -138,11 +130,29 @@ const Tecnologias = () => {
                   <hr className="h-0.5 w-full bg-pink-500" />
 
                   {isOpen && (
-                    <div className="p-4 bg-purple-200 rounded-b-lg text-justify">
-                      <p className="text-sm md:text-md font-semibold text-indigo-600">- Descrição da linguagem: <span className="font-semibold text-gray-600">{stack.description}</span></p>
-                      <p className="text-sm md:text-md font-semibold text-indigo-600 pt-4">- Início dos estudos: <span className="font-semibold text-gray-600">{stack.date}.</span></p>
-                      <p className="text-sm md:text-md font-semibold text-indigo-600 pt-4">- Nível de conhecimento: <span className="font-semibold text-gray-600">{stack.knowledge}.</span></p>
-                      <p className="text-sm md:text-md font-semibold text-indigo-600 pt-4">- Experiência e habilidades: <span className="font-semibold text-gray-600">{stack.aplication}</span></p>
+                    <div className="flow-root bg-indigo-200 rounded-b-lg text-sm md:text-md text-gray-600 font-semibold">
+                      <dl className="-my-3 divide-y divide-purple-300 p-4">
+                        <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                          <dt className="text-indigo-600">Descrição da linguagem:</dt>
+                          <dd className="text-gray-700 sm:col-span-2 text-justify"><span className="text-gray-600">{stack.description}</span></dd>
+                        </div>
+
+                        <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                          <dt className="text-indigo-600">Início dos estudos:</dt>
+                          <dd className="text-gray-700 sm:col-span-2"> <span className="text-gray-600">{stack.date}.</span></dd>
+                        </div>
+
+                        <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                          <dt className="text-indigo-600">Nível de conhecimento:</dt>
+                          <dd className="text-gray-700 sm:col-span-2"><span className="text-gray-600">{stack.knowledge}.</span></dd>
+                        </div>
+
+                        <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                          <dt className="text-indigo-600">Experiência e habilidades:</dt>
+                          <dd className="text-gray-700 sm:col-span-2 text-justify"><span className="text-gray-600">{stack.aplication}</span></dd>
+                        </div>
+
+                      </dl>
                     </div>
                   )}
 

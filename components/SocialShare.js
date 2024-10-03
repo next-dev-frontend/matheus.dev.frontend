@@ -13,7 +13,7 @@ const SocialShare = () => {
   });
 
   const handleScroll = () => {
-    if (window.pageYOffset > 600) {
+    if (window.pageYOffset > 300) {
       setIsVisible(true);
     } else {
       setIsVisible(false);
