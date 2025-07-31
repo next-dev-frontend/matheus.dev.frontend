@@ -41,7 +41,7 @@ const Projetos = () => {
     {
       title: 'Escolinha Bíblica',
       image: '/banners/site4.webp',
-      description: 'Esse foi meu último trabalho como freelancer. Desenvolvido em 2024 para um produtor de conteúdo digital, o site possui diversas páginas de venda com otimização de SEO, segurança máxima CSP e CloudFlare, responsividade e acessibilidade, além de excelente performance. Fizemos testes de escalabilidade e o site se mostrou muito eficiente, suportando alto numero de acessos e transações simultâneas. O código-fonte não está disponível.',
+      description: 'Esse foi meu último trabalho como freelancer. Desenvolvido em 2024 para um produtor de conteúdo digital, o site possui diversas páginas de venda com otimização de SEO, segurança máxima CSP e CloudFlare, responsividade e acessibilidade, além de excelente performance. O cliente disponibilizou todas as imagens utilizadas no site e o layout foi criado de acordo com que o cliente almejava. Fizemos testes de escalabilidade e o site se mostrou muito eficiente, suportando alto numero de acessos e transações simultâneas. O cliente optou por um site em html tradicional, devido ao custo da hospedagem, então, tive que converter o projeto feito com React.js/Next.js para html puro. Me surpreendi com a capacidade do nextjs para fazer essa conversão quase que automaticamente utilizando next export. Um trabalho que poderia demorar semanas, fiz em apenas alguns dias. O código-fonte não está disponível.',
       button1Text: 'X',
       button2Text: 'Acessar Site',
       button2Link: 'https://escolinhabiblicainfantil.com.br/',

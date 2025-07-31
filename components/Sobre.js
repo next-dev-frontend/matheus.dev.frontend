@@ -45,7 +45,7 @@ const Sobre = () => {
         <div className="p-2 pt-4 text-justify text-lg md:text-xl">
           <p className="indent-8">
             É um grande prazer recebê-lo&#40;a&#41; aqui. Meu nome é Matheus,
-            tenho 44 anos e possuo graduação em Ciência
+            tenho 45 anos e possuo graduação em Ciência
             da Computação desde o ano de 2016, trilho uma jornada
             que se reinventou no final de 2020 quando tive meu primeiro contato com o <Link onClick={mouseClick} href="https://nextjs.org/" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="nextjs.org" rel="noopener noreferrer" target='_blank'>Next.js</Link>, e
             logo em seguida, com <Link onClick={mouseClick} href="https://tailwindcss.com/" className="text-pink-500 decoration-2 decoration-purple-500 hover:underline" title="tailwindcss.com" rel="noopener noreferrer" target='_blank'>Tailwind</Link> e
@@ -153,7 +153,7 @@ const Sobre = () => {
 
           <div className="text-justify">
             <p className="indent-8 pt-4 pb-2">
-              Nos últimos três anos, segui estudando programação web &#40;principalmente front-end&#41;,
+              Nos últimos anos, segui estudando programação web &#40;principalmente front-end&#41;,
               SEO para otimização em motores de busca, webdesign para criação visual dos sites,
               marketing digital para divulgação em diversas plataformas e redes sociais,
               segurança de websites seguindo as melhores práticas da CSP, PWA com next.js, aplicando testes e
