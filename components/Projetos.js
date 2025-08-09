@@ -1,7 +1,5 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { FaLaptopCode } from "react-icons/fa";
 import { SiPwa } from "react-icons/si";
 import { Howl } from 'howler';
 

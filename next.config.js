@@ -82,6 +82,17 @@ module.exports = withTM(
       reactStrictMode: true,
       distDir: '.next',
 
+      // gerar apenas código moderno
+      experimental: {
+        legacyBrowsers: false,
+        browsersListForSwc: true
+      },
+
+      // ativar styled-components sem Babel
+      compiler: {
+        styledComponents: true
+      },
+
       async headers() {
         return [
           {
@@ -121,10 +132,6 @@ module.exports = withTM(
 
         return config;
       },
-
-
-
-
 
     })
   )
