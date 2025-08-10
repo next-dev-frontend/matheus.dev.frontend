@@ -58,14 +58,14 @@ const Carousel = () => {
           <IoIosArrowBack />
         </button> */}
 
-        <div className="flex mx-auto border-4 border-indigo-500 border-double border-dotted rounded-full w-40 h-40">
+        <div className="flex mx-auto border-4 border-indigo-500 border-double rounded-full w-40 h-40">
           <Image
             src={images[currentImage]}
             // alt={`Foto ${currentImage + 1}`}
             alt={`Foto do Matheus`}
             width={320}
             height={320}
-            priority
+            fetchPriority='high'
             onMouseEnter={handleHover}
             onMouseLeave={handleHover}
             className='rounded-full transform transition hover:scale-105 duration-300 ease-in-out'

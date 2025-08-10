@@ -45,7 +45,7 @@ const CookiePopup = ({ onClose }) => {
             className="rounded-full text-lg md:text-xl w-32 h-full mb-2 px-6 pb-2 pt-2.5 font-medium leading-normal bg-green-700 text-white border-2 border-white cursor-pointer transform transition hover:scale-105 duration-200 ease-in-out"
             aria-label="Aceitar cookies"
           >
-            Entendi!
+            Aceitar!
           </button>
         </div>
       </div>
