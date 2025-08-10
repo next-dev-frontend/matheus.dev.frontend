@@ -67,7 +67,6 @@ const Carousel = () => {
             height={320}
             priority="true"
             fetchPriority="high"
-            placeholder="blur"
             onMouseEnter={handleHover}
             onMouseLeave={handleHover}
             className='rounded-full transform transition hover:scale-105 duration-300 ease-in-out'
