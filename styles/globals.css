@@ -16,7 +16,6 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  /* Coloque o valor adequado para garantir que fique acima de outros elementos */
 }
 
 .loading-text {

@@ -82,10 +82,9 @@ module.exports = withTM(
       reactStrictMode: true,
       distDir: '.next',
 
-      // gerar apenas código moderno
       experimental: {
         legacyBrowsers: false,
-        browsersListForSwc: true
+        //browsersListForSwc: true
       },
 
       // ativar styled-components sem Babel
