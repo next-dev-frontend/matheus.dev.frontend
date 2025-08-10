@@ -77,7 +77,7 @@ const Sobre = () => {
             seus passos iniciais. Os livros eram um pouco caros e muito disputados nas
             bibliotecas. Neste período eu me interessava mais por programação desktop e
             acabei abandonando de vez a programação web. Anos depois, eu me deparei com
-            o poderoso react.js aliado ao next.js e me encontrei mergulhando novamente no
+            o poderoso react.js aliado ao next.js na criação de aplicações web modernas e me encontrei mergulhando novamente no
             desenvolvimento web, só que desta vez, com uma empolgação única que nunca havia
             sentido com outras linguagens.
           </p>
