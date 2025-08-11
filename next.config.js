@@ -1,5 +1,4 @@
 const runtimeCaching = require("next-pwa/cache");
-const withTM = require('next-transpile-modules')(['tailwindcss']);
 const withImages = require('next-images');
 const withPWA = require('next-pwa')({
   dest: "public",
@@ -12,6 +11,7 @@ const withPWA = require('next-pwa')({
 });
 
 const isProduction = process.env.NODE_ENV === "production";
+
 const crypto = require('crypto');
 const nonceScriptSrc = crypto.randomBytes(16).toString('base64');
 //const nonceStyleSrc = crypto.randomBytes(16).toString('base64');
@@ -76,62 +76,59 @@ const securityHeaders = [
   },
 ];
 
-module.exports = withTM(
-  withImages(
-    withPWA({
-      reactStrictMode: true,
-      distDir: '.next',
+module.exports = withImages(
+  withPWA({
+    reactStrictMode: true,
+    distDir: '.next',
 
-      experimental: {
-        legacyBrowsers: false,
-        //browsersListForSwc: true
-      },
+    experimental: {
+      legacyBrowsers: false,
+    },
 
-      // ativar styled-components sem Babel
-      compiler: {
-        styledComponents: true
-      },
+    // ativar styled-components sem Babel
+    compiler: {
+      styledComponents: true
+    },
 
-      async headers() {
-        return [
-          {
-            source: '/(.*)', // Aplicar em todas as rotas
-            headers: securityHeaders,
-          },
-        ];
-      },
+    async headers() {
+      return [
+        {
+          source: '/(.*)', // Aplicar em todas as rotas
+          headers: securityHeaders,
+        },
+      ];
+    },
 
-      images: {
-        formats: ['image/webp'],
-        deviceSizes: [640, 828, 1080, 1920, 2048, 3840],
-        imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 512],
-      },
+    images: {
+      formats: ['image/webp'],
+      deviceSizes: [640, 828, 1080, 1920, 2048, 3840],
+      imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 512],
+    },
 
-      env: {
-        nonceScriptSrc,
-        //nonceStyleSrc,
-      },
+    env: {
+      nonceScriptSrc,
+      //nonceStyleSrc,
+    },
 
-      typescript: {
-        ignoreBuildErrors: true,
-      },
-      eslint: {
-        ignoreDuringBuilds: true,
-      },
+    typescript: {
+      ignoreBuildErrors: true,
+    },
+    eslint: {
+      ignoreDuringBuilds: true,
+    },
 
 
-      webpack: (config, { dev, isServer }) => {
-        if (!dev && !isServer) {
-          // Habilitar treeshaking para remover dependências não utilizadas
-          config.optimization.concatenateModules = true;
-          config.optimization.providedExports = true;
-          config.optimization.usedExports = true;
-          config.optimization.sideEffects = true;
-        }
+    webpack: (config, { dev, isServer }) => {
+      if (!dev && !isServer) {
+        // Habilitar treeshaking para remover dependências não utilizadas
+        config.optimization.concatenateModules = true;
+        config.optimization.providedExports = true;
+        config.optimization.usedExports = true;
+        config.optimization.sideEffects = true;
+      }
 
-        return config;
-      },
+      return config;
+    },
 
-    })
-  )
+  })
 );
