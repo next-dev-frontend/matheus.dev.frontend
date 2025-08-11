@@ -1,3 +1,12 @@
-node_modules
-    .next
-/*.js
+# Ignorar dependências e build
+node_modules/
+.next/
+out/
+
+# Ignorar arquivos de service worker e workbox gerados automaticamente
+public/sw.js
+public/workbox-*.js
+
+# Ignorar arquivos de configuração do próprio projeto
+*.config.js
+*.config.cjs
