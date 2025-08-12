@@ -1,16 +1,16 @@
-import Head from 'next/head';
 import { useState, useEffect } from 'react';
+import Head from 'next/head';
+import Image from 'next/image';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+import { Howl, Howler } from 'howler';
 import { FaVolumeMute, FaVolumeUp, FaMailBulk, FaMapMarkerAlt, FaWhatsapp, FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaSun, FaRegMoon, FaBars, FaTimes } from 'react-icons/fa';
 import { SiGithub, SiLinkedin, SiTailwindcss, SiTypescript, SiNetlify, SiVercel, SiFacebook } from 'react-icons/si';
-import { Howl, Howler } from 'howler';
 import Sobre from '../components/Sobre';
 import Tecnologias from '../components/Tecnologias';
 import Projetos from '../components/Projetos';
-import dynamic from 'next/dynamic';
-const Carousel = dynamic(() => import('../components/Carousel'), { ssr: false });
 const SocialShare = dynamic(() => import('../components/SocialShare'));
-const Analytics = dynamic(() => import('../components/Analytics'));
+const Analytics = dynamic(() => import('../components/Analytics'), { ssr: false });
 
 const IconJump = ({ icon, delay }) => {
   return (
@@ -216,7 +216,20 @@ const Home = () => {
                 {muted ? <FaVolumeMute title='Ativar Efeitos Sonoros' className='text-gray-500 w-10 h-10 p-2 rounded-full hover:bg-white' /> : <FaVolumeUp title="Desativar Efeitos Sonoros" className='text-purple-500 w-10 h-10 p-2 rounded-full hover:bg-white' />}
               </button>
 
-              <Carousel />
+              <div className="flex mx-auto border-4 border-indigo-500 border-double rounded-full w-40 h-40">
+                <Image
+                  src={"/images/foto1.webp"}
+                  // alt={`Foto ${currentImage + 1}`}
+                  alt={"Foto do Matheus"}
+                  width={320}
+                  height={320}
+                  priority
+                  fetchPriority="high"
+                  onMouseEnter={handleHover}
+                  onMouseLeave={handleHover}
+                  className='rounded-full transform transition hover:scale-105 duration-300 ease-in-out'
+                />
+              </div>
 
               <div className="text-center pt-4">
                 <h1 className="text-lg lg:text-xl text-white font-medium rounded-md p-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-lg">
