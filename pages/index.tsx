@@ -8,7 +8,7 @@ import Sobre from '../components/Sobre';
 import Tecnologias from '../components/Tecnologias';
 import Projetos from '../components/Projetos';
 import dynamic from 'next/dynamic';
-const Carousel = dynamic(() => import('../components/Carousel'));
+const Carousel = dynamic(() => import('../components/Carousel'), { ssr: false });
 const SocialShare = dynamic(() => import('../components/SocialShare'));
 const Analytics = dynamic(() => import('../components/Analytics'));
 
@@ -205,8 +205,6 @@ const Home = () => {
         <meta property="article:tag" content="Tailwind" />
       </Head>
       <div>
-
-        <Analytics />
 
         <div className={`z-10 flex overflow-y-auto w-full max-w-full h-full min-h-screen bg-no-repeat items-start justify-center mx-auto bg-opacity-60 ${bgColor} `}>
           <div className={`flex flex-col md:flex-row w-screen mx-auto max-w-6xl gap-4 px-2 md:px-4 py-2 md:py-4`}>
@@ -501,7 +499,7 @@ const Home = () => {
         </div>
 
         <SocialShare />
-
+        <Analytics />
       </div>
     </>
   );

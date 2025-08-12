@@ -7,12 +7,6 @@ const images = ['/images/foto1.webp', '/images/foto2.webp', '/images/foto3.webp'
 const Carousel = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
-  //efeito sonoro de click
-  const clickFx = new Howl({
-    src: ['../effects/clickFx.mp3'],
-    volume: 0.5,
-  });
-
   //efeito sonoro de hover
   const hoverFx = new Howl({
     src: ['../effects/hoverFx.mp3'],
