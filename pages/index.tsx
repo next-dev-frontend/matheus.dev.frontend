@@ -123,6 +123,7 @@ export default function Home() {
         <title>Desenvolvedor Web React.Js | Matheus S. Lopes</title>
         <meta name="description" content="Desenvolvedor web especializado em React.js, Next.js, e Tailwind CSS. Criação de sites otimizados e responsivos para empresas e landing pages." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preload" href="/images/foto1.webp" as="image" fetchpriority="high" />
       </Head>
 
       <div className={`z-10 flex overflow-y-auto w-full max-w-full h-full min-h-screen bg-no-repeat items-start justify-center mx-auto bg-opacity-60 ${bgColor}`}>
@@ -131,23 +132,23 @@ export default function Home() {
           {/* Sidebar (mantenho classes originais; ajusto z-index via style para evitar bloqueio) */}
           <div className="w-full justify-center md:max-w-1/4 items-center md:w-1/3 bg-white bg-opacity-80 rounded h-full p-4 sm:order-1 shadow-lg border-2 border-gray-400 relative"
             style={{ zIndex: 50 }}>
+
             {/* Volume button */}
             <button onClick={toggleMute} onMouseEnter={handleHover} title="Audio" aria-label="Audio">
               {muted ? <FaVolumeMute title='Ativar Efeitos Sonoros' className='text-gray-500 w-10 h-10 p-2 rounded-full hover:bg-white' /> : <FaVolumeUp title="Desativar Efeitos Sonoros" className='text-purple-500 w-10 h-10 p-2 rounded-full hover:bg-white' />}
             </button>
 
-            <div className="flex mx-auto border-4 border-indigo-500 border-double rounded-full w-40 h-40">
+            <div className="flex mx-auto rounded-full w-40 h-40 will-change-transform">
               <Image
-                src={"/images/foto1.webp"}
-                // alt={`Foto ${currentImage + 1}`}
-                alt={"Foto do Matheus"}
+                src="/images/foto1.webp"
+                alt="Foto do Matheus"
                 width={320}
                 height={320}
                 priority
                 fetchPriority="high"
-                onMouseEnter={handleHover}
-                onMouseLeave={handleHover}
-                className='rounded-full transform transition hover:scale-105 duration-300 ease-in-out'
+                loading="eager"
+                decoding="sync"
+                className="rounded-full transition-transform hover:scale-105 duration-300 will-change-transform"
               />
             </div>
 
